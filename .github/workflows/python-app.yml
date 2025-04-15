@@ -1,0 +1,50 @@
+name: Python application
+
+on:
+  schedule:
+    - cron: "*/10 22-23,0-15 * * *"  # 每小时执行一次
+  push:
+    branches: [ "main" ]  # 仅在推送到 main 分支时执行
+
+permissions:
+  contents: write  # 需要写入仓库权限（提交文件）
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # 获取仓库代码
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"  # 设置 Python 版本为 3.10
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install requests beautifulsoup4 lxml
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi  # 安装依赖
+
+    - name: Run Python script (access_token.py)
+      run: |
+        python3 main.py  # 执行 access_token.py 脚本，生成 token.json 和 ids.json
+
+    - name: Commit and push token.json and ids.json to the repository
+      run: |
+        # 配置 Git 用户信息
+        git config user.name "coomaso"
+        git config user.email "coomaso@gmail.com"
+        
+        # 检查 zb.json 是否有更改
+        git add zb.json
+
+        # 提交更改，如果没有更改则跳过
+        git commit -m "Update zb.json" || echo "No changes to commit"
+
+        # 推送到远程仓库
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 默认的 GITHUB_TOKEN 来执行推送
