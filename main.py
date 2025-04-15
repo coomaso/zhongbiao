@@ -24,7 +24,7 @@ def send_wechat_message(webhook_url, message):
 url = "https://ggzy.sc.yichang.gov.cn/EpointWebBuilder/rest/secaction/getSecInfoListYzm"
 
 # 本地JSON文件路径
-local_json_file = "/root/zb.json"  # 绝对路径
+local_json_file = "zb.json"  # 绝对路径
 
 # 企业微信机器人Webhook地址
 webhook_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4576c3a0-9e34-4857-92b1-96f91a6246cf"
