@@ -29,6 +29,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi  # 安装依赖
 
     - name: Run Python script (access_token.py)
+      env: 
+        QYWX_URL: ${{ secrets.QYWX_URL }}  # 添加此行以传递Secret
       run: |
         python3 main.py  # 执行 access_token.py 脚本，生成 token.json 和 ids.json
 
