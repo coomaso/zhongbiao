@@ -27,7 +27,7 @@ url = "https://ggzy.sc.yichang.gov.cn/EpointWebBuilder/rest/secaction/getSecInfo
 local_json_file = "zb.json"  # 绝对路径
 
 # 企业微信机器人Webhook地址
-webhook_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4576c3a0-9e34-4857-92b1-96f91a6246cf"
+webhook_url = os.environ["QYWX_URL"]
 
 # 动态生成时间范围
 today = datetime.datetime.now()
