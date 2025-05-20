@@ -28,7 +28,7 @@ local_json_file = "zb.json"  # 绝对路径
 
 # 企业微信机器人Webhook地址
 webhook_url = os.environ["QYWX_URL"]
-
+webhook_zb_url = os.environ["QYWX_ZB_URL"]
 # 动态生成时间范围
 today = datetime.datetime.now()
 startdate = (today - datetime.timedelta(days=7)).strftime("%Y-%m-%d 00:00:00")
@@ -107,6 +107,8 @@ if response.status_code == 200:
                     f"注意：如果链接无法访问，可能是由于网络问题或链接本身的问题。请检查链接的合法性，并适当重试。"
                 )
                 send_wechat_message(webhook_url, message)
+                if "盛荣" in bidder:
+                    send_wechat_message(webhook_zb_url, message)
         else:
             print("没有新数据")
     else:
