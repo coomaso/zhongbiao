@@ -104,7 +104,6 @@ if response.status_code == 200:
                     f"中标人：{bidder}\n"
                     f"中标价：{price}\n"
                     f"链接：{full_url}\n"
-                    f"注意：如果链接无法访问，可能是由于网络问题或链接本身的问题。请检查链接的合法性，并适当重试。"
                 )
                 send_wechat_message(webhook_url, message)
                 if "盛荣" in bidder:
