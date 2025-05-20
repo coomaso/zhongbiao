@@ -91,10 +91,10 @@ if response.status_code == 200:
                 html = item.get("infocontent", "")
                 soup = BeautifulSoup(html, 'html.parser')
                 # 提取中标人
-                bidder_td = soup.find('td', text=re.compile(r'中标人[:：]'))
+                bidder_td = soup.find('td', string=re.compile(r'中标人[:：]'))
                 bidder = bidder_td.find_next_sibling('td').get_text(strip=True) if bidder_td else "未找到中标人信息"
                 # 提取中标价
-                price_td = soup.find('td', text=re.compile(r'中标价[\(（]?.*?[\)）]?[:：]'))
+                price_td = soup.find('td', string=re.compile(r'中标价[\(（]?.*?[\)）]?[:：]'))
                 price = price_td.find_next_sibling('td').get_text(strip=True) if price_td else "未找到中标价信息"
                 # 拼接完整的链接
                 full_url = f"https://ggzy.sc.yichang.gov.cn{infourl}"
