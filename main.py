@@ -103,7 +103,7 @@ if response.status_code == 200:
                     f"日期：{infodate}\n"
                     f"中标人：{bidder}\n"
                     f"中标价：{price}\n"
-                    f"链接：{full_url}\n"
+                    f"链接：{full_url}"
                 )
                 send_wechat_message(webhook_url, message)
                 if "盛荣" in bidder:
