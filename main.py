@@ -32,14 +32,22 @@ class BidMonitor:
             "pagesize": str(self.page_size),
             **date_range
         }
+        retries = 3
+        for attempt in range(retries):
+            try:
+                response = requests.post(self.api_url, data=payload, timeout=30)
+                response.raise_for_status()
+                return response.json().get("custom", {}).get("infodata", [])
+            except requests.exceptions.Timeout:
+                print(f"[第 {attempt+1} 次尝试] 请求超时，等待重试...")
+            except requests.exceptions.ConnectionError:
+                print(f"[第 {attempt+1} 次尝试] 网络连接错误，等待重试...")
+            except requests.RequestException as e:
+                print(f"[第 {attempt+1} 次尝试] 请求失败: {str(e)}")
+            time.sleep(5)
         
-        try:
-            response = requests.post(self.api_url, data=payload, timeout=15)
-            response.raise_for_status()
-            return response.json().get("custom", {}).get("infodata", [])
-        except requests.RequestException as e:
-            print(f"[API错误] 数据获取失败: {str(e)}")
-            return []
+        print("[最终失败] 无法获取数据，已达最大重试次数")
+        return []
 
     def process_and_store_data(self) -> int:
         """处理数据并返回新增数量"""
