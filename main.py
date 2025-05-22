@@ -22,6 +22,27 @@ class BidMonitor:
         self.category_num = "003001005"
         self.page_size = 6  # 每页获取数量
 
+    def reparse_all_data(self):
+        """从原始数据文件重新解析所有数据"""
+        original_data = self._load_json_file(self.original_file)
+        parsed_data = []
+    
+        for item in original_data:
+            parsed_record = {
+                "infoid": item.get("infoid"),
+                "infourl": item.get("infourl"),
+                "parsed_data": self._parse_html_content(item.get("infocontent", "")),
+                "raw_data": {
+                    "title": item.get("title"),
+                    "infodate": item.get("infodate")
+                }
+            }
+            parsed_data.append(parsed_record)
+        
+        self._save_json_file(self.parsed_file, parsed_data)
+        print(f"[重解析完成] 共解析 {len(parsed_data)} 条数据并保存到 {self.parsed_file}")
+
+
     def fetch_latest_data(self) -> List[Dict]:
         """获取最新招标数据"""
         date_range = self._get_date_range(7)  # 获取近7天数据
@@ -244,14 +265,18 @@ class BidMonitor:
         )
 
 if __name__ == "__main__":
-    # 初始化监控器
+    import sys
+
     monitor = BidMonitor()
-    
-    # 数据采集处理阶段
-    new_count = monitor.process_and_store_data()
-    
-    if new_count > 0:
-        print(f"发现 {new_count} 条新数据，开始发送通知...")
-        monitor.send_notifications()
+
+    # 命令行参数支持
+    if "--reparse-all" in sys.argv:
+        monitor.reparse_all_data()
     else:
-        print("没有检测到新数据")
+        # 正常监控流程
+        new_count = monitor.process_and_store_data()
+        if new_count > 0:
+            print(f"发现 {new_count} 条新数据，开始发送通知...")
+            monitor.send_notifications()
+        else:
+            print("没有检测到新数据")
