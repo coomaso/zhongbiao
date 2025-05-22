@@ -166,7 +166,14 @@ class BidMonitor:
     def _clean_key(self, text: str) -> str:
         """清洗键名字符串"""
         return re.sub(r'[:：\s]', '', text).strip()
-
+        
+    def _find_field_by_regex(self, parsed: Dict[str, Any], pattern: str) -> str:
+        """正则匹配关键字"""
+        for key, value in parsed.items():
+            if re.search(pattern, key):
+                return value
+        return "未找到信息"
+        
     def _build_message(self, record: Dict) -> str:
         """构建通知消息"""
         parsed = record.get("parsed_data", {})
@@ -176,7 +183,7 @@ class BidMonitor:
         title = raw.get("title", "未知标题")
         date = raw.get("infodate", "未知日期")
         bidder = parsed.get("中标人", self._fallback_extract(record, "中标人"))
-        price = parsed.get("中标价", self._fallback_extract(record, "中标价"))
+        price = self._find_field_by_regex(parsed, r"中标价")
         url = self._build_full_url(record.get("infourl", ""))
         
         return (
