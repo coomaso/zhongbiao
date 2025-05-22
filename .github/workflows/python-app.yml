@@ -41,11 +41,17 @@ jobs:
         git config user.name "coomaso"
         git config user.email "coomaso@gmail.com"
         
-        # 检查 zb.json 是否有更改
-        git add zb.json
+        # 添加文件
+        git add zb.json parsed.json
+    
+        # 检查是否有更改
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+          exit 0
+        fi
 
         # 提交更改，如果没有更改则跳过
-        git commit -m "Update zb.json" || echo "No changes to commit"
+        git commit -m "Update zb.json and parsed.json" || echo "No changes to commit"
 
         # 推送到远程仓库
         git push origin main
