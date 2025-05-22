@@ -4,194 +4,246 @@ import datetime
 import os
 import re
 from bs4 import BeautifulSoup
-from typing import List, Dict
+from typing import List, Dict, Any
 
 class BidMonitor:
     def __init__(self):
-        self.original_file = "zb.json"  # 原始数据存储路径
-        self.parsed_file = "parsed.json"      # 解析后数据存储路径
-
-        # 环境变量配置 Webhook URL
-        self.webhook_url = os.environ.get("QYWX_URL", "")
-        self.webhook_zb_url = os.environ.get("QYWX_ZB_URL", "")
+        # 初始化文件路径
+        self.original_file = "zb.json"  # 原始数据存储
+        self.parsed_file = "parsed.json"      # 解析结果存储
         
-        # API 请求配置参数
+        # 企业微信配置
+        self.webhook_url = os.getenv("QYWX_URL")
+        self.webhook_zb_url = os.getenv("QYWX_ZB_URL")
+        
+        # API配置
         self.api_url = "https://ggzy.sc.yichang.gov.cn/EpointWebBuilder/rest/secaction/getSecInfoListYzm"
         self.site_guid = "7eb5f7f1-9041-43ad-8e13-8fcb82ea831a"
         self.category_num = "003001005"
+        self.page_size = 6  # 每页获取数量
 
-    def fetch_data(self) -> List[Dict]:
-        # 构造查询日期区间
-        date_range = self._get_date_range(7)
+    def fetch_latest_data(self) -> List[Dict]:
+        """获取最新招标数据"""
+        date_range = self._get_date_range(7)  # 获取近7天数据
         payload = {
             "siteGuid": self.site_guid,
             "categoryNum": self.category_num,
             "pageindex": "0",
-            "pagesize": "6",
+            "pagesize": str(self.page_size),
             **date_range
         }
+        
         try:
-            response = requests.post(self.api_url, data=payload)
+            response = requests.post(self.api_url, data=payload, timeout=15)
             response.raise_for_status()
             return response.json().get("custom", {}).get("infodata", [])
         except requests.RequestException as e:
-            print(f"API请求失败: {str(e)}")
+            print(f"[API错误] 数据获取失败: {str(e)}")
             return []
 
-    def process_data(self, new_data: List[Dict]) -> int:
-        # 读取本地已有原始数据
-        existing_raw = self._load_data_file(self.original_file)
-        # 判断哪些是新增的数据
-        new_items = [item for item in new_data if not self._is_existing(item, existing_raw)]
+    def process_and_store_data(self) -> int:
+        """处理数据并返回新增数量"""
+        # 获取新数据
+        new_raw_data = self.fetch_latest_data()
+        if not new_raw_data:
+            return 0
 
-        if new_items:
-            # 保存原始数据
-            updated_raw = existing_raw + new_items
-            self._save_data_file(self.original_file, updated_raw)
+        # 加载已有原始数据
+        existing_raw = self._load_json_file(self.original_file)
+        
+        # 过滤新数据
+        new_items = [
+            item for item in new_raw_data
+            if not self._is_existing_record(item, existing_raw)
+        ]
+        
+        if not new_items:
+            return 0
 
-            # 解析新增数据并保存结构化内容
-            parsed_data = self._load_data_file(self.parsed_file)
-            parsed_items = [self._parse_and_link(item) for item in new_items]
-            self._save_data_file(self.parsed_file, parsed_data + parsed_items)
-
+        # 保存原始数据
+        updated_raw = existing_raw + new_items
+        self._save_json_file(self.original_file, updated_raw)
+        
+        # 解析新数据
+        parsed_data = self._load_json_file(self.parsed_file)
+        for item in new_items:
+            parsed_record = {
+                "infoid": item.get("infoid"),
+                "infourl": item.get("infourl"),
+                "parsed_data": self._parse_html_content(item.get("infocontent", "")),
+                "raw_data": {  # 保留关键原始字段
+                    "title": item.get("title"),
+                    "infodate": item.get("infodate")
+                }
+            }
+            parsed_data.append(parsed_record)
+        
+        self._save_json_file(self.parsed_file, parsed_data)
         return len(new_items)
 
-    def _parse_and_link(self, raw_item: Dict) -> Dict:
-        # 将解析结果与原始数据建立关联
-        parsed = {
-            "infoid": raw_item.get("infoid"),
-            "infourl": raw_item.get("infourl"),
-            "data": self._parse_html_content(raw_item)
-        }
-        return parsed
+    def send_notifications(self):
+        """发送最新通知"""
+        # 获取最新解析数据
+        parsed_data = self._load_json_file(self.parsed_file)
+        if not parsed_data:
+            return
 
-    def send_notifications(self, new_items: List[Dict]):
-        parsed_data = self._load_data_file(self.parsed_file)
-        # 构建 infoid -> 解析结果 映射表
-        parsed_map = {p["infoid"]: p for p in parsed_data}
+        # 获取最近处理数量
+        new_count = min(len(parsed_data), self.page_size)
+        latest_parsed = parsed_data[-new_count:]
+        
+        for record in latest_parsed:
+            # 构建消息内容
+            message = self._build_message(record)
+            if not message:
+                continue
 
-        for raw_item in new_items:
-            infoid = raw_item.get("infoid")
-            parsed = parsed_map.get(infoid, {})
+            # 发送常规通知
+            self._send_wechat(message, self.webhook_url)
+            
+            # 特殊关键词检测
+            if "盛荣" in record.get("parsed_data", {}).get("中标人", ""):
+                self._send_wechat(message, self.webhook_zb_url)
 
-            # 优先使用结构化字段，否则回退原始HTML提取
-            bidder = parsed.get("data", {}).get("中标人") or self._extract_from_html(raw_item, '中标人')
-            price = parsed.get("data", {}).get("中标价") or self._extract_from_html(raw_item, '中标价')
-
-            message = self._build_message(raw_item, bidder, price)
-            self._send_wechat(message)
-
-            # 特殊关键字额外通知
-            if "盛荣" in bidder:
-                self._send_wechat(message, is_special=True)
-
-    def _parse_html_content(self, item: Dict) -> Dict:
-        parsed = {}
-        html = item.get("infocontent", "")
+    def _parse_html_content(self, html: str) -> Dict:
+        """解析HTML内容为结构化数据"""
+        result = {}
         try:
             soup = BeautifulSoup(html, 'html.parser')
-            table = soup.find("table")  # 查找表格结构
-            if table:
-                for row in table.find_all("tr"):
-                    cols = [td.get_text(strip=True) for td in row.find_all("td")]
-                    self._process_row(cols, parsed)  # 提取键值对
-        except Exception as e:
-            parsed["error"] = str(e)
-        return parsed
+            table = soup.find("table")
+            if not table:
+                return result
 
-    def _process_row(self, columns: List[str], data: Dict):
-        # 处理每一行表格中的列
+            for row in table.find_all("tr"):
+                cols = [td.get_text(strip=True) for td in row.find_all("td")]
+                self._process_table_row(cols, result)
+
+        except Exception as e:
+            print(f"[解析错误] HTML解析失败: {str(e)}")
+        return result
+
+    def _process_table_row(self, columns: List[str], result: Dict):
+        """处理表格行数据"""
+        # 处理第一组键值对
         if len(columns) >= 2:
             key = self._clean_key(columns[0])
-            data[key] = columns[1]
+            result[key] = columns[1]
+        
+        # 处理第二组键值对
         if len(columns) >= 4:
-            key2 = self._clean_key(columns[2])
-            data[key2] = columns[3]
+            key = self._clean_key(columns[2])
+            result[key] = columns[3]
 
     def _clean_key(self, text: str) -> str:
-        # 清洗字段名中的特殊符号
+        """清洗键名字符串"""
         return re.sub(r'[:：\s]', '', text).strip()
 
-    def _extract_from_html(self, item: Dict, field: str) -> str:
-        # 从原始 HTML 中提取字段（如中标人、中标价）
-        html = item.get("infocontent", "")
+    def _build_message(self, record: Dict) -> str:
+        """构建通知消息"""
+        parsed = record.get("parsed_data", {})
+        raw = record.get("raw_data", {})
+        
+        # 获取关键字段
+        title = raw.get("title", "未知标题")
+        date = raw.get("infodate", "未知日期")
+        bidder = parsed.get("中标人", self._fallback_extract(record, "中标人"))
+        price = parsed.get("中标价", self._fallback_extract(record, "中标价"))
+        url = self._build_full_url(record.get("infourl", ""))
+        
+        return (
+            f"新公告：{title}\n"
+            f"发布日期：{date}\n"
+            f"中标单位：{bidder}\n"
+            f"中标金额：{price}\n"
+            f"详情链接：{url}"
+        )
+
+    def _fallback_extract(self, record: Dict, field: str) -> str:
+        """备选字段提取方法"""
+        html = self._find_raw_html(record.get("infoid"))
+        if not html:
+            return "未找到信息"
+        
         soup = BeautifulSoup(html, 'html.parser')
         td = soup.find('td', string=re.compile(fr'{field}[:：]'))
         return td.find_next_sibling('td').get_text(strip=True) if td else "未找到信息"
 
-    def _build_message(self, item: Dict, bidder: str, price: str) -> str:
-        # 构建通知消息文本
-        return (
-            f"新公告：{item.get('title', '')}\n"
-            f"日期：{item.get('infodate', '')}\n"
-            f"中标人：{bidder}\n"
-            f"中标价：{price}\n"
-            f"链接：{self._build_full_url(item.get('infourl', ''))}"
-        )
+    def _find_raw_html(self, infoid: str) -> str:
+        """通过ID查找原始HTML"""
+        raw_data = self._load_json_file(self.original_file)
+        for item in raw_data:
+            if item.get("infoid") == infoid:
+                return item.get("infocontent", "")
+        return ""
 
     def _build_full_url(self, path: str) -> str:
-        # 构造完整公告链接
+        """构建完整URL"""
         return f"https://ggzy.sc.yichang.gov.cn{path}" if path else ""
 
-    def _send_wechat(self, message: str, is_special=False):
-        # 发送企业微信消息通知
-        webhook = self.webhook_zb_url if is_special else self.webhook_url
-        payload = {"msgtype": "text", "text": {"content": message}}
+    def _send_wechat(self, message: str, webhook: str):
+        """发送企业微信通知"""
+        if not webhook:
+            print("[通知错误] Webhook地址未配置")
+            return
+
+        payload = {
+            "msgtype": "text",
+            "text": {"content": message}
+        }
+        
         try:
-            response = requests.post(webhook, json=payload)
+            response = requests.post(webhook, json=payload, timeout=10)
             response.raise_for_status()
+            print(f"[通知成功] 消息已发送至 {webhook}")
         except Exception as e:
-            print(f"消息发送失败: {str(e)}")
+            print(f"[通知失败] {str(e)}")
 
     def _get_date_range(self, days: int) -> Dict:
-        # 返回过去 `days` 天的时间范围
+        """生成时间范围"""
         today = datetime.datetime.now()
         return {
             "startdate": (today - datetime.timedelta(days=days)).strftime("%Y-%m-%d 00:00:00"),
             "enddate": today.strftime("%Y-%m-%d 23:59:59")
         }
 
-    def _is_existing(self, new_item: Dict, existing_data: List[Dict]) -> bool:
-        # 判断数据是否已存在（根据infoid或url）
-        return any(
-            item.get("infoid") == new_item.get("infoid") or
-            item.get("infourl") == new_item.get("infourl")
-            for item in existing_data
-        )
-
-    def _load_data_file(self, filename: str) -> List[Dict]:
-        # 加载指定JSON文件
-        if not os.path.exists(filename):
-            return []
+    def _load_json_file(self, filename: str) -> List[Dict]:
+        """加载JSON文件"""
         try:
-            with open(filename, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except (json.JSONDecodeError, IOError) as e:
-            print(f"加载 {filename} 失败: {str(e)}")
+            if os.path.exists(filename):
+                with open(filename, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            return []
+        except Exception as e:
+            print(f"[文件错误] 加载 {filename} 失败: {str(e)}")
             return []
 
-    def _save_data_file(self, filename: str, data: List[Dict]):
-        # 保存数据到指定JSON文件
+    def _save_json_file(self, filename: str, data: List[Dict]):
+        """保存JSON文件"""
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
-        except IOError as e:
-            print(f"保存 {filename} 失败: {str(e)}")
+        except Exception as e:
+            print(f"[文件错误] 保存 {filename} 失败: {str(e)}")
+
+    def _is_existing_record(self, new_item: Dict, existing: List[Dict]) -> bool:
+        """检查记录是否存在"""
+        new_id = new_item.get("infoid")
+        new_url = new_item.get("infourl")
+        return any(
+            item.get("infoid") == new_id or 
+            item.get("infourl") == new_url
+            for item in existing
+        )
 
 if __name__ == "__main__":
+    # 初始化监控器
     monitor = BidMonitor()
-    fresh_data = monitor.fetch_data()
-
-    if not fresh_data:
-        print("未获取到新数据")
-        exit(0)
-
-    new_count = monitor.process_data(fresh_data)
-
+    
+    # 数据采集处理阶段
+    new_count = monitor.process_and_store_data()
+    
     if new_count > 0:
-        # 加载最新新增的原始数据
-        raw_data = monitor._load_data_file(monitor.original_file)[-new_count:]
-        monitor.send_notifications(raw_data)
-        print(f"处理完成，新增{new_count}条数据")
+        print(f"发现 {new_count} 条新数据，开始发送通知...")
+        monitor.send_notifications()
     else:
-        print("没有新增数据")
+        print("没有检测到新数据")
