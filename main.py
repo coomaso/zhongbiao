@@ -45,13 +45,17 @@ class BidMonitor:
 
     def fetch_latest_data(self) -> List[Dict]:
         """获取最新招标数据"""
-        date_range = self._get_date_range(7)  # 获取近7天数据
+        # date_range = self._get_date_range(7)  # 获取近7天数据
         payload = {
             "siteGuid": self.site_guid,
             "categoryNum": self.category_num,
             "pageindex": "0",
             "pagesize": str(self.page_size),
-            **date_range
+            "content": "",
+            "startdate": "",
+            "enddate": "", 
+            "xiqucode": ""
+            # date_range
         }
         retries = 3
         for attempt in range(retries):
