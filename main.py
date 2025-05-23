@@ -135,7 +135,7 @@ class BidMonitor:
             self._send_wechat(message, self.webhook_url)
             
             # 特殊关键词检测
-            if "盛荣" in record.get("parsed_data", {}).get("中标人", ""):
+            if "盛荣" in record.get("latest_parsed", {}).get("中标人", ""):
                 self._send_wechat(message, self.webhook_zb_url)
 
     def _parse_html_content(self, html: str) -> Dict:
