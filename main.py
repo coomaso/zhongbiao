@@ -29,7 +29,35 @@ class BidMonitor:
         self.category_num = "003001005"
         self.page_size = 6
         self.latest_new_count = 0  # 跟踪最新新增数量
+        
+    def _load_json_file(self, filename: str) -> List[Dict]:
+        """加载JSON文件"""
+        try:
+            if os.path.exists(filename):
+                with open(filename, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            return []
+        except Exception as e:
+            print(f"[文件错误] 加载 {filename} 失败: {str(e)}")
+            return []
 
+    def _save_json_file(self, filename: str, data: List[Dict]):
+        """保存JSON文件"""
+        try:
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"[文件错误] 保存 {filename} 失败: {str(e)}")
+
+    def _is_existing_record(self, new_item: Dict, existing: List[Dict]) -> bool:
+        """检查记录是否已存在"""
+        new_id = new_item.get("infoid")
+        new_url = new_item.get("infourl")
+        return any(
+            item.get("infoid") == new_id or 
+            item.get("infourl") == new_url
+            for item in existing
+        )
     def reparse_all_data(self):
         """重新解析所有原始数据"""
         original_data = self._load_json_file(self.original_file)
