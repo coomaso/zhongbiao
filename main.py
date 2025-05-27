@@ -209,11 +209,11 @@ class BidMonitor:
         
         return (
             "📢 新中标公告\n"
-            f"  📜 标题：  {raw.get('title', '未知标题')}\n"
-            f"  📅 日期：  {raw.get('infodate', '未知日期')}\n"
-            f"  🏢 中标方：  {bidder}\n"
-            f"  💰 中标金额：  {price}\n"
-            f"🔗 详情链接：  {self._build_full_url(record.get('infourl', ''))}"
+            f"  📜 标题：{raw.get('title', '未知标题')}\n"
+            f"  📅 日期：{raw.get('infodate', '未知日期')}\n"
+            f"  🏢 中标方：{bidder}\n"
+            f"  💰 中标金额：{price}\n"
+            f"🔗 详情链接：{self._build_full_url(record.get('infourl', ''))}"
         )
 
     def _find_field(self, data: Dict, pattern: str) -> str:
