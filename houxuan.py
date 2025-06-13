@@ -239,8 +239,8 @@ class BidMonitor:
                         "price": price
                     })
             
-            # 确保至少有3个候选人
-            while len(bidders_and_prices) < 5:
+            # 确保至少有5个候选人
+            while len(bidders_and_prices) < 6:
                 bidders_and_prices.append({
                     "bidder": "未提供",
                     "price": "未提供"
@@ -277,7 +277,7 @@ class BidMonitor:
             bap = parsed_data.get("bidders_and_prices", [])
             
             if bap:
-                table_header = "|中标候选人|投标报价|\n|--------:|----:|"
+                table_header = "|中标候选人|投标报价|\n| :----: | -------: |"
                 table_rows = []
                 
                 for i, item in enumerate(bap):
