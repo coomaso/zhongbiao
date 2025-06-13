@@ -26,9 +26,10 @@ class BidMonitor:
         # API配置
         self.api_url = "https://ggzy.sc.yichang.gov.cn/EpointWebBuilder/rest/secaction/getSecInfoListYzm"
         self.site_guid = "7eb5f7f1-9041-43ad-8e13-8fcb82ea831a"
-        self.category_num = "003001004" # 中标候选人类别
+        self.category_num = "003001004"  # 中标候选人类别
         self.page_size = 6
         self.latest_new_count = 0  # 跟踪最新新增数量
+        self.base_url = "https://jyj.zhijiang.gov.cn"  # 基础URL
         
     def _load_json_file(self, filename: str) -> List[Dict]:
         """加载JSON文件"""
@@ -58,6 +59,7 @@ class BidMonitor:
             item.get("infourl") == new_url
             for item in existing
         )
+    
     def reparse_all_data(self):
         """重新解析所有原始数据"""
         original_data = self._load_json_file(self.original_file)
@@ -67,7 +69,7 @@ class BidMonitor:
             parsed_record = {
                 "infoid": item.get("infoid"),
                 "infourl": item.get("infourl"),
-                "parsed_data": self._parse_html_content(item.get("infocontent", "")),
+                "parsed_data": self._parse_html_content(item),
                 "raw_data": {
                     "title": item.get("title"),
                     "infodate": item.get("infodate")
@@ -130,7 +132,7 @@ class BidMonitor:
             parsed_record = {
                 "infoid": item.get("infoid"),
                 "infourl": item.get("infourl"),
-                "parsed_data": self._parse_html_content(item.get("infocontent", "")),
+                "parsed_data": self._parse_html_content(item),
                 "raw_data": {
                     "title": item.get("title"),
                     "infodate": item.get("infodate")
@@ -141,6 +143,96 @@ class BidMonitor:
         self._save_json_file(self.parsed_file, parsed_data)
         self.latest_new_count = len(new_items)  # 保存最新数量
         return self.latest_new_count
+
+    def _parse_html_content(self, data: Dict) -> Dict:
+        """解析HTML内容，提取关键信息"""
+        try:
+            # 提取项目名称
+            project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
+            
+            # 提取公示时间
+            publicity_period = ""
+            infocontent = data.get("infocontent", "")
+            soup = BeautifulSoup(infocontent, 'html.parser')
+            for p in soup.find_all('p'):
+                text = p.get_text().strip()
+                if "公示期为" in text:
+                    publicity_period = text.split("公示期为")[-1].strip()
+                    break
+            
+            # 提取中标候选人及报价
+            bidders = []
+            prices = []
+            
+            # 查找包含评标结果的表格
+            for table in soup.find_all('table'):
+                rows = table.find_all('tr')
+                if len(rows) > 1 and "中标候选人名称" in rows[0].get_text():
+                    # 提取候选人名称行
+                    bidder_row = rows[1].find_all('td')
+                    if bidder_row:
+                        bidders = [td.get_text(strip=True) for td in bidder_row[1:]]
+                    
+                    # 提取报价行
+                    price_row = rows[2].find_all('td')
+                    if price_row:
+                        prices = [td.get_text(strip=True) for td in price_row[1:]]
+                    break
+            
+            # 构建完整URL
+            infourl = data.get("infourl", "")
+            full_url = f"{self.base_url}{infourl}" if infourl and infourl.startswith("/") else infourl
+            
+            return {
+                "project_name": project_name,
+                "publicity_period": publicity_period,
+                "bidders": bidders,
+                "prices": prices,
+                "full_url": full_url
+            }
+        except Exception as e:
+            print(f"[解析错误] 解析HTML内容失败: {str(e)}")
+            return {}
+
+    def _build_message(self, record: Dict) -> str:
+        """构建通知消息"""
+        try:
+            parsed_data = record.get("parsed_data", {})
+            raw_data = record.get("raw_data", {})
+            
+            # 构建中标候选人表格
+            markdown_table = ""
+            if parsed_data.get("bidders") and parsed_data.get("prices"):
+                table_header = "| 序号 | 中标候选人 | 投标报价(元) |\n| :----- | :----: | -------: |"
+                table_rows = []
+                
+                for i, (bidder, price) in enumerate(zip(parsed_data["bidders"], parsed_data["prices"])):
+                    try:
+                        # 格式化金额为千位分隔
+                        formatted_price = f"{float(price.replace(',', '')):,.2f}"
+                    except:
+                        formatted_price = price
+                    table_rows.append(f"| {i+1} | {bidder} | {formatted_price} |")
+                
+                markdown_table = table_header + "\n" + "\n".join(table_rows)
+            
+            # 构建完整消息
+            message = (
+                "📢 新中标公告\n"
+                f"  📜 标题：{raw_data.get('title', '未知标题')}\n"
+                f"  📅 日期：{raw_data.get('infodate', '未知日期')}\n"
+                f"  ⏳ 公示时间：{parsed_data.get('publicity_period', '')}\n\n"
+            )
+            
+            if markdown_table:
+                message += "🏆 中标候选人及报价：\n" + markdown_table + "\n\n"
+            
+            message += f"🔗 详情链接：{parsed_data.get('full_url', '')}"
+            
+            return message
+        except Exception as e:
+            print(f"[消息构建错误] 构建通知消息失败: {str(e)}")
+            return ""
 
     def send_notifications(self):
         """发送通知"""
@@ -159,88 +251,27 @@ class BidMonitor:
             if self.webhook_url:
                 self._send_wechat(message, self.webhook_url)
             
-            # 中标特别通知
-            if "盛荣" in record.get("parsed_data", {}).get("中标人", ""):
+            # 检查是否有"盛荣"中标
+            if "盛荣" in message:
+                # 中标特别通知
                 if self.webhook_zb_url:
                     self._send_wechat(f"【中标通知】\n{message}", self.webhook_zb_url)
 
-def extract_bid_info(data):
-    # 提取项目名称
-    project_name = data["customtitle"].replace("中标候选人公示", "").strip()
-    
-    # 提取公示时间
-    publicity_period = ""
-    infocontent = data["infocontent"]
-    soup = BeautifulSoup(infocontent, 'html.parser')
-    for p in soup.find_all('p'):
-        if "公示期为" in p.get_text():
-            publicity_period = p.get_text().split("公示期为")[1].strip()
-            break
-    
-    # 提取中标候选人及报价
-    bidders = []
-    prices = []
-    
-    # 查找包含评标结果的表格
-    for table in soup.find_all('table'):
-        rows = table.find_all('tr')
-        if len(rows) > 1 and "中标候选人名称" in rows[0].get_text():
-            # 提取候选人名称行
-            bidder_row = rows[1].find_all('td')
-            if bidder_row:
-                bidders = [td.get_text(strip=True) for td in bidder_row[1:]]
-            
-            # 提取报价行
-            price_row = rows[2].find_all('td')
-            if price_row:
-                prices = [td.get_text(strip=True) for td in price_row[1:]]
-            break
-    
-    # 构建Markdown表格
-    table_header = "| 序号 | 中标候选人 | 投标报价(元) |\n| :----- | :----: | -------: |"
-    table_rows = []
-    
-    for i, (bidder, price) in enumerate(zip(bidders, prices)):
-        try:
-            # 格式化金额为千位分隔
-            formatted_price = f"{float(price.replace(',', '')):,.2f}"
-        except:
-            formatted_price = price
-        table_rows.append(f"| {i+1} | {bidder} | {formatted_price} |")
-    
-    markdown_table = table_header + "\n" + "\n".join(table_rows)
-    
-    # 提取详情URL
-    infourl = data["infourl"]
-    base_url = "https://jyj.zhijiang.gov.cn"  # 根据实际情况可能需要调整
-    full_url = f"{base_url}{infourl}" if infourl.startswith("/") else infourl
-    
-    # 构建完整输出
-    return (
-        "📢 新中标公告\n"
-        f"  📜 标题：{data['title']}\n"
-        f"  📅 日期：{data['infodate']}\n"
-        f"  ⏳ 公示时间：{publicity_period}\n\n"
-        "🏆 中标候选人及报价：\n"
-        f"{markdown_table}\n\n"
-        f"🔗 详情链接：{full_url}"
-    )
-
     def _send_wechat(self, message: str, webhook: str):
         """发送企业微信通知markdown_v2"""
-        payload = {
-            "msgtype": "markdown_v2",
-            "markdown_v2":  {"content": message}
-        }
         try:
+            payload = {
+                "msgtype": "markdown_v2",
+                "markdown_v2": {
+                    "content": message
+                }
+            }
             response = requests.post(webhook, json=payload, timeout=10)
             response.raise_for_status()
             print(f"[通知成功] 发送到 {webhook}")
         except Exception as e:
             print(f"[通知失败] {str(e)}")
 
-    # 其他辅助方法保持不变...
-    
 if __name__ == "__main__":
     import sys
     monitor = BidMonitor()
