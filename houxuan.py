@@ -277,7 +277,7 @@ class BidMonitor:
             bap = parsed_data.get("bidders_and_prices", [])
             
             if bap:
-                table_header = "| 序号 | 中标候选人 | 投标报价 |\n| :----- | :----: | -------: |"
+                table_header = "| 序号 | 中标候选人 | 投标报价 |\n| :--: | :------: | :----: |"
                 table_rows = []
                 
                 for i, item in enumerate(bap):
@@ -340,12 +340,11 @@ class BidMonitor:
             
             # 构建完整消息
             message = (
-                "**📢 中标候选人公告**\n"
-                f"📜 标题：{raw_data.get('title', '未知标题')}\n"
-                f"📅 日期：{raw_data.get('infodate', '未知日期')}\n"
-                f"⏳ 公示时间：{parsed_data.get('publicity_period', '未提供')}\n\n"
-            )
-            
+                "# 📢 中标候选人公告\n\n"
+                f">📜 标题：{raw_data.get('title', '未知标题')}\n\n"
+                f">📅 日期：{raw_data.get('infodate', '未知日期')}\n\n"
+                f">⏳ 公示时间：{parsed_data.get('publicity_period', '未提供')}\n\n"
+            )            
             if markdown_table:
                 message += "**🏆 中标候选人及报价：**\n" + markdown_table + "\n\n"
             else:
