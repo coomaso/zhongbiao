@@ -158,7 +158,7 @@ class BidMonitor:
                 r"公示[期时为](.+?至.+?)(?:\n|<|$)",
                 r"公示时间[：:](.+?至.+?)(?:\n|<|$)",
                 r"公示期[：:](.+?至.+?)(?:\n|<|$)",
-                r"公示[期时][为：:](.+?)(?=\n|$)"
+                r"公示[期时][：:](.+?)(?=\n|$)"
             ]
             for pattern in pub_patterns:
                 match = re.search(pattern, full_text)
@@ -287,18 +287,52 @@ class BidMonitor:
                     # 格式化报价
                     formatted_price = price
                     if '%' in price:
-                        formatted_price = f"下浮率: {price}"
-                    elif any(char.isdigit() for char in price): 
-                        clean_price_str = re.sub(r'[^\d.]', '', price.replace(',', ''))
-                        if clean_price_str:
+                        # If it contains a percentage, keep it as is
+                        formatted_price = price
+                    elif any(char.isdigit() for char in price):
+                        # Remove commas and attempt to clean numerical parts
+                        clean_price_str = price.replace(',', '')
+                        
+                        # Try to extract the number before units (元, 万元) or percentage
+                        # This regex attempts to find a number at the beginning or within the string,
+                        # and then capture potential units or percentages at the end.
+                        match_yuan = re.search(r'([\d.]+)\s*元', clean_price_str)
+                        match_wanyuan = re.search(r'([\d.]+)\s*万元', clean_price_str)
+                        match_percent = re.search(r'([\d.]+)\s*%', clean_price_str)
+                        
+                        num_val = None
+                        original_unit = None
+                    
+                        if match_wanyuan:
+                            num_val = float(match_wanyuan.group(1))
+                            original_unit = "万元"
+                        elif match_yuan:
+                            num_val = float(match_yuan.group(1))
+                            original_unit = "元"
+                        elif match_percent:
+                            formatted_price = price # Already handled by the top-level '%' check, but good for robustness
+                        else:
+                            # If no explicit unit, try to parse it directly as a number
                             try:
-                                num_price = float(clean_price_str)
-                                if "万元" in price or num_price > 10000:
-                                    formatted_price = f"{num_price:,.2f}万元"
+                                num_val = float(re.sub(r'[^\d.]', '', clean_price_str))
+                                # Heuristic: if a raw number is very large, assume it's in yuan by default
+                                if num_val > 100000: # Adjust threshold as needed, >10万 seems like a good cutoff for yuan to万元 conversion
+                                    original_unit = "元" # Treat as raw yuan if large
                                 else:
-                                    formatted_price = f"{num_price:,.2f}元"
+                                    original_unit = "unknown" # Small numbers, keep as is or assume yuan
                             except ValueError:
-                                pass  # 保持原格式
+                                pass # Not a straightforward number, keep original price
+                    
+                        if num_val is not None:
+                            if original_unit == "元":
+                                if num_val >= 10000: # Convert large yuan amounts to万元
+                                    formatted_price = f"{num_val / 10000:,.2f}万元"
+                                else:
+                                    formatted_price = f"{num_val:,.2f}元"
+                            elif original_unit == "万元":
+                                formatted_price = f"{num_val:,.2f}万元"
+                            elif original_unit == "unknown":
+                                formatted_price = f"{num_val:,.2f}元" # Default to yuan for smaller numbers without explicit unit
                     
                     table_rows.append(f"| {i+1} | {bidder} | {formatted_price} |")
                 
@@ -360,8 +394,8 @@ class BidMonitor:
         """发送企业微信通知"""
         try:
             payload = {
-                "msgtype": "markdown",
-                "markdown": {
+                "msgtype": "markdown_v2",
+                "markdown_v2": {
                     "content": message
                 }
             }
