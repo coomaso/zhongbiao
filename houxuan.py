@@ -64,7 +64,7 @@ class BidMonitor:
         """重新解析所有原始数据"""
         original_data = self._load_json_file(self.original_file)
         parsed_data = []
-    
+        
         for item in original_data:
             parsed_record = {
                 "infoid": item.get("infoid"),
@@ -156,12 +156,11 @@ class BidMonitor:
             
             # 提取公示时间
             publicity_period = ""
-            # 尝试多种方式定位公示时间
             pub_time_patterns = [
-                r"公示[期时为](.+?至.+?)\n",
-                r"公示[期时为](.+?)\n",
-                r"公示时间[：:](.+?至.+?)\n",
-                r"公示期[：:](.+?至.+?)\n"
+                r"公示[期时为](.+?至.+?)(?:\n|<)",
+                r"公示[期时为](.+?)(?:\n|<)",
+                r"公示时间[：:](.+?至.+?)(?:\n|<)",
+                r"公示期[：:](.+?至.+?)(?:\n|<)"
             ]
             
             full_text = soup.get_text()
@@ -172,91 +171,98 @@ class BidMonitor:
                     break
             
             # 提取中标候选人及报价
-            bidders = []
-            prices = []
+            bidders_and_prices = []
             
-            # 改进的表格解析逻辑
+            # Improved table parsing logic
             for table in soup.find_all('table'):
-                # 尝试识别表头行
                 header_row = None
-                for row in table.find_all('tr'):
-                    # 检查是否包含"中标候选人"、"投标人"等关键词
-                    row_text = row.get_text()
-                    if "中标候选人" in row_text or "投标人" in row_text or "报价" in row_text:
+                header_cells_text = []
+
+                # Find the header row that contains relevant keywords
+                for row_idx, row in enumerate(table.find_all('tr')):
+                    current_row_cells = [td.get_text(strip=True) for td in row.find_all(['th', 'td'])]
+                    
+                    if any(keyword in cell for cell in current_row_cells for keyword in ["中标候选人", "投标人", "单位名称", "报价", "投标报价", "下浮率"]):
                         header_row = row
+                        header_cells_text = current_row_cells
                         break
                 
                 if header_row:
-                    # 确定列位置
-                    header_cells = [td.get_text(strip=True) for td in header_row.find_all(['th', 'td'])]
+                    bidder_col = -1
+                    price_col = -1
                     
-                    # 确定投标人名称列
-                    bidder_col = None
-                    for i, text in enumerate(header_cells):
-                        if "候选人" in text or "投标人" in text or "单位名称" in text:
+                    # Identify column indices for bidder and price
+                    for i, cell_text in enumerate(header_cells_text):
+                        if "候选人" in cell_text or "投标人" in cell_text or "单位名称" in cell_text:
                             bidder_col = i
-                            break
-                    
-                    # 确定报价列
-                    price_col = None
-                    for i, text in enumerate(header_cells):
-                        if "报价" in text or "金额" in text or "下浮率" in text:
+                        if "报价" in cell_text or "金额" in cell_text or "下浮率" in cell_text:
                             price_col = i
-                            break
                     
-                    # 如果找到有效列，提取数据
-                    if bidder_col is not None or price_col is not None:
-                        # 处理后续数据行
-                        for row in header_row.find_next_siblings('tr'):
+                    # If we found at least one of the key columns, process data rows
+                    if bidder_col != -1 or price_col != -1:
+                        data_rows = header_row.find_next_siblings('tr')
+                        for row in data_rows:
                             cells = row.find_all(['td'])
-                            if len(cells) > max(bidder_col or 0, price_col or 0):
-                                # 提取投标人
-                                if bidder_col is not None and bidder_col < len(cells):
-                                    bidder = cells[bidder_col].get_text(strip=True)
-                                    # 有效性过滤
-                                    if len(bidder) > 2 and not any(keyword in bidder for keyword in 
-                                                                ["下浮率", "质量", "目标", "设计", "施工", "标准"]):
-                                        bidders.append(bidder)
-                                
-                                # 提取报价
-                                if price_col is not None and price_col < len(cells):
-                                    price = cells[price_col].get_text(strip=True)
-                                    # 有效性过滤
-                                    if any(char in price for char in ["元", "%", ".", "万"]) and len(price) < 20:
-                                        prices.append(price)
+                            
+                            bidder_name = ""
+                            bid_price = ""
+
+                            if bidder_col != -1 and bidder_col < len(cells):
+                                bidder_name = cells[bidder_col].get_text(strip=True)
+                            
+                            if price_col != -1 and price_col < len(cells):
+                                bid_price = cells[price_col].get_text(strip=True)
+                            
+                            # Add to list only if at least one piece of information is found
+                            if bidder_name or bid_price:
+                                # Apply basic filtering for irrelevant table header repeats in data rows
+                                if "投标人" not in bidder_name and "报价" not in bid_price and "名次" not in bidder_name:
+                                    bidders_and_prices.append({
+                                        "bidder": bidder_name,
+                                        "price": bid_price
+                                    })
             
-            # 备用方案1：尝试从文本中提取候选人
-            if not bidders:
-                # 尝试匹配候选人列表格式
+            # Fallback for bidders and prices if table parsing yields nothing
+            if not bidders_and_prices:
+                # Attempt to extract candidate names from text if no table data was found
+                # Prioritize explicit "第X名" format
                 candidate_matches = re.findall(r'第[一二三四五]名[：:]\s*([^\n（]+)', full_text)
                 if candidate_matches:
-                    bidders = [match.strip() for match in candidate_matches]
+                    for match in candidate_matches:
+                        bidders_and_prices.append({"bidder": match.strip(), "price": "未提供"})
                 
-                # 尝试匹配公司名称格式
-                if not bidders:
-                    company_matches = re.findall(r'[（(](\w{5,}公司|\w{5,}有限公司|\w{5,}集团)', full_text)
+                # If still no bidders, try to find company names
+                if not bidders_and_prices:
+                    company_matches = re.findall(r'([\u4e00-\u9fa5]{5,}公司|[\u4e00-\u9fa5]{5,}有限公司|[\u4e00-\u9fa5]{5,}集团)', full_text)
                     if company_matches:
-                        bidders = list(set(company_matches))  # 去重
-            
-            # 备用方案2：尝试从文本中提取报价
-            if not prices:
-                # 尝试提取报价（金额或下浮率）
-                price_matches = re.findall(r'(?:报价|投标价|下浮率)[：:]\s*([\d%.]+)', full_text)
-                if not price_matches:
-                    price_matches = re.findall(r'[\d,]+\.?\d*\s*[元%]', full_text)
-                
-                if price_matches:
-                    prices = [match.strip() for match in price_matches]
-            
-            # 构建完整URL
+                        unique_companies = list(dict.fromkeys(company_matches)) # Deduplicate while preserving order
+                        for company in unique_companies:
+                            bidders_and_prices.append({"bidder": company, "price": "未提供"})
+
+                # Attempt to extract prices from text if no table data was found
+                # This might result in prices without associated bidders, so it's a last resort.
+                if not any(item.get("price") != "未提供" for item in bidders_and_prices):
+                    price_matches = re.findall(r'(?:投标报价|报价|下浮率)[:：\s]*([\d.,%元万]+)|([\d.,]+)\s*(?:元|万元|%)', full_text)
+                    for match_tuple in price_matches:
+                        price_str = next((s for s in match_tuple if s), None) # Get the non-empty match
+                        if price_str and len(bidders_and_prices) > len([p for p in bidders_and_prices if p["price"] != "未提供"]):
+                            # Attempt to assign prices to existing bidders or add as general prices
+                            for i, item in enumerate(bidders_and_prices):
+                                if item.get("price") == "未提供":
+                                    bidders_and_prices[i]["price"] = price_str.strip()
+                                    break
+                            else: # If no "未提供" prices to fill, just append
+                                bidders_and_prices.append({"bidder": "未知中标人", "price": price_str.strip()})
+
+
+            # Build full URL
             infourl = data.get("infourl", "")
             full_url = f"{self.base_url}{infourl}" if infourl and infourl.startswith("/") else infourl
             
             return {
                 "project_name": project_name,
                 "publicity_period": publicity_period,
-                "bidders": bidders,
-                "prices": prices,
+                "bidders_and_prices": bidders_and_prices,
                 "full_url": full_url
             }
         except Exception as e:
@@ -271,63 +277,57 @@ class BidMonitor:
             
             # 构建中标候选人表格
             markdown_table = ""
-            if parsed_data.get("bidders") and parsed_data.get("prices"):
+            bap = parsed_data.get("bidders_and_prices", [])
+            
+            if bap:
                 table_header = "| 序号 | 中标候选人 | 投标报价 |\n| :----- | :----: | -------: |"
                 table_rows = []
                 
-                # 确定最小长度，避免索引错误
-                min_len = min(len(parsed_data["bidders"]), len(parsed_data["prices"]))
-                
-                for i in range(min_len):
-                    bidder = parsed_data["bidders"][i]
-                    price = parsed_data["prices"][i]
+                for i, item in enumerate(bap):
+                    bidder = item.get("bidder", "")
+                    price = item.get("price", "")
                     
-                    # 格式化报价
-                    try:
-                        # 处理下浮率报价
-                        if '%' in price:
-                            formatted_price = price
-                        # 处理金额报价
-                        else:
-                            # 移除非数字字符
-                            clean_price = re.sub(r'[^\d.]', '', price)
-                            if clean_price:
-                                num_price = float(clean_price)
-                                # 超过10万时使用万元单位
-                                if num_price > 100000:
-                                    formatted_price = f"{num_price/10000:,.2f}万元"
-                                else:
-                                    formatted_price = f"{num_price:,.2f}元"
-                            else:
-                                formatted_price = price
-                    except:
+                    # Format price
+                    formatted_price = price
+                    if '%' in price:
                         formatted_price = price
+                    elif any(char.isdigit() for char in price): # Only try to format if it contains digits
+                        clean_price_str = re.sub(r'[^\d.]', '', price.replace(',', ''))
+                        if clean_price_str:
+                            try:
+                                num_price = float(clean_price_str)
+                                if "万元" in price:
+                                    formatted_price = f"{num_price:,.2f}万元"
+                                elif "元" in price or num_price > 100000: # Heuristic for large numbers assumed to be in yuan, converted to萬元
+                                    formatted_price = f"{num_price/10000:,.2f}万元"
+                                else: # Assume it's in yuan if no unit or small number
+                                    formatted_price = f"{num_price:,.2f}元"
+                            except ValueError:
+                                formatted_price = price # Fallback if conversion fails
                     
                     table_rows.append(f"| {i+1} | {bidder} | {formatted_price} |")
                 
                 markdown_table = table_header + "\n" + "\n".join(table_rows)
             
-            # 构建完整消息
+            # Build full message
             message = (
-                "#📢 中标候选人公告\n"
+                "**📢 中标候选人公告**\n"
                 f"📜 标题：{raw_data.get('title', '未知标题')}\n"
                 f"📅 日期：{raw_data.get('infodate', '未知日期')}\n"
-                f"⏳ 公示时间：{parsed_data.get('publicity_period', '')}\n\n"
+                f"⏳ 公示时间：{parsed_data.get('publicity_period', '未提供')}\n\n"
             )
             
             if markdown_table:
-                message += "🏆 中标候选人及报价：\n" + markdown_table + "\n\n"
-            elif parsed_data.get("bidders"):
-                # 没有表格时使用简单列表
-                message += "🏆 中标候选人：\n"
-                for i, bidder in enumerate(parsed_data["bidders"]):
-                    message += f"{i+1}. {bidder}\n"
-                
-                # 如果有报价但不匹配数量
-                if parsed_data.get("prices"):
-                    message += "\n💰 投标报价：\n"
-                    for price in parsed_data["prices"]:
-                        message += f"- {price}\n"
+                message += "**🏆 中标候选人及报价：**\n" + markdown_table + "\n\n"
+            elif bap: # If no table, but some bidders/prices were extracted
+                message += "**🏆 中标候选人：**\n"
+                for item in bap:
+                    bidder = item.get("bidder", "")
+                    price = item.get("price", "")
+                    if bidder and price and price != "未提供":
+                        message += f"- {bidder} (报价: {price})\n"
+                    elif bidder:
+                        message += f"- {bidder}\n"
                 message += "\n"
             
             message += f"🔗 详情链接：{parsed_data.get('full_url', '')}"
@@ -343,6 +343,7 @@ class BidMonitor:
             return
 
         parsed_data = self._load_json_file(self.parsed_file)
+        # Ensure we only get the *new* data added in the current run
         latest_parsed = parsed_data[-self.latest_new_count:]
         
         for record in latest_parsed:
@@ -364,8 +365,8 @@ class BidMonitor:
         """发送企业微信通知markdown_v2"""
         try:
             payload = {
-                "msgtype": "markdown_v2",
-                "markdown_v2": {
+                "msgtype": "markdown",  # Changed to markdown for simplicity if markdown_v2 has specific requirements not met
+                "markdown": {
                     "content": message
                 }
             }
