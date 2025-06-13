@@ -3,8 +3,6 @@ name: Python application
 on:
   schedule:
     - cron: "*/10 22-23,0-15 * * *"  # 每小时执行一次
-  push:
-    branches: [ "main" ]  # 仅在推送到 main 分支时执行
 
 permissions:
   contents: write  # 需要写入仓库权限（提交文件）
