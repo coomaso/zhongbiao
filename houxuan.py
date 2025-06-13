@@ -143,22 +143,58 @@ class BidMonitor:
         self._save_json_file(self.parsed_file, parsed_data)
         self.latest_new_count = len(new_items)  # 保存最新数量
         return self.latest_new_count
-
     def _parse_html_content(self, data: Dict) -> Dict:
         """解析HTML内容，提取关键信息"""
         try:
             # 提取项目名称
             project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
             
-            # 提取公示时间
+            # 提取公示时间 - 修复逻辑
             publicity_period = ""
             infocontent = data.get("infocontent", "")
             soup = BeautifulSoup(infocontent, 'html.parser')
+            
+            # 方法1：尝试从段落中提取
             for p in soup.find_all('p'):
                 text = p.get_text().strip()
                 if "公示期为" in text:
-                    publicity_period = text.split("公示期为")[-1].strip()
-                    break
+                    # 使用正则表达式精确提取时间段
+                    match = re.search(r"公示期为(.+?)\n", text)
+                    if match:
+                        publicity_period = match.group(1).strip()
+                        break
+                    # 如果没有换行符，尝试分割提取
+                    else:
+                        parts = text.split("公示期为")
+                        if len(parts) > 1:
+                            publicity_period = parts[1].split("。")[0].strip()
+                            break
+            
+            # 方法2：如果段落提取失败，尝试从表格后的文本中提取
+            if not publicity_period:
+                tables = soup.find_all('table')
+                if tables:
+                    last_table = tables[-1]
+                    next_element = last_table.find_next_sibling()
+                    while next_element:
+                        if next_element.name == 'p' and "公示期为" in next_element.get_text():
+                            text = next_element.get_text().strip()
+                            match = re.search(r"公示期为(.+?)\n", text)
+                            if match:
+                                publicity_period = match.group(1).strip()
+                                break
+                        next_element = next_element.find_next_sibling()
+            
+            # 方法3：作为最后手段，使用简单文本搜索
+            if not publicity_period:
+                text_content = soup.get_text()
+                match = re.search(r"公示期为(.+?)\n", text_content)
+                if match:
+                    publicity_period = match.group(1).strip()
+                elif "公示期为" in text_content:
+                    parts = text_content.split("公示期为")
+                    if len(parts) > 1:
+                        publicity_period = parts[1].split("。")[0].split("\n")[0].strip()
             
             # 提取中标候选人及报价
             bidders = []
@@ -192,7 +228,7 @@ class BidMonitor:
             }
         except Exception as e:
             print(f"[解析错误] 解析HTML内容失败: {str(e)}")
-            return {}
+            return {}        
 
     def _build_message(self, record: Dict) -> str:
         """构建通知消息"""
@@ -218,10 +254,10 @@ class BidMonitor:
             
             # 构建完整消息
             message = (
-                "📢 新中标公告\n"
-                f"  📜 标题：{raw_data.get('title', '未知标题')}\n"
-                f"  📅 日期：{raw_data.get('infodate', '未知日期')}\n"
-                f"  ⏳ 公示时间：{parsed_data.get('publicity_period', '')}\n\n"
+                "#📢 中标候选人公告\n"
+                f"📜 标题：{raw_data.get('title', '未知标题')}\n"
+                f"📅 日期：{raw_data.get('infodate', '未知日期')}\n"
+                f"⏳ 公示时间：{parsed_data.get('publicity_period', '')}\n\n"
             )
             
             if markdown_table:
@@ -255,7 +291,7 @@ class BidMonitor:
             if "盛荣" in message:
                 # 中标特别通知
                 if self.webhook_zb_url:
-                    self._send_wechat(f"【中标通知】\n{message}", self.webhook_zb_url)
+                    self._send_wechat(f"【入围投标候选人通知】\n{message}", self.webhook_zb_url)
 
     def _send_wechat(self, message: str, webhook: str):
         """发送企业微信通知markdown_v2"""
