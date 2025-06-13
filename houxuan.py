@@ -232,7 +232,7 @@ class BidMonitor:
                 prices = re.findall(price_pattern, full_text)
                 
                 # 配对候选人和报价
-                for i, company in enumerate(unique_companies[:3]):  # 最多取前三
+                for i, company in enumerate(unique_companies[:5]):  # 最多取前三
                     price = prices[i] if i < len(prices) else "未提供"
                     bidders_and_prices.append({
                         "bidder": company,
