@@ -144,106 +144,111 @@ class BidMonitor:
         self.latest_new_count = len(new_items)  # 保存最新数量
         return self.latest_new_count
 
-    def _parse_html_content(self, data: Dict) -> Dict:
-        """解析HTML内容，提取项目信息和中标候选人列表"""
-        try:
-            project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
-            infocontent = data.get("infocontent", "")
-            soup = BeautifulSoup(infocontent, 'html.parser')
-            full_text = soup.get_text()
-    
-            # 提取公示时间
-            publicity_period = ""
-            pub_patterns = [
-                r"公示[期时]为?[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
-                r"公示时间[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
-                r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)"
-            ]
-            for pattern in pub_patterns:
-                match = re.search(pattern, full_text)
-                if match:
-                    publicity_period = match.group(1).strip()
-                    break
-    
-            bidders_and_prices = []
-            seen_bidders = set()
-    
-            # 表格提取（增强结构识别）
-            for table in soup.find_all('table'):
-                header_text = table.get_text()
-                if not any(key in header_text for key in ["中标候选人", "投标人", "单位名称", "报价", "下浮率"]):
-                    continue  # 不含关键词，跳过
-    
-                rows = table.find_all("tr")
-                for row in rows:
-                    cells = row.find_all(['td', 'th'])
-                    if len(cells) < 2:
-                        continue
-    
-                    cell_texts = [cell.get_text(strip=True) for cell in cells]
-                    row_text = ''.join(cell_texts)
-    
-                    # 寻找包含公司名的行
-                    if any("公司" in c or "集团" in c for c in cell_texts):
-                        for cell in cell_texts:
-                            bidder = cell.strip()
-                            if bidder and bidder not in seen_bidders and any(kw in bidder for kw in ["公司", "集团", "设计院", "工程"]):
-                                seen_bidders.add(bidder)
-                                bidders_and_prices.append({"bidder": bidder, "price": "未提供"})
-    
-                    # 如果包含“报价”关键词，尝试提取价格
-                    elif any("报价" in c or "下浮率" in c or "%" in c for c in cell_texts):
-                        prices = []
-                        for c in cell_texts:
-                            c = c.replace('\xa0', '').strip()
-                            if re.search(r"([\d,.]+(万元|元|%))", c) or "下浮率" in c:
-                                prices.append(c)
-                        # 把价格匹配到已有的 bidder 上（按顺序）
-                        for i in range(min(len(prices), len(bidders_and_prices))):
-                            if bidders_and_prices[i]["price"] == "未提供":
-                                bidders_and_prices[i]["price"] = prices[i]
-            
-            # 如果表格未识别，尝试文本提取作为备选
-            if not bidders_and_prices:
-                company_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
-                price_pattern = r'(?:报价|金额|下浮率|投标报价)[：:\s]*([\d,.%万元元]+)'
-    
-                companies = re.findall(company_pattern, full_text)
-                unique_companies = []
-                seen = set()
-                for c, _ in companies:
-                    if c not in seen:
-                        seen.add(c)
-                        unique_companies.append(c)
-    
-                prices = re.findall(price_pattern, full_text)
-                for i, company in enumerate(unique_companies[:5]):
-                    price = prices[i] if i < len(prices) else "未提供"
+def _parse_html_content(self, data: Dict) -> Dict:
+    """解析HTML内容，提取项目信息和中标候选人列表"""
+    try:
+        project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
+        infocontent = data.get("infocontent", "")
+        soup = BeautifulSoup(infocontent, 'html.parser')
+        full_text = soup.get_text()
+
+        # 提取公示时间
+        publicity_period = ""
+        pub_patterns = [
+            r"公示[期时]为?[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+            r"公示时间[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+            r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)"
+        ]
+        for pattern in pub_patterns:
+            match = re.search(pattern, full_text)
+            if match:
+                publicity_period = match.group(1).strip()
+                break
+
+        bidders_and_prices = []
+        seen_bidders = set()
+
+        # 首先尝试从结构化表格提取（适用于规范公告）
+        for table in soup.find_all('table'):
+            rows = table.find_all("tr")
+            for row in rows:
+                cells = row.find_all(['td', 'th'])
+                if len(cells) < 2:
+                    continue
+                texts = [cell.get_text(strip=True) for cell in cells]
+                if any("公司" in t or "集团" in t for t in texts) and any(
+                    "报价" in t or "下浮率" in t or "%" in t or "收费" in t for t in texts
+                ):
+                    for i in range(0, len(texts) - 1):
+                        company = texts[i]
+                        price = texts[i + 1]
+                        if (
+                            any(k in company for k in ["公司", "集团", "设计院", "工程局", "有限公司"])
+                            and company not in seen_bidders
+                        ):
+                            seen_bidders.add(company)
+                            bidders_and_prices.append({
+                                "bidder": company,
+                                "price": price
+                            })
+            if bidders_and_prices:
+                break  # 表格中提取成功就不继续
+
+        # 如果表格失败，则启用文本中结构提取（限“评审结果”段）
+        if not bidders_and_prices:
+            review_section = re.search(
+                r'(评审结果.*?)((招标人|代理机构|联系|联系方式|附件)[：:\s]|$)',
+                full_text,
+                re.S
+            )
+            relevant_text = review_section.group(1) if review_section else full_text
+
+            # 提取“公司 + 报价”结构
+            pattern = r'(?P<company>[\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))[\s，,:：]*' \
+                      r'(?P<price>按.+?计取|下浮率[\d.]+%|[\d,.]+(?:万元|元|%))'
+
+            for match in re.finditer(pattern, relevant_text):
+                company = match.group("company").strip()
+                price = match.group("price").strip()
+                if company not in seen_bidders:
+                    seen_bidders.add(company)
                     bidders_and_prices.append({
                         "bidder": company,
                         "price": price
                     })
-    
-            # 构建最终数据结构
-            infourl = data.get("infourl", "")
-            full_url = f"{self.base_url}{infourl}" if infourl.startswith("/") else infourl
-    
-            return {
-                "project_name": project_name or "未知项目",
-                "publicity_period": publicity_period,
-                "bidders_and_prices": bidders_and_prices,
-                "full_url": full_url
-            }
-    
-        except Exception as e:
-            print(f"[解析错误] {str(e)}")
-            return {
-                "project_name": project_name or "解析失败",
-                "publicity_period": "",
-                "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
-                "full_url": ""
-            }
 
+        # 如果仍然失败，降级提取公司名（无报价）
+        if not bidders_and_prices:
+            fallback_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+            fallback_section = review_section.group(1) if review_section else full_text
+            companies = re.findall(fallback_pattern, fallback_section)
+            for comp, _ in companies:
+                if comp not in seen_bidders:
+                    seen_bidders.add(comp)
+                    bidders_and_prices.append({
+                        "bidder": comp,
+                        "price": "未提供"
+                    })
+
+        # 构建最终数据结构
+        infourl = data.get("infourl", "")
+        full_url = f"{self.base_url}{infourl}" if infourl.startswith("/") else infourl
+
+        return {
+            "project_name": project_name or "未知项目",
+            "publicity_period": publicity_period,
+            "bidders_and_prices": bidders_and_prices,
+            "full_url": full_url
+        }
+
+    except Exception as e:
+        print(f"[解析错误] {str(e)}")
+        return {
+            "project_name": project_name or "解析失败",
+            "publicity_period": "",
+            "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
+            "full_url": ""
+        }
 
             
     def _build_message(self, record: Dict) -> str:
