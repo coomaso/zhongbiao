@@ -168,43 +168,35 @@ class BidMonitor:
             bidders_and_prices = []
             seen_bidders = set()
     
-            # 找到“评审结果”部分文本（更可能包含候选人与报价信息）
+            # 限定在“评审结果”或全文
             review_section = re.search(
-                r'(评审结果.*?)(招标人代表|招标单位|联系人|联系方式|附件|$)',
-                full_text,
-                re.S
+                r'(评审结果.*?)(招标人代表|联系人|联系方式|附件|$)',
+                full_text, re.S
             )
             relevant_text = review_section.group(1) if review_section else full_text
     
-            # 第一步：提取所有候选人公司
-            company_pattern = r'[\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司)'
-            companies = re.findall(company_pattern, relevant_text)
-            company_full_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
-            matched_companies = re.findall(company_full_pattern, relevant_text)
-    
+            # 提取所有候选人公司（不去重“有限公司”等误识别，保守起见）
+            company_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+            candidates = re.findall(company_pattern, relevant_text)
             unique_companies = []
             seen = set()
-            for comp, _ in matched_companies:
-                if comp not in seen:
-                    seen.add(comp)
-                    unique_companies.append(comp)
+            for name, _ in candidates:
+                if name not in seen and len(name) > 4:
+                    seen.add(name)
+                    unique_companies.append(name)
     
-            # 第二步：为每个公司尝试匹配最近的报价表达
-            for comp in unique_companies:
-                comp_escaped = re.escape(comp)
-                # 构造正则：公司名 后面紧跟 报价说明（不跨段）
-                price_match = re.search(
-                    comp_escaped + r'[：:\s]*((按.+?计取)|(下浮率[\d.]+%)|([\d,.]+(万元|元|%)))',
-                    relevant_text
-                )
-    
-                if price_match:
-                    price = price_match.group(1).strip()
-                else:
-                    price = "未提供"
-    
+            # 为每个候选人查找其对应报价：从全文中按“句”拆分，再匹配公司名 + 报价表达式
+            sentences = re.split(r'[。；\n]', relevant_text)
+            for company in unique_companies:
+                price = "未提供"
+                for sent in sentences:
+                    if company in sent and re.search(r"(下浮率[\d.]+%|按.+?计取|[\d,.]+[万]?元|报价[:：]?\s*[\d,.%]+)", sent):
+                        price_match = re.search(r"(下浮率[\d.]+%|按.+?计取|[\d,.]+[万]?元|报价[:：]?\s*[\d,.%]+)", sent)
+                        if price_match:
+                            price = price_match.group(1).strip()
+                            break
                 bidders_and_prices.append({
-                    "bidder": comp,
+                    "bidder": company,
                     "price": price
                 })
     
@@ -227,7 +219,6 @@ class BidMonitor:
                 "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
                 "full_url": ""
             }
-
 
             
     def _build_message(self, record: Dict) -> str:
