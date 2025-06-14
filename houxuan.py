@@ -191,18 +191,18 @@ class BidMonitor:
                         
                         if candidate_row:
                             candidate_cells = candidate_row.find_all(['td', 'th'])
-                            # 跳过表头单元格（通常是前两个单元格）
-                            candidates = []
                             # 确定起始列：如果第一列包含"第一名"等，则从第一列开始
                             start_col = 0
-                            if "名次" in row_text or "第一名" in candidate_cells[0].get_text(strip=True):
+                            # 检查第一列是否包含名次信息
+                            if candidate_cells and re.match(r'^第?[一二三四五六七八九十\d]+名?$', candidate_cells[0].get_text(strip=True)):
                                 start_col = 1  # 跳过名次列
                             
+                            candidates = []
                             for i in range(start_col, len(candidate_cells)):
                                 text = candidate_cells[i].get_text(strip=True)
                                 # 排除空值、无关文本和名次文本
                                 if (text and len(text) > 1 and 
-                                    not re.match(r'^第[一二三四五六七八九十\d]+名?$', text) and
+                                    not re.match(r'^第?[一二三四五六七八九十\d]+名?$', text) and
                                     ("公司" in text or "集团" in text or "有限" in text or "设计院" in text)):
                                     candidates.append(text)
                         
@@ -220,17 +220,33 @@ class BidMonitor:
                             # 使用相同的起始列
                             for i in range(start_col, len(price_cells)):
                                 text = price_cells[i].get_text(strip=True)
+                                # 排除表头标签
+                                if any(kw in text for kw in ["投标报价", "报价", "投标总价", "总报价", "投标金额", "金额"]):
+                                    continue
                                 # 保留所有文本内容（可能是数字或描述性文本）
-                                if text and text != "/" and not re.match(r'^第[一二三四五六七八九十\d]+名?$', text):
+                                if text and text != "/" and not re.match(r'^第?[一二三四五六七八九十\d]+名?$', text):
                                     prices.append(text)
                             
-                            # 配对候选人和报价
+                            # 配对候选人和报价 - 确保数量匹配
                             for i, candidate in enumerate(candidates):
-                                price = prices[i] if i < len(prices) else "未提供"
-                                bidders_and_prices.append({
-                                    "bidder": candidate,
-                                    "price": price
-                                })
+                                if i < len(prices):
+                                    bidders_and_prices.append({
+                                        "bidder": candidate,
+                                        "price": prices[i]
+                                    })
+                                else:
+                                    # 如果报价数量不足，尝试从其他列获取
+                                    if i < len(price_cells):
+                                        alt_price = price_cells[i].get_text(strip=True)
+                                        bidders_and_prices.append({
+                                            "bidder": candidate,
+                                            "price": alt_price
+                                        })
+                                    else:
+                                        bidders_and_prices.append({
+                                            "bidder": candidate,
+                                            "price": "未提供"
+                                        })
                         
                         # 如果找到候选人，跳出循环
                         if bidders_and_prices:
@@ -357,6 +373,9 @@ class BidMonitor:
                                 "bidder": company,
                                 "price": "未提供"
                             })
+                        else:
+                            # 保留原始报价
+                            bidders_and_prices[i]["bidder"] = company
 
             # 构建最终数据结构
             infourl = data.get("infourl", "")
