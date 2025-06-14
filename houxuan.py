@@ -144,7 +144,7 @@ class BidMonitor:
         self.latest_new_count = len(new_items)  # 保存最新数量
         return self.latest_new_count
 
-    def _parse_html_content(self, data: Dict) -> Dict:
+        def _parse_html_content(self, data: Dict) -> Dict:
         """解析HTML内容，提取项目信息和中标候选人列表"""
         try:
             project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
@@ -168,67 +168,45 @@ class BidMonitor:
             bidders_and_prices = []
             seen_bidders = set()
     
-            # 首先尝试从结构化表格提取（适用于规范公告）
-            for table in soup.find_all('table'):
-                rows = table.find_all("tr")
-                for row in rows:
-                    cells = row.find_all(['td', 'th'])
-                    if len(cells) < 2:
-                        continue
-                    texts = [cell.get_text(strip=True) for cell in cells]
-                    if any("公司" in t or "集团" in t for t in texts) and any(
-                        "报价" in t or "下浮率" in t or "%" in t or "收费" in t for t in texts
-                    ):
-                        for i in range(0, len(texts) - 1):
-                            company = texts[i]
-                            price = texts[i + 1]
-                            if (
-                                any(k in company for k in ["公司", "集团", "设计院", "工程局", "有限公司"])
-                                and company not in seen_bidders
-                            ):
-                                seen_bidders.add(company)
-                                bidders_and_prices.append({
-                                    "bidder": company,
-                                    "price": price
-                                })
-                if bidders_and_prices:
-                    break  # 表格中提取成功就不继续
+            # 找到“评审结果”部分文本（更可能包含候选人与报价信息）
+            review_section = re.search(
+                r'(评审结果.*?)(招标人代表|招标单位|联系人|联系方式|附件|$)',
+                full_text,
+                re.S
+            )
+            relevant_text = review_section.group(1) if review_section else full_text
     
-            # 如果表格失败，则启用文本中结构提取（限“评审结果”段）
-            if not bidders_and_prices:
-                review_section = re.search(
-                    r'(评审结果.*?)((招标人|代理机构|联系|联系方式|附件)[：:\s]|$)',
-                    full_text,
-                    re.S
+            # 第一步：提取所有候选人公司
+            company_pattern = r'[\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司)'
+            companies = re.findall(company_pattern, relevant_text)
+            company_full_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+            matched_companies = re.findall(company_full_pattern, relevant_text)
+    
+            unique_companies = []
+            seen = set()
+            for comp, _ in matched_companies:
+                if comp not in seen:
+                    seen.add(comp)
+                    unique_companies.append(comp)
+    
+            # 第二步：为每个公司尝试匹配最近的报价表达
+            for comp in unique_companies:
+                comp_escaped = re.escape(comp)
+                # 构造正则：公司名 后面紧跟 报价说明（不跨段）
+                price_match = re.search(
+                    comp_escaped + r'[：:\s]*((按.+?计取)|(下浮率[\d.]+%)|([\d,.]+(万元|元|%)))',
+                    relevant_text
                 )
-                relevant_text = review_section.group(1) if review_section else full_text
     
-                # 提取“公司 + 报价”结构
-                pattern = r'(?P<company>[\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))[\s，,:：]*' \
-                          r'(?P<price>按.+?计取|下浮率[\d.]+%|[\d,.]+(?:万元|元|%))'
+                if price_match:
+                    price = price_match.group(1).strip()
+                else:
+                    price = "未提供"
     
-                for match in re.finditer(pattern, relevant_text):
-                    company = match.group("company").strip()
-                    price = match.group("price").strip()
-                    if company not in seen_bidders:
-                        seen_bidders.add(company)
-                        bidders_and_prices.append({
-                            "bidder": company,
-                            "price": price
-                        })
-    
-            # 如果仍然失败，降级提取公司名（无报价）
-            if not bidders_and_prices:
-                fallback_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
-                fallback_section = review_section.group(1) if review_section else full_text
-                companies = re.findall(fallback_pattern, fallback_section)
-                for comp, _ in companies:
-                    if comp not in seen_bidders:
-                        seen_bidders.add(comp)
-                        bidders_and_prices.append({
-                            "bidder": comp,
-                            "price": "未提供"
-                        })
+                bidders_and_prices.append({
+                    "bidder": comp,
+                    "price": price
+                })
     
             # 构建最终数据结构
             infourl = data.get("infourl", "")
@@ -249,6 +227,7 @@ class BidMonitor:
                 "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
                 "full_url": ""
             }
+
 
             
     def _build_message(self, record: Dict) -> str:
