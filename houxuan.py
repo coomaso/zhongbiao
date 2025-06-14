@@ -6,6 +6,7 @@ import re
 import time
 from bs4 import BeautifulSoup
 from typing import List, Dict, Any
+import traceback
 
 class BidMonitor:
     def __init__(self):
@@ -146,113 +147,167 @@ class BidMonitor:
 
     def _parse_html_content(self, data: Dict) -> Dict:
         """解析HTML内容，提取项目信息和中标候选人列表"""
+        project_name = ""
         try:
             project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
             infocontent = data.get("infocontent", "")
             soup = BeautifulSoup(infocontent, 'html.parser')
             full_text = soup.get_text()
-    
-            # 提取公示时间
+
+            # 提取公示时间 - 增强匹配逻辑
             publicity_period = ""
             pub_patterns = [
                 r"公示[期时]为?[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
                 r"公示时间[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
-                r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)"
+                r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+                r"公示期为(\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分至\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分)",
+                r"公示期[为]?(\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分至\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分)"
             ]
             for pattern in pub_patterns:
                 match = re.search(pattern, full_text)
                 if match:
-                    publicity_period = match.group(1).strip()
+                    if pattern in [pub_patterns[3], pub_patterns[4]]:  # 处理特定格式的时间
+                        publicity_period = match.group(0).replace("公示期为", "").strip()
+                    else:
+                        publicity_period = match.group(1).strip()
                     break
-    
+
             bidders_and_prices = []
-    
-            # 方法1：精确提取表格中的候选人及报价
+
+            # 方法1：精确提取表格中的候选人及报价 - 增强表格解析
             for table in soup.find_all('table'):
                 # 查找包含"中标候选人名称"的行
-                header_row = None
+                header_found = False
                 for row in table.find_all('tr'):
-                    if "中标候选人名称" in row.get_text():
-                        header_row = row
-                        break
-                
-                if header_row:
-                    # 从表头行提取候选人名称
-                    candidate_cells = header_row.find_all(['td', 'th'])
-                    candidates = []
-                    # 跳过前两个单元格（表头标签）
-                    for i in range(2, len(candidate_cells)):
-                        text = candidate_cells[i].get_text(strip=True)
-                        if text and ("公司" in text or "集团" in text):
-                            candidates.append(text)
-                    
-                    # 查找包含"投标报价"的行
-                    price_row = None
-                    for row in header_row.find_next_siblings('tr'):
-                        if "投标报价" in row.get_text():
-                            price_row = row
-                            break
-                    
-                    if price_row:
-                        price_cells = price_row.find_all(['td', 'th'])
-                        prices = []
-                        # 跳过前两个单元格（表头标签）
-                        for i in range(2, len(price_cells)):
-                            text = price_cells[i].get_text(strip=True)
-                            if re.search(r"[\d,.]+", text):  # 包含数字的单元格
-                                prices.append(text)
+                    row_text = row.get_text(strip=True)
+                    if any(keyword in row_text for keyword in ["中标候选人名称", "候选人名称", "单位名称"]):
+                        header_found = True
                         
-                        # 配对候选人和报价
-                        for i, candidate in enumerate(candidates):
-                            price = prices[i] if i < len(prices) else "未提供"
-                            bidders_and_prices.append({
-                                "bidder": candidate,
-                                "price": price
-                            })
-                    
-                    # 如果找到候选人，跳出循环
-                    if bidders_and_prices:
-                        break
-            
+                        # 尝试从当前行或下一行提取候选人数据
+                        candidate_row = row
+                        # 如果当前行没有足够的单元格，尝试下一行
+                        if len(row.find_all(['td', 'th'])) < 3:
+                            candidate_row = row.find_next_sibling('tr')
+                        
+                        if candidate_row:
+                            candidate_cells = candidate_row.find_all(['td', 'th'])
+                            # 跳过表头单元格（通常是前两个单元格）
+                            candidates = []
+                            for i in range(2, len(candidate_cells)):
+                                text = candidate_cells[i].get_text(strip=True)
+                                # 排除空值和无关文本
+                                if text and len(text) > 1 and ("公司" in text or "院" in text or "有限" in text):
+                                    candidates.append(text)
+                        
+                        # 查找包含"投标报价"的行
+                        price_row = None
+                        for next_row in row.find_next_siblings('tr'):
+                            if any(keyword in next_row.get_text() for keyword in 
+                                  ["投标报价", "报价", "投标总价", "总报价", "投标金额"]):
+                                price_row = next_row
+                                break
+                        
+                        if price_row:
+                            price_cells = price_row.find_all(['td', 'th'])
+                            prices = []
+                            # 跳过表头单元格
+                            for i in range(2, len(price_cells)):
+                                text = price_cells[i].get_text(strip=True)
+                                # 保留所有文本内容（可能是数字或描述性文本）
+                                if text and text != "/":
+                                    prices.append(text)
+                            
+                            # 配对候选人和报价
+                            for i, candidate in enumerate(candidates):
+                                price = prices[i] if i < len(prices) else "未提供"
+                                bidders_and_prices.append({
+                                    "bidder": candidate,
+                                    "price": price
+                                })
+                        
+                        # 如果找到候选人，跳出循环
+                        if bidders_and_prices:
+                            break
+                if header_found:
+                    break
+
             # 方法2：如果表格提取失败，尝试从文本中提取
             if not bidders_and_prices:
                 # 查找评审结果部分
                 review_section = ""
-                review_match = re.search(r'二、评标结果(.+?)三、公示时间', full_text, re.DOTALL)
-                if review_match:
-                    review_section = review_match.group(1)
-                else:
+                # 尝试多种可能的章节分隔
+                section_patterns = [
+                    r'二、评标结果(.+?)三、公示时间',
+                    r'二、评标情况(.+?)三、公示时间',
+                    r'二、评审结果(.+?)三、公示时间',
+                    r'二、中标候选人(.+?)三、公示时间'
+                ]
+                for pattern in section_patterns:
+                    review_match = re.search(pattern, full_text, re.DOTALL)
+                    if review_match:
+                        review_section = review_match.group(1)
+                        break
+                if not review_section:
                     review_section = full_text
                 
-                # 提取候选人名称
-                candidate_pattern = r'中标候选人名称[：:\s]*([^\n]+)'
-                candidate_match = re.search(candidate_pattern, review_section)
-                if candidate_match:
-                    candidates_text = candidate_match.group(1)
-                    # 分割候选人名称
-                    candidates = re.split(r'[、，,]', candidates_text)
-                    # 清理空格
-                    candidates = [c.strip() for c in candidates if c.strip()]
+                # 提取候选人名称 - 增强模式
+                candidates = []
+                # 模式1：匹配"第X中标候选人：公司名称"
+                candidate_pattern1 = r'第[一二三四五六七八九十\d]+中标候选人[：:\s]*([^\n]+)'
+                candidate_matches1 = re.findall(candidate_pattern1, review_section)
+                if candidate_matches1:
+                    candidates = [match.strip() for match in candidate_matches1]
                 else:
-                    # 备选方案：提取所有公司名称
-                    company_pattern = r'([\u4e00-\u9fa5]{2,}(?:公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
-                    candidates = re.findall(company_pattern, review_section)
-                    # 去重
-                    seen = set()
-                    unique_candidates = [c for c in candidates if c not in seen and not seen.add(c)]
-                    candidates = unique_candidates
+                    # 模式2：匹配"中标候选人名称：公司A,公司B,公司C"
+                    candidate_pattern2 = r'中标候选人名称[：:\s]*([^\n]+)'
+                    candidate_match2 = re.search(candidate_pattern2, review_section)
+                    if candidate_match2:
+                        candidates_text = candidate_match2.group(1)
+                        # 分割候选人名称
+                        candidates = re.split(r'[、，,;；]', candidates_text)
+                        # 清理空格
+                        candidates = [c.strip() for c in candidates if c.strip()]
+                    else:
+                        # 模式3：直接查找排名不分先后的候选人
+                        unordered_pattern = r'中标候选人为[（(]排名不分先后[）)]?[：:\s]*([^\n]+)'
+                        unordered_match = re.search(unordered_pattern, review_section)
+                        if unordered_match:
+                            candidates_text = unordered_match.group(1)
+                            # 分割候选人名称
+                            candidates = re.split(r'[、，,;；]', candidates_text)
+                            # 清理空格
+                            candidates = [c.strip() for c in candidates if c.strip()]
+                        else:
+                            # 备选方案：提取所有公司名称
+                            company_pattern = r'([\u4e00-\u9fa5]{2,}(?:公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+                            candidates = re.findall(company_pattern, review_section)
+                            # 去重
+                            seen = set()
+                            unique_candidates = [c for c in candidates if c not in seen and not seen.add(c)]
+                            candidates = unique_candidates
                 
-                # 提取报价
+                # 提取报价 - 增强报价模式
                 prices = []
                 # 查找投标报价部分
-                price_pattern = r'投标报价[：:\s]*([\d,.]+元)'
+                price_pattern = r'(?:投标报价|报价|投标总价|总报价)[：:\s]*([^\n]+?)(?:\n|$)'
                 price_matches = re.findall(price_pattern, review_section)
                 if price_matches:
-                    prices = price_matches
+                    # 从匹配的文本中提取具体的报价值
+                    for match in price_matches:
+                        # 尝试提取数字和单位
+                        price_values = re.findall(r'([\d,.]+[万元%]?|[\d,.]+元|[\d.]+%)', match)
+                        if price_values:
+                            prices.extend(price_values)
                 else:
-                    # 备选方案：提取所有数字报价
-                    price_pattern = r'([\d,.]+万元?|[\d,.]+元|[\d.]+%)'
-                    prices = re.findall(price_pattern, review_section)
+                    # 备选方案1：提取百分比费率
+                    rate_pattern = r'按.+?收费标准的(\d+)%'
+                    rate_matches = re.findall(rate_pattern, review_section)
+                    if rate_matches:
+                        prices = [f"{rate}%" for rate in rate_matches]
+                    else:
+                        # 备选方案2：提取所有数字报价
+                        price_pattern = r'([\d,.]+万元?|[\d,.]+元|[\d.]+%)'
+                        prices = re.findall(price_pattern, review_section)
                 
                 # 配对候选人和报价
                 for i, candidate in enumerate(candidates):
@@ -261,20 +316,21 @@ class BidMonitor:
                         "bidder": candidate,
                         "price": price
                     })
-    
+
             # 构建最终数据结构
             infourl = data.get("infourl", "")
             full_url = f"{self.base_url}{infourl}" if infourl.startswith("/") else infourl
-    
+
             return {
                 "project_name": project_name or "未知项目",
                 "publicity_period": publicity_period,
                 "bidders_and_prices": bidders_and_prices,
                 "full_url": full_url
             }
-    
+
         except Exception as e:
             print(f"[解析错误] {str(e)}")
+            traceback.print_exc()
             return {
                 "project_name": project_name or "解析失败",
                 "publicity_period": "",
@@ -293,62 +349,55 @@ class BidMonitor:
             bap = parsed_data.get("bidders_and_prices", [])
             
             if bap:
-                table_header = "|中标候选人|投标报价|\n| :----: | -------: |"
+                table_header = "|中标候选人|投标报价|\n| :----: | :------ |"
                 table_rows = []
                 
                 for i, item in enumerate(bap):
-                    bidder = item.get("bidder", "未提供")
-                    price = item.get("price", "未提供")
+                    bidder = item.get("bidder", "未提供").replace("&nbsp;", "").strip()
+                    price = item.get("price", "未提供").replace("&nbsp;", "").strip()
                     
-                    # 格式化报价
+                    # 格式化报价 - 处理各种复杂情况
                     formatted_price = price
-                    if '%' in price:
-                        # If it contains a percentage, keep it as is
+                    
+                    # 情况1：纯数字（可能包含逗号）
+                    if re.match(r'^[\d,]+(?:\.\d+)?$', price.replace(',', '')):
+                        try:
+                            # 移除逗号后转换为浮点数
+                            price_num = float(price.replace(',', ''))
+                            if price_num >= 1000000:  # 超过100万
+                                formatted_price = f"{price_num/10000:,.2f}万元"
+                            elif price_num >= 10000:  # 1万-100万
+                                formatted_price = f"{price_num/10000:,.2f}万元"
+                            else:
+                                formatted_price = f"{price_num:,.2f}元"
+                        except:
+                            pass
+                    
+                    # 情况2：百分比费率
+                    elif '%' in price:
+                        # 保持原样显示
                         formatted_price = price
-                    elif any(char.isdigit() for char in price):
-                        # Remove commas and attempt to clean numerical parts
-                        clean_price_str = price.replace(',', '')
-                        
-                        # Try to extract the number before units (元, 万元) or percentage
-                        # This regex attempts to find a number at the beginning or within the string,
-                        # and then capture potential units or percentages at the end.
-                        match_yuan = re.search(r'([\d.]+)\s*元', clean_price_str)
-                        match_wanyuan = re.search(r'([\d.]+)\s*万元', clean_price_str)
-                        match_percent = re.search(r'([\d.]+)\s*%', clean_price_str)
-                        
-                        num_val = None
-                        original_unit = None
                     
-                        if match_wanyuan:
-                            num_val = float(match_wanyuan.group(1))
-                            original_unit = "万元"
-                        elif match_yuan:
-                            num_val = float(match_yuan.group(1))
-                            original_unit = "元"
-                        elif match_percent:
-                            formatted_price = price # Already handled by the top-level '%' check, but good for robustness
-                        else:
-                            # If no explicit unit, try to parse it directly as a number
+                    # 情况3：包含"元"或"万元"
+                    elif "元" in price or "万元" in price:
+                        # 尝试提取数字部分进行格式化
+                        num_match = re.search(r'([\d,\.]+)', price)
+                        if num_match:
+                            num_str = num_match.group(1).replace(',', '')
                             try:
-                                num_val = float(re.sub(r'[^\d.]', '', clean_price_str))
-                                # Heuristic: if a raw number is very large, assume it's in yuan by default
-                                if num_val > 100000: # Adjust threshold as needed, >10万 seems like a good cutoff for yuan to万元 conversion
-                                    original_unit = "元" # Treat as raw yuan if large
-                                else:
-                                    original_unit = "unknown" # Small numbers, keep as is or assume yuan
-                            except ValueError:
-                                pass # Not a straightforward number, keep original price
-                    
-                        if num_val is not None:
-                            if original_unit == "元":
-                                if num_val >= 10000: # Convert large yuan amounts to万元
-                                    formatted_price = f"{num_val / 10000:,.2f}万元"
+                                num_val = float(num_str)
+                                if "万元" in price or num_val >= 10000:
+                                    formatted_price = f"{num_val/10000:,.2f}万元"
                                 else:
                                     formatted_price = f"{num_val:,.2f}元"
-                            elif original_unit == "万元":
-                                formatted_price = f"{num_val:,.2f}万元"
-                            elif original_unit == "unknown":
-                                formatted_price = f"{num_val:,.2f}元" # Default to yuan for smaller numbers without explicit unit
+                            except:
+                                formatted_price = price
+                    
+                    # 情况4：复杂的文本描述（如按收费标准）
+                    elif "按" in price and "标准" in price:
+                        # 简化显示
+                        simplified = re.sub(r'计费额以.*', '', price)
+                        formatted_price = simplified.strip()
                     
                     table_rows.append(f"|{bidder}|{formatted_price}|")
                 
@@ -379,6 +428,7 @@ class BidMonitor:
             return message
         except Exception as e:
             print(f"[消息构建错误] 构建通知消息失败: {str(e)}")
+            traceback.print_exc()
             return ""
 
     def send_notifications(self):
