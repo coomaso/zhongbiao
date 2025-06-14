@@ -145,147 +145,111 @@ class BidMonitor:
         return self.latest_new_count
 
     def _parse_html_content(self, data: Dict) -> Dict:
-        """解析HTML内容，提取关键信息"""
+        """解析HTML内容，提取项目信息和中标候选人列表"""
         try:
             project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
             infocontent = data.get("infocontent", "")
             soup = BeautifulSoup(infocontent, 'html.parser')
             full_text = soup.get_text()
-            
+    
             # 提取公示时间
             publicity_period = ""
             pub_patterns = [
-                r"公示[期时](.+?至.+?)(?:\n|<|$)",
-                r"公示时间[：:](.+?至.+?)(?:\n|<|$)",
-                r"公示期[：:](.+?至.+?)(?:\n|<|$)",
-                r"公示[期时][：:](.+?)(?=\n|$)"
+                r"公示[期时]为?[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+                r"公示时间[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+                r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)"
             ]
             for pattern in pub_patterns:
                 match = re.search(pattern, full_text)
                 if match:
                     publicity_period = match.group(1).strip()
                     break
-            
-            # 表格提取逻辑 - 增强表头识别
+    
             bidders_and_prices = []
-            candidate_tables = []
-            header_keywords = ["中标候选人", "投标人", "单位名称", "企业名称", "供应商", "名次"]
-            
+            seen_bidders = set()
+    
+            # 优先从表格中提取
             for table in soup.find_all('table'):
-                headers = [th.get_text(strip=True) for th in table.find_all(['th', 'td'])]
-                if any(any(kw in h for kw in header_keywords) for h in headers):
-                    candidate_tables.append(table)
-            
-            # 处理表格数据 - 针对特殊表格结构
-            for table in candidate_tables:
-                # 查找包含候选人名称的行
-                candidate_rows = []
-                for row in table.find_all('tr'):
-                    cells = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
-                    if any("公司" in cell or "集团" in cell for cell in cells):
-                        candidate_rows.append(row)
-                
-                # 特殊表格结构处理 - 3名候选人格式
-                if "名次" in table.get_text():
-                    # 查找包含候选人名称的行
-                    for row in table.find_all('tr'):
-                        row_text = row.get_text(strip=True)
-                        if "中标候选人名称" in row_text:
-                            # 候选人名称在下一列
-                            candidate_cells = row.find_all(['td', 'th'])
-                            candidates = []
-                            # 从第三列开始提取候选人名称
-                            for i in range(2, len(candidate_cells)):
-                                text = candidate_cells[i].get_text(strip=True)
-                                if text and ("公司" in text or "集团" in text):
-                                    candidates.append(text)
-                            
-                            # 在后续行中查找报价
-                            for next_row in row.find_next_siblings('tr'):
-                                if "投标报价" in next_row.get_text(strip=True):
-                                    price_cells = next_row.find_all(['td', 'th'])
-                                    prices = []
-                                    # 从第三列开始提取报价
-                                    for i in range(2, len(price_cells)):
-                                        text = price_cells[i].get_text(strip=True)
-                                        if re.search(r"[\d,.]{3,}", text):  # 包含数字的单元格
-                                            prices.append(text)
-                                    
-                                    # 组合候选人和报价
-                                    for i, candidate in enumerate(candidates):
-                                        if i < len(prices):
-                                            bidders_and_prices.append({
-                                                "bidder": candidate,
-                                                "price": prices[i]
-                                            })
-                                    break  # 找到后退出循环
-                            break  # 找到后退出循环
-                
-                # 5名候选人格式
-                elif candidate_rows:
-                    # 提取第一组候选人（通常在表格顶部）
-                    first_candidate_row = candidate_rows[0]
-                    candidate_cells = first_candidate_row.find_all(['td', 'th'])
-                    
-                    # 查找候选人名称 - 跳过表头单元格
-                    candidates = []
-                    for cell in candidate_cells:
-                        text = cell.get_text(strip=True)
-                        if ("公司" in text or "集团" in text) and not any(kw in text for kw in ["名称", "单位"]):
-                            candidates.append(text)
-                    
-                    # 在后续行中查找报价
-                    for next_row in first_candidate_row.find_next_siblings('tr'):
-                        if not next_row: continue
-                        
-                        price_cells = next_row.find_all(['td', 'th'])
-                        prices = []
-                        for cell in price_cells:
-                            text = cell.get_text(strip=True)
-                            if re.search(r"[\d,.]{3,}", text):  # 包含数字的单元格
-                                prices.append(text)
-                        
-                        # 如果找到匹配数量的报价
-                        if len(prices) == len(candidates):
-                            for i, candidate in enumerate(candidates):
-                                bidders_and_prices.append({
-                                    "bidder": candidate,
-                                    "price": prices[i]
-                                })
-                            break  # 找到后退出循环
-            
-            # 如果表格方法未找到，使用文本匹配作为备选
+                headers = [cell.get_text(strip=True) for cell in table.find_all('tr')[0].find_all(['td', 'th']) if cell.get_text(strip=True)]
+                if any(kw in ''.join(headers) for kw in ["中标候选人", "投标人", "单位名称", "投标报价", "下浮率"]):
+                    rows = table.find_all('tr')
+                    candidate_row = None
+                    price_row = None
+    
+                    for row in rows:
+                        cells = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
+                        joined = ''.join(cells)
+                        if not candidate_row and any("公司" in c or "集团" in c for c in cells):
+                            candidate_row = cells
+                        elif not price_row and ("报价" in joined or "下浮率" in joined):
+                            price_row = cells
+    
+                    if candidate_row and price_row:
+                        # 去掉表头，找出有效数据起始点
+                        start_index = 2 if "中标候选人" in candidate_row[0] or "名称" in candidate_row[0] else 0
+                        for i in range(start_index, len(candidate_row)):
+                            bidder = candidate_row[i].strip()
+                            if not bidder or bidder in seen_bidders:
+                                continue
+                            seen_bidders.add(bidder)
+                            price = price_row[i].strip() if i < len(price_row) else "未提供"
+    
+                            # 忽略异常低的报价（如2元）
+                            if re.search(r'元', price):
+                                try:
+                                    value = float(re.sub(r'[^\d.]', '', price))
+                                    if value < 1000:
+                                        continue
+                                except:
+                                    pass
+    
+                            bidders_and_prices.append({
+                                "bidder": bidder,
+                                "price": price
+                            })
+                    if bidders_and_prices:
+                        break  # 如果已有结果，跳出循环
+    
+            # 备选方案：文本中提取（仅在表格失败时使用）
             if not bidders_and_prices:
-                # 尝试匹配公司名称
-                company_pattern = r'([\u4e00-\u9fa5]{2,}?(?:公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+                company_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+                price_pattern = r'(?:报价|金额|下浮率|投标报价)[：:\s]*([\d,.%万元元]+)'
+    
                 companies = re.findall(company_pattern, full_text)
-                # 去重但保留顺序
+                unique_companies = []
                 seen = set()
-                unique_companies = [x for x in companies if not (x in seen or seen.add(x))]
-                
-                # 提取报价
-                price_pattern = r'(?:报价|金额|下浮率|投标报价)[:：\s]*([\d,.%万]+)'
+                for c, _ in companies:
+                    if c not in seen:
+                        seen.add(c)
+                        unique_companies.append(c)
+    
                 prices = re.findall(price_pattern, full_text)
-                
-                # 配对候选人和报价
-                for i, company in enumerate(unique_companies[:5]):  # 最多取前五
+                for i, company in enumerate(unique_companies[:5]):
                     price = prices[i] if i < len(prices) else "未提供"
+                    # 过滤无效价格
+                    if re.search(r'元', price):
+                        try:
+                            val = float(re.sub(r'[^\d.]', '', price))
+                            if val < 1000:
+                                continue
+                        except:
+                            pass
                     bidders_and_prices.append({
                         "bidder": company,
                         "price": price
                     })
-            
-            # 构建完整URL
+    
+            # 构建最终数据结构
             infourl = data.get("infourl", "")
             full_url = f"{self.base_url}{infourl}" if infourl.startswith("/") else infourl
-            
+    
             return {
-                "project_name": project_name,
+                "project_name": project_name or "未知项目",
                 "publicity_period": publicity_period,
                 "bidders_and_prices": bidders_and_prices,
                 "full_url": full_url
             }
-            
+    
         except Exception as e:
             print(f"[解析错误] {str(e)}")
             return {
@@ -294,6 +258,7 @@ class BidMonitor:
                 "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
                 "full_url": ""
             }
+
             
     def _build_message(self, record: Dict) -> str:
         """构建通知消息"""
