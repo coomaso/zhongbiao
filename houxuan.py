@@ -144,7 +144,7 @@ class BidMonitor:
         self.latest_new_count = len(new_items)  # 保存最新数量
         return self.latest_new_count
 
-        def _parse_html_content(self, data: Dict) -> Dict:
+    def _parse_html_content(self, data: Dict) -> Dict:
         """解析HTML内容，提取项目信息和中标候选人列表"""
         try:
             project_name = data.get("customtitle", "").replace("中标候选人公示", "").strip()
