@@ -180,7 +180,7 @@ class BidMonitor:
                 header_found = False
                 for row in table.find_all('tr'):
                     row_text = row.get_text(strip=True)
-                    if any(keyword in row_text for keyword in ["中标候选人名称", "候选人名称", "单位名称"]):
+                    if any(keyword in row_text for keyword in ["中标候选人名称", "候选人名称", "单位名称", "名次"]):
                         header_found = True
                         
                         # 尝试从当前行或下一行提取候选人数据
@@ -193,28 +193,35 @@ class BidMonitor:
                             candidate_cells = candidate_row.find_all(['td', 'th'])
                             # 跳过表头单元格（通常是前两个单元格）
                             candidates = []
-                            for i in range(2, len(candidate_cells)):
+                            # 确定起始列：如果第一列包含"第一名"等，则从第一列开始
+                            start_col = 0
+                            if "名次" in row_text or "第一名" in candidate_cells[0].get_text(strip=True):
+                                start_col = 1  # 跳过名次列
+                            
+                            for i in range(start_col, len(candidate_cells)):
                                 text = candidate_cells[i].get_text(strip=True)
-                                # 排除空值和无关文本
-                                if text and len(text) > 1 and ("公司" in text or "院" in text or "有限" in text):
+                                # 排除空值、无关文本和名次文本
+                                if (text and len(text) > 1 and 
+                                    not re.match(r'^第[一二三四五六七八九十\d]+名?$', text) and
+                                    ("公司" in text or "集团" in text or "有限" in text or "设计院" in text)):
                                     candidates.append(text)
                         
                         # 查找包含"投标报价"的行
                         price_row = None
                         for next_row in row.find_next_siblings('tr'):
                             if any(keyword in next_row.get_text() for keyword in 
-                                  ["投标报价", "报价", "投标总价", "总报价", "投标金额"]):
+                                  ["投标报价", "报价", "投标总价", "总报价", "投标金额", "金额"]):
                                 price_row = next_row
                                 break
                         
                         if price_row:
                             price_cells = price_row.find_all(['td', 'th'])
                             prices = []
-                            # 跳过表头单元格
-                            for i in range(2, len(price_cells)):
+                            # 使用相同的起始列
+                            for i in range(start_col, len(price_cells)):
                                 text = price_cells[i].get_text(strip=True)
                                 # 保留所有文本内容（可能是数字或描述性文本）
-                                if text and text != "/":
+                                if text and text != "/" and not re.match(r'^第[一二三四五六七八九十\d]+名?$', text):
                                     prices.append(text)
                             
                             # 配对候选人和报价
@@ -278,13 +285,25 @@ class BidMonitor:
                             # 清理空格
                             candidates = [c.strip() for c in candidates if c.strip()]
                         else:
-                            # 备选方案：提取所有公司名称
-                            company_pattern = r'([\u4e00-\u9fa5]{2,}(?:公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
-                            candidates = re.findall(company_pattern, review_section)
-                            # 去重
-                            seen = set()
-                            unique_candidates = [c for c in candidates if c not in seen and not seen.add(c)]
-                            candidates = unique_candidates
+                            # 模式4：尝试提取表格外的候选人
+                            table_candidates = []
+                            for row in soup.find_all('tr'):
+                                cells = row.find_all(['td', 'th'])
+                                for cell in cells:
+                                    text = cell.get_text(strip=True)
+                                    if ("公司" in text or "集团" in text or "有限" in text) and len(text) > 5:
+                                        if not any(c == text for c in table_candidates):
+                                            table_candidates.append(text)
+                            if table_candidates:
+                                candidates = table_candidates
+                            else:
+                                # 备选方案：提取所有公司名称
+                                company_pattern = r'([\u4e00-\u9fa5]{2,}(?:公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
+                                candidates = re.findall(company_pattern, review_section)
+                                # 去重
+                                seen = set()
+                                unique_candidates = [c for c in candidates if c not in seen and not seen.add(c)]
+                                candidates = unique_candidates
                 
                 # 提取报价 - 增强报价模式
                 prices = []
@@ -316,6 +335,28 @@ class BidMonitor:
                         "bidder": candidate,
                         "price": price
                     })
+
+            # 确保至少提取到3名候选人（如果原文有3名）
+            if len(bidders_and_prices) < 3:
+                # 尝试从表格中直接提取所有公司名称
+                all_companies = []
+                for table in soup.find_all('table'):
+                    for row in table.find_all('tr'):
+                        for cell in row.find_all(['td', 'th']):
+                            text = cell.get_text(strip=True)
+                            if ("公司" in text or "集团" in text) and len(text) > 5:
+                                if not any(c == text for c in all_companies):
+                                    all_companies.append(text)
+                
+                # 如果找到更多候选人，合并结果
+                if len(all_companies) > len(bidders_and_prices):
+                    for i, company in enumerate(all_companies):
+                        if i >= len(bidders_and_prices):
+                            # 为新发现的候选人添加默认报价
+                            bidders_and_prices.append({
+                                "bidder": company,
+                                "price": "未提供"
+                            })
 
             # 构建最终数据结构
             infourl = data.get("infourl", "")
@@ -422,6 +463,10 @@ class BidMonitor:
                         message += f" (报价: {price})"
                     message += "\n"
                 message += "\n"
+            
+            # 添加候选人数量信息
+            if bap:
+                message += f"**共发现 {len(bap)} 名中标候选人**\n\n"
             
             message += f"🔗 **详情链接**：{parsed_data.get('full_url', '')}"
             
