@@ -168,49 +168,42 @@ class BidMonitor:
             bidders_and_prices = []
             seen_bidders = set()
     
-            # 优先从表格中提取
+            # 表格提取（增强结构识别）
             for table in soup.find_all('table'):
-                headers = [cell.get_text(strip=True) for cell in table.find_all('tr')[0].find_all(['td', 'th']) if cell.get_text(strip=True)]
-                if any(kw in ''.join(headers) for kw in ["中标候选人", "投标人", "单位名称", "投标报价", "下浮率"]):
-                    rows = table.find_all('tr')
-                    candidate_row = None
-                    price_row = None
+                header_text = table.get_text()
+                if not any(key in header_text for key in ["中标候选人", "投标人", "单位名称", "报价", "下浮率"]):
+                    continue  # 不含关键词，跳过
     
-                    for row in rows:
-                        cells = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
-                        joined = ''.join(cells)
-                        if not candidate_row and any("公司" in c or "集团" in c for c in cells):
-                            candidate_row = cells
-                        elif not price_row and ("报价" in joined or "下浮率" in joined):
-                            price_row = cells
+                rows = table.find_all("tr")
+                for row in rows:
+                    cells = row.find_all(['td', 'th'])
+                    if len(cells) < 2:
+                        continue
     
-                    if candidate_row and price_row:
-                        # 去掉表头，找出有效数据起始点
-                        start_index = 2 if "中标候选人" in candidate_row[0] or "名称" in candidate_row[0] else 0
-                        for i in range(start_index, len(candidate_row)):
-                            bidder = candidate_row[i].strip()
-                            if not bidder or bidder in seen_bidders:
-                                continue
-                            seen_bidders.add(bidder)
-                            price = price_row[i].strip() if i < len(price_row) else "未提供"
+                    cell_texts = [cell.get_text(strip=True) for cell in cells]
+                    row_text = ''.join(cell_texts)
     
-                            # 忽略异常低的报价（如2元）
-                            if re.search(r'元', price):
-                                try:
-                                    value = float(re.sub(r'[^\d.]', '', price))
-                                    if value < 1000:
-                                        continue
-                                except:
-                                    pass
+                    # 寻找包含公司名的行
+                    if any("公司" in c or "集团" in c for c in cell_texts):
+                        for cell in cell_texts:
+                            bidder = cell.strip()
+                            if bidder and bidder not in seen_bidders and any(kw in bidder for kw in ["公司", "集团", "设计院", "工程"]):
+                                seen_bidders.add(bidder)
+                                bidders_and_prices.append({"bidder": bidder, "price": "未提供"})
     
-                            bidders_and_prices.append({
-                                "bidder": bidder,
-                                "price": price
-                            })
-                    if bidders_and_prices:
-                        break  # 如果已有结果，跳出循环
-    
-            # 备选方案：文本中提取（仅在表格失败时使用）
+                    # 如果包含“报价”关键词，尝试提取价格
+                    elif any("报价" in c or "下浮率" in c or "%" in c for c in cell_texts):
+                        prices = []
+                        for c in cell_texts:
+                            c = c.replace('\xa0', '').strip()
+                            if re.search(r"([\d,.]+(万元|元|%))", c) or "下浮率" in c:
+                                prices.append(c)
+                        # 把价格匹配到已有的 bidder 上（按顺序）
+                        for i in range(min(len(prices), len(bidders_and_prices))):
+                            if bidders_and_prices[i]["price"] == "未提供":
+                                bidders_and_prices[i]["price"] = prices[i]
+            
+            # 如果表格未识别，尝试文本提取作为备选
             if not bidders_and_prices:
                 company_pattern = r'([\u4e00-\u9fa5]{2,}(公司|集团|设计院|研究院|工程局|有限公司|股份公司))'
                 price_pattern = r'(?:报价|金额|下浮率|投标报价)[：:\s]*([\d,.%万元元]+)'
@@ -226,14 +219,6 @@ class BidMonitor:
                 prices = re.findall(price_pattern, full_text)
                 for i, company in enumerate(unique_companies[:5]):
                     price = prices[i] if i < len(prices) else "未提供"
-                    # 过滤无效价格
-                    if re.search(r'元', price):
-                        try:
-                            val = float(re.sub(r'[^\d.]', '', price))
-                            if val < 1000:
-                                continue
-                        except:
-                            pass
                     bidders_and_prices.append({
                         "bidder": company,
                         "price": price
@@ -258,6 +243,7 @@ class BidMonitor:
                 "bidders_and_prices": [{"bidder": "解析失败", "price": "请查看详情"}],
                 "full_url": ""
             }
+
 
             
     def _build_message(self, record: Dict) -> str:
