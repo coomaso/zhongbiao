@@ -365,5 +365,32 @@
       "title": "红花套镇城背溪大道改扩建工程一标段中标候选人公示",
       "infodate": "2025-06-17"
     }
+  },
+  {
+    "infoid": "8e6a35ba-661d-4623-82df-fe38e63fc498",
+    "infourl": "/jyxx/003001/003001004/20250617/8e6a35ba-661d-4623-82df-fe38e63fc498.html",
+    "parsed_data": {
+      "project_name": "当阳市坝慈路改造工程初步设计",
+      "publicity_period": "2025年06月17日 19时30分至2025年06月20日 19时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北中广公路勘察设计有限公司",
+          "price": "985500.00"
+        },
+        {
+          "bidder": "中都工程设计有限公司",
+          "price": "998000.00"
+        },
+        {
+          "bidder": "沈阳市市政工程设计研究院有限公司",
+          "price": "1039500.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250617/8e6a35ba-661d-4623-82df-fe38e63fc498.html"
+    },
+    "raw_data": {
+      "title": "当阳市坝慈路改造工程初步设计中标候选人公示",
+      "infodate": "2025-06-17"
+    }
   }
 ]
