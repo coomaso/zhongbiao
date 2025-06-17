@@ -257,5 +257,32 @@
       "title": "秭归农商行郭家坝支行综合楼装修改造项目中标候选人公示",
       "infodate": "2025-06-17"
     }
+  },
+  {
+    "infoid": "67d28b1c-4c0a-4bef-a252-ef9fabc19a8d",
+    "infourl": "/jyxx/003001/003001004/20250617/67d28b1c-4c0a-4bef-a252-ef9fabc19a8d.html",
+    "parsed_data": {
+      "project_name": "金亚·时光序（二期）项目监理服务",
+      "publicity_period": "2025年06月17日 12时00分至2025年06月20日 12时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中达安股份有限公司",
+          "price": "1980000.00"
+        },
+        {
+          "bidder": "中冶南方武汉工程咨询管理有限公司",
+          "price": "2036666.00"
+        },
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "2025686.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250617/67d28b1c-4c0a-4bef-a252-ef9fabc19a8d.html"
+    },
+    "raw_data": {
+      "title": "金亚·时光序（二期）项目监理服务中标候选人公示",
+      "infodate": "2025-06-17"
+    }
   }
 ]
