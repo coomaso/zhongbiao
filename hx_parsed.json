@@ -419,5 +419,113 @@
       "title": "金亚·时光序2#地块电梯工程中标候选人公示",
       "infodate": "2025-06-18"
     }
+  },
+  {
+    "infoid": "7a680527-4019-4fe7-be06-c71332d8bb03",
+    "infourl": "/jyxx/003001/003001004/20250618/7a680527-4019-4fe7-be06-c71332d8bb03.html",
+    "parsed_data": {
+      "project_name": "宜昌市西陵区2025年老旧小区改造工程设计",
+      "publicity_period": "2025年06月18日 17时00分至2025年06月22日 07时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "三峡大学（湖北）设计咨询研究院有限责任公司",
+          "price": "76.00%"
+        },
+        {
+          "bidder": "武汉轻工建筑设计有限公司",
+          "price": "73.00%"
+        },
+        {
+          "bidder": "孝感市城乡规划建筑设计院有限责任公司",
+          "price": "78.00%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/7a680527-4019-4fe7-be06-c71332d8bb03.html"
+    },
+    "raw_data": {
+      "title": "宜昌市西陵区2025年老旧小区改造工程设计中标候选人公示",
+      "infodate": "2025-06-18"
+    }
+  },
+  {
+    "infoid": "8cd485da-98a2-4dd5-a658-31489cfe7db2",
+    "infourl": "/jyxx/003001/003001004/20250618/8cd485da-98a2-4dd5-a658-31489cfe7db2.html",
+    "parsed_data": {
+      "project_name": "点军区城市地下管网升级改造项目一期排水工程(二标段)施工",
+      "publicity_period": "2025年06月18日 17时00分至2025年06月23日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北夷顺路桥有限公司",
+          "price": "2870920.33"
+        },
+        {
+          "bidder": "宜昌市东风水利水电工程建设有限公司",
+          "price": "2898822.86"
+        },
+        {
+          "bidder": "湖北楠山建设工程有限公司",
+          "price": "2875322.02"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/8cd485da-98a2-4dd5-a658-31489cfe7db2.html"
+    },
+    "raw_data": {
+      "title": "点军区城市地下管网升级改造项目一期排水工程(二标段)施工中标候选人公示",
+      "infodate": "2025-06-18"
+    }
+  },
+  {
+    "infoid": "2aac6bb9-33ff-425b-ad99-a5863ac02e3a",
+    "infourl": "/jyxx/003001/003001004/20250618/2aac6bb9-33ff-425b-ad99-a5863ac02e3a.html",
+    "parsed_data": {
+      "project_name": "三峡旅游职业技术学院 1、2、3 号学生公寓改造项目施工",
+      "publicity_period": "2025年06月18日 17时00分至2025年06月23日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中博皓月建设工程有限公司",
+          "price": "6848751.94"
+        },
+        {
+          "bidder": "湖北盛荣建设集团有限公司",
+          "price": "6838010.00"
+        },
+        {
+          "bidder": "湖北汇艺装饰工程有限责任公司",
+          "price": "6833530.68"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/2aac6bb9-33ff-425b-ad99-a5863ac02e3a.html"
+    },
+    "raw_data": {
+      "title": "三峡旅游职业技术学院 1、2、3 号学生公寓改造项目施工中标候选人公示",
+      "infodate": "2025-06-18"
+    }
+  },
+  {
+    "infoid": "6a36577d-5c6a-4a65-b422-899175e68683",
+    "infourl": "/jyxx/003001/003001004/20250618/6a36577d-5c6a-4a65-b422-899175e68683.html",
+    "parsed_data": {
+      "project_name": "宜昌高铁新城配套给水管网工程设计项目",
+      "publicity_period": "2025年06月18日 17时00分至2025年06月21日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北建科国际工程有限公司、宜昌华成工程技术有限公司联合体",
+          "price": "58.90"
+        },
+        {
+          "bidder": "长江勘测规划设计研究有限责任公司",
+          "price": "59.60"
+        },
+        {
+          "bidder": "湖北省电力规划设计研究院有限公司",
+          "price": "55.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/6a36577d-5c6a-4a65-b422-899175e68683.html"
+    },
+    "raw_data": {
+      "title": "宜昌高铁新城配套给水管网工程设计项目中标候选人公示",
+      "infodate": "2025-06-18"
+    }
   }
 ]
