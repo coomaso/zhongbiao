@@ -527,5 +527,86 @@
       "title": "宜昌高铁新城配套给水管网工程设计项目中标候选人公示",
       "infodate": "2025-06-18"
     }
+  },
+  {
+    "infoid": "0098bbdf-e5d3-4dbc-b7cf-80f2e5676d33",
+    "infourl": "/jyxx/003001/003001004/20250618/0098bbdf-e5d3-4dbc-b7cf-80f2e5676d33.html",
+    "parsed_data": {
+      "project_name": "寓见·当阳保障性租赁住房建设项目工程监理",
+      "publicity_period": "2025年06月18日 17时30分至2025年06月23日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌胜一建设工程咨询有限公司",
+          "price": "1001000.00"
+        },
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "1065000.00"
+        },
+        {
+          "bidder": "湖北衡钺建设监理有限责任公司",
+          "price": "784869.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/0098bbdf-e5d3-4dbc-b7cf-80f2e5676d33.html"
+    },
+    "raw_data": {
+      "title": "寓见·当阳保障性租赁住房建设项目工程监理中标候选人公示",
+      "infodate": "2025-06-18"
+    }
+  },
+  {
+    "infoid": "87273fc2-8e9b-49f6-ab8c-ea5683891f4a",
+    "infourl": "/jyxx/003001/003001004/20250618/87273fc2-8e9b-49f6-ab8c-ea5683891f4a.html",
+    "parsed_data": {
+      "project_name": "G347兴山境南德线南阳至三堆河段路面功能性改造工程施工",
+      "publicity_period": "2025年06月18日 17时30分至2025年06月23日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北华赢路桥工程有限公司",
+          "price": "3078610.00"
+        },
+        {
+          "bidder": "湖北省清江路桥建筑有限公司",
+          "price": "3096089.00"
+        },
+        {
+          "bidder": "湖北洋铭建设工程有限公司",
+          "price": "3127694.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/87273fc2-8e9b-49f6-ab8c-ea5683891f4a.html"
+    },
+    "raw_data": {
+      "title": "G347兴山境南德线南阳至三堆河段路面功能性改造工程施工中标候选人公示",
+      "infodate": "2025-06-18"
+    }
+  },
+  {
+    "infoid": "33574960-fa16-49d2-bb4d-b3db0a8df1dc",
+    "infourl": "/jyxx/003001/003001004/20250618/33574960-fa16-49d2-bb4d-b3db0a8df1dc.html",
+    "parsed_data": {
+      "project_name": "S312兴山境宜兴线峡口一桥至加油站段路面结构性改造工程及贺家沟中桥至昭君桥段路面功能性改造工程施工",
+      "publicity_period": "2025年06月18日 17时30分至2025年06月23日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北瑞得建设有限责任公司",
+          "price": "16262395.00"
+        },
+        {
+          "bidder": "宜都市三立路桥工程建设有限责任公司",
+          "price": "16588686.00"
+        },
+        {
+          "bidder": "湖北洋铭建设工程有限公司",
+          "price": "16675523.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250618/33574960-fa16-49d2-bb4d-b3db0a8df1dc.html"
+    },
+    "raw_data": {
+      "title": "S312兴山境宜兴线峡口一桥至加油站段路面结构性改造工程及贺家沟中桥至昭君桥段路面功能性改造工程施工中标候选人公示",
+      "infodate": "2025-06-18"
+    }
   }
 ]
