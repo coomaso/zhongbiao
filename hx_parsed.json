@@ -986,5 +986,59 @@
       "title": "兴山县平邑口罗家垭20MW光伏电站二期项目--开关站扩建工程中标候选人公示",
       "infodate": "2025-06-21"
     }
+  },
+  {
+    "infoid": "d64cb8ef-c3a5-4010-8a42-3bd6ed9c1b71",
+    "infourl": "/jyxx/003001/003001004/20250623/d64cb8ef-c3a5-4010-8a42-3bd6ed9c1b71.html",
+    "parsed_data": {
+      "project_name": "点军区城市地下管网升级改造项目一期给水工程（一标段）",
+      "publicity_period": "2025年06月23日 12时00分至2025年06月26日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北益通建设股份有限公司",
+          "price": "55699323.72"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "55434168.87"
+        },
+        {
+          "bidder": "宜昌富强工程有限责任公司、长江三峡水务（宜昌）有限公司联合体",
+          "price": "54681148.88"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250623/d64cb8ef-c3a5-4010-8a42-3bd6ed9c1b71.html"
+    },
+    "raw_data": {
+      "title": "点军区城市地下管网升级改造项目一期给水工程（一标段）中标候选人公示",
+      "infodate": "2025-06-23"
+    }
+  },
+  {
+    "infoid": "7a1f4853-29b7-4490-a23f-02abe96e99d6",
+    "infourl": "/jyxx/003001/003001004/20250623/7a1f4853-29b7-4490-a23f-02abe96e99d6.html",
+    "parsed_data": {
+      "project_name": "南湾村临河移民工业园（二期）",
+      "publicity_period": "2025年06月23日 12时00分至2025年06月26日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北恒诚建设有限公司",
+          "price": "7267221.68"
+        },
+        {
+          "bidder": "湖北国昌建设工程有限公司",
+          "price": "7295078.19"
+        },
+        {
+          "bidder": "友焜建工集团有限公司",
+          "price": "7214771.80"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250623/7a1f4853-29b7-4490-a23f-02abe96e99d6.html"
+    },
+    "raw_data": {
+      "title": "南湾村临河移民工业园（二期）中标候选人公示",
+      "infodate": "2025-06-23"
+    }
   }
 ]
