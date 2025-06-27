@@ -1592,5 +1592,32 @@
       "title": "长江水文宜昌科创中心精装修项目中标候选人公示",
       "infodate": "2025-06-27"
     }
+  },
+  {
+    "infoid": "ab8bd726-8637-4c5f-91c3-5e7ac08cee17",
+    "infourl": "/jyxx/003001/003001004/20250627/ab8bd726-8637-4c5f-91c3-5e7ac08cee17.html",
+    "parsed_data": {
+      "project_name": "夷陵三巷市场项目",
+      "publicity_period": "2025年06月27日 20时30分至2025年06月30日 20时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北远雄建筑工程有限公司",
+          "price": "15816618.00"
+        },
+        {
+          "bidder": "中远汇成建设工程有限公司",
+          "price": "15940871.78"
+        },
+        {
+          "bidder": "湖北城阙建设有限公司",
+          "price": "15900688.21"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250627/ab8bd726-8637-4c5f-91c3-5e7ac08cee17.html"
+    },
+    "raw_data": {
+      "title": "夷陵三巷市场项目中标候选人公示",
+      "infodate": "2025-06-27"
+    }
   }
 ]
