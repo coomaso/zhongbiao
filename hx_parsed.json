@@ -1955,5 +1955,59 @@
       "title": "中央绿心中轴线生态治理项目（宋家河流域综合整治修复工程）地勘中标候选人公示",
       "infodate": "2025-07-02"
     }
+  },
+  {
+    "infoid": "28fa7bbe-8e96-4669-9fff-8b3548a466ce",
+    "infourl": "/jyxx/003001/003001004/20250702/28fa7bbe-8e96-4669-9fff-8b3548a466ce.html",
+    "parsed_data": {
+      "project_name": "伍家岗区东山大道与东站二路交会处西侧商业项目（一期）方案设计服务",
+      "publicity_period": "2025年07月02日 15时00分至2025年07月07日 15时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "重庆大学建筑规划设计研究总院有限公司",
+          "price": "4945000.00"
+        },
+        {
+          "bidder": "天津城建设计院有限公司",
+          "price": "4897700.00"
+        },
+        {
+          "bidder": "东风鸿远工程咨询有限公司",
+          "price": "4860000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250702/28fa7bbe-8e96-4669-9fff-8b3548a466ce.html"
+    },
+    "raw_data": {
+      "title": "伍家岗区东山大道与东站二路交会处西侧商业项目（一期）方案设计服务中标候选人公示",
+      "infodate": "2025-07-02"
+    }
+  },
+  {
+    "infoid": "ff3b5efc-e388-446a-a223-ec4dd290a876",
+    "infourl": "/jyxx/003001/003001004/20250702/ff3b5efc-e388-446a-a223-ec4dd290a876.html",
+    "parsed_data": {
+      "project_name": "猇亭区实验初级中学校园环境提升工程施工",
+      "publicity_period": "2025年07月02日 15时00分至2025年07月07日 15时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌诚祥建筑工程有限公司",
+          "price": "6243145.42"
+        },
+        {
+          "bidder": "湖北晨思建设工程有限公司",
+          "price": "6215959.63"
+        },
+        {
+          "bidder": "宜昌鼎燊建设工程有限公司",
+          "price": "6265901.74"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250702/ff3b5efc-e388-446a-a223-ec4dd290a876.html"
+    },
+    "raw_data": {
+      "title": "猇亭区实验初级中学校园环境提升工程施工中标候选人公示",
+      "infodate": "2025-07-02"
+    }
   }
 ]
