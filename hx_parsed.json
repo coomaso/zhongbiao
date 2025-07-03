@@ -2198,5 +2198,32 @@
       "title": "建投·信义华府（二期）住宅小区建设项目检测中标候选人公示",
       "infodate": "2025-07-03"
     }
+  },
+  {
+    "infoid": "2392de8a-bfec-4eea-a691-35e5e266ee5f",
+    "infourl": "/jyxx/003001/003001004/20250704/2392de8a-bfec-4eea-a691-35e5e266ee5f.html",
+    "parsed_data": {
+      "project_name": "S225枝江市雅畈至枝城长江大桥段公路工程前期工作",
+      "publicity_period": "2025年07月04日 00时00分至2025年07月08日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市交通规划勘察设计研究院有限公司",
+          "price": "4370000.00"
+        },
+        {
+          "bidder": "中国市政工程中南设计研究总院有限公司",
+          "price": "4190000.00"
+        },
+        {
+          "bidder": "湖北中广公路勘察设计有限公司",
+          "price": "4400000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250704/2392de8a-bfec-4eea-a691-35e5e266ee5f.html"
+    },
+    "raw_data": {
+      "title": "S225枝江市雅畈至枝城长江大桥段公路工程前期工作中标候选人公示",
+      "infodate": "2025-07-04"
+    }
   }
 ]
