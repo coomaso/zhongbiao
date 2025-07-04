@@ -2441,5 +2441,67 @@
       "title": "青宜产业园配套基础设施建设二期项目（老街卫生院停车场项目）中标候选人公示",
       "infodate": "2025-07-04"
     }
+  },
+  {
+    "infoid": "276816d1-d5ad-47dd-b2cf-180c8b4fd07a",
+    "infourl": "/jyxx/003001/003001004/20250704/276816d1-d5ad-47dd-b2cf-180c8b4fd07a.html",
+    "parsed_data": {
+      "project_name": "三峡库区宜昌柑橘特色产业灌区(沿江片区）万家湾片田间工程示范区",
+      "publicity_period": "2025年07月04日 17时30分至2025年07月07日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北昊源建设工程有限公司",
+          "price": "4476798.08"
+        },
+        {
+          "bidder": "宜昌市东风水利水电工程建设有限公司",
+          "price": "4471825.43"
+        },
+        {
+          "bidder": "湖北越智建设工程有限责任公司",
+          "price": "4483130.87"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250704/276816d1-d5ad-47dd-b2cf-180c8b4fd07a.html"
+    },
+    "raw_data": {
+      "title": "三峡库区宜昌柑橘特色产业灌区(沿江片区）万家湾片田间工程示范区中标候选人公示",
+      "infodate": "2025-07-04"
+    }
+  },
+  {
+    "infoid": "85dbc999-45af-4259-a1eb-bfce76236a95",
+    "infourl": "/jyxx/003001/003001004/20250704/85dbc999-45af-4259-a1eb-bfce76236a95.html",
+    "parsed_data": {
+      "project_name": "十里红宾馆精装修项目施工",
+      "publicity_period": "2025年07月04日 17时30分至2025年07月07日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "浙江亚厦装饰股份有限公司",
+          "price": "203358288.88"
+        },
+        {
+          "bidder": "中建东方装饰有限公司",
+          "price": "217451997.62"
+        },
+        {
+          "bidder": "中建二局装饰工程有限公司",
+          "price": "218732810.60"
+        },
+        {
+          "bidder": "中建五局装饰幕墙有限公司",
+          "price": "212325147.56"
+        },
+        {
+          "bidder": "华鼎建筑装饰工程有限公司",
+          "price": "203456369.58"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250704/85dbc999-45af-4259-a1eb-bfce76236a95.html"
+    },
+    "raw_data": {
+      "title": "十里红宾馆精装修项目施工中标候选人公示",
+      "infodate": "2025-07-04"
+    }
   }
 ]
