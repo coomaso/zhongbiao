@@ -2225,5 +2225,32 @@
       "title": "S225枝江市雅畈至枝城长江大桥段公路工程前期工作中标候选人公示",
       "infodate": "2025-07-04"
     }
+  },
+  {
+    "infoid": "04e685e2-1da9-446a-a948-af5dcaa58ab6",
+    "infourl": "/jyxx/003001/003001004/20250704/04e685e2-1da9-446a-a948-af5dcaa58ab6.html",
+    "parsed_data": {
+      "project_name": "西陵峡•三游洞游客服务中心建设项目施工(第2次招标)",
+      "publicity_period": "2025年07月04日 10时00分至2025年07月07日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北盛荣建设集团有限公司",
+          "price": "33375260.55"
+        },
+        {
+          "bidder": "湖北鑫民建设集团有限公司",
+          "price": "33406008.67"
+        },
+        {
+          "bidder": "江铭建设集团有限公司",
+          "price": "33601171.05"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250704/04e685e2-1da9-446a-a948-af5dcaa58ab6.html"
+    },
+    "raw_data": {
+      "title": "西陵峡•三游洞游客服务中心建设项目施工(第2次招标)中标候选人公示",
+      "infodate": "2025-07-04"
+    }
   }
 ]
