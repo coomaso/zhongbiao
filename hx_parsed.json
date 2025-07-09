@@ -2754,5 +2754,32 @@
       "title": "2025年度当阳市半月镇全域国土综合整治项目EPC工程总承包中标候选人公示",
       "infodate": "2025-07-08"
     }
+  },
+  {
+    "infoid": "67426a20-a831-4fe2-a1bd-8b68da2d2bff",
+    "infourl": "/jyxx/003001/003001004/20250709/67426a20-a831-4fe2-a1bd-8b68da2d2bff.html",
+    "parsed_data": {
+      "project_name": "白洋铜杆加工项目配套土建工程(第2次招标)",
+      "publicity_period": "2025年07月09日 11时30分至2025年07月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中国机械工业第二建设工程有限公司",
+          "price": "17563048.70"
+        },
+        {
+          "bidder": "湖北三峡路桥工程有限公司",
+          "price": "17801668.18"
+        },
+        {
+          "bidder": "江铭建设集团有限公司",
+          "price": "17470000.06"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250709/67426a20-a831-4fe2-a1bd-8b68da2d2bff.html"
+    },
+    "raw_data": {
+      "title": "白洋铜杆加工项目配套土建工程(第2次招标)中标候选人公示",
+      "infodate": "2025-07-09"
+    }
   }
 ]
