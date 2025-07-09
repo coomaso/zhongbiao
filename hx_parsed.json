@@ -2781,5 +2781,32 @@
       "title": "白洋铜杆加工项目配套土建工程(第2次招标)中标候选人公示",
       "infodate": "2025-07-09"
     }
+  },
+  {
+    "infoid": "ffbf42bd-1195-4b4b-b8fa-1236fdef3046",
+    "infourl": "/jyxx/003001/003001004/20250709/ffbf42bd-1195-4b4b-b8fa-1236fdef3046.html",
+    "parsed_data": {
+      "project_name": "G42宜昌北收费站及接线改扩建工程可行性研究及初步设计服务采购",
+      "publicity_period": "2025年07月09日 17时30分至2025年07月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "四川省公路规划勘察设计研究院有限公司",
+          "price": "69.93"
+        },
+        {
+          "bidder": "安徽省交通规划设计研究总院股份有限公司",
+          "price": "69.90"
+        },
+        {
+          "bidder": "湖北省交通规划设计院股份有限公司",
+          "price": "69.80"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250709/ffbf42bd-1195-4b4b-b8fa-1236fdef3046.html"
+    },
+    "raw_data": {
+      "title": "G42宜昌北收费站及接线改扩建工程可行性研究及初步设计服务采购中标候选人公示",
+      "infodate": "2025-07-09"
+    }
   }
 ]
