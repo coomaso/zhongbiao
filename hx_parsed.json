@@ -2835,5 +2835,59 @@
       "title": "2025年度当阳市王店镇全域国土综合整治项目EPC工程总承包中标候选人公示",
       "infodate": "2025-07-09"
     }
+  },
+  {
+    "infoid": "c7ce2201-3fd1-410f-b237-c9c652e1c6cd",
+    "infourl": "/jyxx/003001/003001004/20250709/c7ce2201-3fd1-410f-b237-c9c652e1c6cd.html",
+    "parsed_data": {
+      "project_name": "宜都化工园区企业安全风险智能化管控平台项目",
+      "publicity_period": "2025年07月09日 18时00分至2025年07月12日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜都市辰星数码科技有限公司",
+          "price": "3662800.00"
+        },
+        {
+          "bidder": "硬石科技（武汉）有限公司",
+          "price": "3709016.00"
+        },
+        {
+          "bidder": "湖北永立中安科技有限公司",
+          "price": "3605000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250709/c7ce2201-3fd1-410f-b237-c9c652e1c6cd.html"
+    },
+    "raw_data": {
+      "title": "宜都化工园区企业安全风险智能化管控平台项目中标候选人公示",
+      "infodate": "2025-07-09"
+    }
+  },
+  {
+    "infoid": "86e3d674-ce3c-4db0-8879-ecb354d744b2",
+    "infourl": "/jyxx/003001/003001004/20250709/86e3d674-ce3c-4db0-8879-ecb354d744b2.html",
+    "parsed_data": {
+      "project_name": "宜昌市兴山县王家河2025年防洪排涝治理工程建设项目（一期）",
+      "publicity_period": "2025年07月09日 18时00分至2025年07月14日 08时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌誉博建设工程有限公司",
+          "price": "2015390.33"
+        },
+        {
+          "bidder": "湖北越智建设工程有限责任公司",
+          "price": "2019452.05"
+        },
+        {
+          "bidder": "天新盛建设集团有限公司",
+          "price": "2025389.80"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250709/86e3d674-ce3c-4db0-8879-ecb354d744b2.html"
+    },
+    "raw_data": {
+      "title": "宜昌市兴山县王家河2025年防洪排涝治理工程建设项目（一期）中标候选人公示",
+      "infodate": "2025-07-09"
+    }
   }
 ]
