@@ -3024,5 +3024,32 @@
       "title": "长阳王家岭锰渣库项目中标候选人公示",
       "infodate": "2025-07-11"
     }
+  },
+  {
+    "infoid": "8f6d1d45-72ec-4513-9c29-7f3fd13acda8",
+    "infourl": "/jyxx/003001/003001004/20250711/8f6d1d45-72ec-4513-9c29-7f3fd13acda8.html",
+    "parsed_data": {
+      "project_name": "2402#工房改造建设项目",
+      "publicity_period": "2025年07月11日 23时59分至2025年07月14日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北三江航天建筑工程有限公司",
+          "price": "5596388.01"
+        },
+        {
+          "bidder": "武汉中盛楚汉建筑有限公司",
+          "price": "5596384.15"
+        },
+        {
+          "bidder": "陕西航天建设集团有限公司",
+          "price": "5688586.80"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250711/8f6d1d45-72ec-4513-9c29-7f3fd13acda8.html"
+    },
+    "raw_data": {
+      "title": "2402#工房改造建设项目中标候选人公示",
+      "infodate": "2025-07-11"
+    }
   }
 ]
