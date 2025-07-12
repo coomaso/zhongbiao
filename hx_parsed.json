@@ -3051,5 +3051,32 @@
       "title": "2402#工房改造建设项目中标候选人公示",
       "infodate": "2025-07-11"
     }
+  },
+  {
+    "infoid": "5dbeb27b-6742-459f-9c4e-e8e3b8c385c1",
+    "infourl": "/jyxx/003001/003001004/20250711/5dbeb27b-6742-459f-9c4e-e8e3b8c385c1.html",
+    "parsed_data": {
+      "project_name": "当阳市坝慈路改造工程监理",
+      "publicity_period": "2025年07月11日 17时00分至2025年07月14日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北炘越建设项目管理有限公司",
+          "price": "1712800.00"
+        },
+        {
+          "bidder": "中新创达咨询有限公司",
+          "price": "1520000.00"
+        },
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "1728800.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250711/5dbeb27b-6742-459f-9c4e-e8e3b8c385c1.html"
+    },
+    "raw_data": {
+      "title": "当阳市坝慈路改造工程监理中标候选人公示",
+      "infodate": "2025-07-11"
+    }
   }
 ]
