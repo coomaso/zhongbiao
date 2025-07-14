@@ -3167,5 +3167,32 @@
       "title": "2025年当阳市农村公路修复养护工程中标候选人公示",
       "infodate": "2025-07-14"
     }
+  },
+  {
+    "infoid": "de413d2f-4842-4b6a-a4ad-d859a58d9d86",
+    "infourl": "/jyxx/003001/003001004/20250714/de413d2f-4842-4b6a-a4ad-d859a58d9d86.html",
+    "parsed_data": {
+      "project_name": "宜昌市当阳义街基础设施提档升级更新改造工程",
+      "publicity_period": "2025年07月14日 18时00分至2025年07月17日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北金湖建设工程有限公司",
+          "price": "10587378.30"
+        },
+        {
+          "bidder": "当阳市给排水安装工程有限公司",
+          "price": "10492969.75"
+        },
+        {
+          "bidder": "湖北群久建设工程有限公司",
+          "price": "10399664.72"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250714/de413d2f-4842-4b6a-a4ad-d859a58d9d86.html"
+    },
+    "raw_data": {
+      "title": "宜昌市当阳义街基础设施提档升级更新改造工程中标候选人公示",
+      "infodate": "2025-07-14"
+    }
   }
 ]
