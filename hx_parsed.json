@@ -4063,5 +4063,32 @@
       "title": "宜昌市第二人民医院病房改造项目医疗专项工程中标候选人公示",
       "infodate": "2025-07-22"
     }
+  },
+  {
+    "infoid": "7abc255f-b1c7-4dc8-ad2b-cafe5f090ea9",
+    "infourl": "/jyxx/003001/003001004/20250722/7abc255f-b1c7-4dc8-ad2b-cafe5f090ea9.html",
+    "parsed_data": {
+      "project_name": "十里红宾馆景观绿化工程及配套附属工程(第2次招标)",
+      "publicity_period": "2025年07月22日 16时00分至2025年07月25日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "固川建设集团有限公司",
+          "price": "63931577.62"
+        },
+        {
+          "bidder": "江铭建设集团有限公司",
+          "price": "63558766.43"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "62706414.99"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250722/7abc255f-b1c7-4dc8-ad2b-cafe5f090ea9.html"
+    },
+    "raw_data": {
+      "title": "十里红宾馆景观绿化工程及配套附属工程(第2次招标)中标候选人公示",
+      "infodate": "2025-07-22"
+    }
   }
 ]
