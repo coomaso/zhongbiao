@@ -4681,5 +4681,59 @@
       "title": "当阳市群力等村两年补短板农村供水工程中标候选人公示",
       "infodate": "2025-07-25"
     }
+  },
+  {
+    "infoid": "7f939f72-af36-40f0-a892-1809aebb299c",
+    "infourl": "/jyxx/003001/003001004/20250725/7f939f72-af36-40f0-a892-1809aebb299c.html",
+    "parsed_data": {
+      "project_name": "远安县城中片区老旧小区改造工程（四期）",
+      "publicity_period": "2025年07月25日 18时00分至2025年07月28日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北省远安海龙建设有限公司",
+          "price": "1987821.53"
+        },
+        {
+          "bidder": "宜昌昌顺建设工程有限公司",
+          "price": "1999430.26"
+        },
+        {
+          "bidder": "湖北骏安骐建筑有限公司",
+          "price": "2069191.88"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250725/7f939f72-af36-40f0-a892-1809aebb299c.html"
+    },
+    "raw_data": {
+      "title": "远安县城中片区老旧小区改造工程（四期）中标候选人公示",
+      "infodate": "2025-07-25"
+    }
+  },
+  {
+    "infoid": "bd3dc0da-9302-4598-aae8-783a9b2b7883",
+    "infourl": "/jyxx/003001/003001004/20250725/bd3dc0da-9302-4598-aae8-783a9b2b7883.html",
+    "parsed_data": {
+      "project_name": "宜都市宋高路延长线新建路灯项目",
+      "publicity_period": "2025年07月25日 18时00分至2025年07月28日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "辉阳集团有限公司",
+          "price": "4768975.62"
+        },
+        {
+          "bidder": "湖北国丰建设有限公司",
+          "price": "4749128.02"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "4783782.65"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250725/bd3dc0da-9302-4598-aae8-783a9b2b7883.html"
+    },
+    "raw_data": {
+      "title": "宜都市宋高路延长线新建路灯项目中标候选人公示",
+      "infodate": "2025-07-25"
+    }
   }
 ]
