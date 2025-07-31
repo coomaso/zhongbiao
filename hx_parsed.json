@@ -5086,5 +5086,86 @@
       "title": "雅官大道西侧地块场平项目中标候选人公示",
       "infodate": "2025-07-31"
     }
+  },
+  {
+    "infoid": "b9d381dd-1e88-488c-af74-20fcacb0693e",
+    "infourl": "/jyxx/003001/003001004/20250731/b9d381dd-1e88-488c-af74-20fcacb0693e.html",
+    "parsed_data": {
+      "project_name": "2025年度远安县旧县等三个乡镇旧县等四个村土地开发项目（一标段）",
+      "publicity_period": "2025年07月31日 18时00分至2025年08月04日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北昌磊建设工程有限公司",
+          "price": "2903271.88"
+        },
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "2923894.14"
+        },
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "2915205.39"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250731/b9d381dd-1e88-488c-af74-20fcacb0693e.html"
+    },
+    "raw_data": {
+      "title": "2025年度远安县旧县等三个乡镇旧县等四个村土地开发项目（一标段）中标候选人公示",
+      "infodate": "2025-07-31"
+    }
+  },
+  {
+    "infoid": "f21b8101-5e91-47f0-990a-857f53633b56",
+    "infourl": "/jyxx/003001/003001004/20250731/f21b8101-5e91-47f0-990a-857f53633b56.html",
+    "parsed_data": {
+      "project_name": "当阳市沮河流域玉泉河（蝴蝶泉陶瓷厂至清水桥段）水环境综合治理项目（一标段）监理服务项目",
+      "publicity_period": "2025年07月31日 18时00分至2025年08月03日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌康正工程咨询管理有限公司",
+          "price": "916500.00"
+        },
+        {
+          "bidder": "湖北新图建设管理有限公司",
+          "price": "912600.00"
+        },
+        {
+          "bidder": "中新创达咨询有限公司",
+          "price": "865233.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250731/f21b8101-5e91-47f0-990a-857f53633b56.html"
+    },
+    "raw_data": {
+      "title": "当阳市沮河流域玉泉河（蝴蝶泉陶瓷厂至清水桥段）水环境综合治理项目（一标段）监理服务项目中标候选人公示",
+      "infodate": "2025-07-31"
+    }
+  },
+  {
+    "infoid": "ab089586-e96d-4af2-b3c8-c5b9db56a9a7",
+    "infourl": "/jyxx/003001/003001004/20250731/ab089586-e96d-4af2-b3c8-c5b9db56a9a7.html",
+    "parsed_data": {
+      "project_name": "当阳市庙前镇烟集村粮食烘干建设项目",
+      "publicity_period": "2025年07月31日 18时00分至2025年08月05日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北鄂武建工集团有限公司",
+          "price": "5516042.91"
+        },
+        {
+          "bidder": "湖北力禹建设工程有限责任公司",
+          "price": "5382165.68"
+        },
+        {
+          "bidder": "宜昌臻美装饰工程有限公司",
+          "price": "5500056.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250731/ab089586-e96d-4af2-b3c8-c5b9db56a9a7.html"
+    },
+    "raw_data": {
+      "title": "当阳市庙前镇烟集村粮食烘干建设项目中标候选人公示",
+      "infodate": "2025-07-31"
+    }
   }
 ]
