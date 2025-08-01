@@ -5329,5 +5329,67 @@
       "title": "宜都市高新园区产业配套设施项目中标候选人公示",
       "infodate": "2025-08-01"
     }
+  },
+  {
+    "infoid": "d5d837e7-ea7d-4c6c-9967-487059a3ad2b",
+    "infourl": "/jyxx/003001/003001004/20250801/d5d837e7-ea7d-4c6c-9967-487059a3ad2b.html",
+    "parsed_data": {
+      "project_name": "田家河片区消防通道工程（一期）",
+      "publicity_period": "2025年08月01日 17时00分至2025年08月05日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宸瑞建设有限公司",
+          "price": "3508905.69"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "3377604.30"
+        },
+        {
+          "bidder": "中博皓月建设工程有限公司",
+          "price": "3559094.94"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250801/d5d837e7-ea7d-4c6c-9967-487059a3ad2b.html"
+    },
+    "raw_data": {
+      "title": "田家河片区消防通道工程（一期）中标候选人公示",
+      "infodate": "2025-08-01"
+    }
+  },
+  {
+    "infoid": "96cbdffd-cc30-40ac-853b-f1e325d8ec84",
+    "infourl": "/jyxx/003001/003001004/20250801/96cbdffd-cc30-40ac-853b-f1e325d8ec84.html",
+    "parsed_data": {
+      "project_name": "枝江市老城区重点片区排水防涝设施改造工程(水系连通及内涝点改造)",
+      "publicity_period": "2025年08月01日 17时00分至2025年08月04日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北鑫民建设集团有限公司",
+          "price": "34958371.05"
+        },
+        {
+          "bidder": "湖北益通建设股份有限公司",
+          "price": "35227720.51"
+        },
+        {
+          "bidder": "坤发建筑有限公司",
+          "price": "35227618.82"
+        },
+        {
+          "bidder": "中源宏宇建设集团有限公司",
+          "price": "35717800.88"
+        },
+        {
+          "bidder": "湖北三峡路桥工程有限公司",
+          "price": "36077707.92"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250801/96cbdffd-cc30-40ac-853b-f1e325d8ec84.html"
+    },
+    "raw_data": {
+      "title": "枝江市老城区重点片区排水防涝设施改造工程(水系连通及内涝点改造)中标候选人公示",
+      "infodate": "2025-08-01"
+    }
   }
 ]
