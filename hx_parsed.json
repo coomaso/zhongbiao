@@ -5194,5 +5194,32 @@
       "title": "三峡坝区商品砼站监理项目中标候选人公示",
       "infodate": "2025-08-01"
     }
+  },
+  {
+    "infoid": "09c6def5-4dab-4fd9-b843-4309fe527dce",
+    "infourl": "/jyxx/003001/003001004/20250801/09c6def5-4dab-4fd9-b843-4309fe527dce.html",
+    "parsed_data": {
+      "project_name": "青宜产业园配套基础设施建设二期项目（湖北鑫聚联包装材料有限公司 10KV 外线工程)",
+      "publicity_period": "2025年08月01日 12时00分至2025年08月04日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "2319988.66"
+        },
+        {
+          "bidder": "宜昌光源电业有限责任公司",
+          "price": "2328739.21元"
+        },
+        {
+          "bidder": "宜昌昌耀电业集团有限公司",
+          "price": "2325032.96元"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250801/09c6def5-4dab-4fd9-b843-4309fe527dce.html"
+    },
+    "raw_data": {
+      "title": "青宜产业园配套基础设施建设二期项目（湖北鑫聚联包装材料有限公司 10KV 外线工程)中标候选人公示",
+      "infodate": "2025-08-01"
+    }
   }
 ]
