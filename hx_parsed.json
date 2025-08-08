@@ -6176,5 +6176,32 @@
       "title": "点军区城乡供水一体化项目（一期）甲供材中标候选人公示",
       "infodate": "2025-08-08"
     }
+  },
+  {
+    "infoid": "2f281d48-dec4-4030-bf8c-d6deedc73435",
+    "infourl": "/jyxx/003001/003001004/20250808/2f281d48-dec4-4030-bf8c-d6deedc73435.html",
+    "parsed_data": {
+      "project_name": "远安县鸣凤镇周家冲片区基础设施建设项目（二标段）",
+      "publicity_period": "2025年08月08日 18时00分至2025年08月11日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "2441907.41"
+        },
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "2422389.44"
+        },
+        {
+          "bidder": "湖北中家耀建设工程有限公司",
+          "price": "2427423.90"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250808/2f281d48-dec4-4030-bf8c-d6deedc73435.html"
+    },
+    "raw_data": {
+      "title": "远安县鸣凤镇周家冲片区基础设施建设项目（二标段）中标候选人公示",
+      "infodate": "2025-08-08"
+    }
   }
 ]
