@@ -7029,5 +7029,59 @@
       "title": "秭归县脐橙产业链数智化仓储项目数智传送系统采购及安装中标候选人公示",
       "infodate": "2025-08-18"
     }
+  },
+  {
+    "infoid": "4e5c6afa-6009-4b1c-ad47-08ebf0b32ece",
+    "infourl": "/jyxx/003001/003001004/20250819/4e5c6afa-6009-4b1c-ad47-08ebf0b32ece.html",
+    "parsed_data": {
+      "project_name": "枝江市城西片区污水管网新建及改造项目（二期）设计单位采购",
+      "publicity_period": "2025年08月19日 17时00分至2025年08月22日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "武汉承远设计咨询集团有限公司",
+          "price": "785600.00"
+        },
+        {
+          "bidder": "湖北省城建设计院股份有限公司",
+          "price": "768800.00"
+        },
+        {
+          "bidder": "境和设计集团有限公司",
+          "price": "776300.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250819/4e5c6afa-6009-4b1c-ad47-08ebf0b32ece.html"
+    },
+    "raw_data": {
+      "title": "枝江市城西片区污水管网新建及改造项目（二期）设计单位采购中标候选人公示",
+      "infodate": "2025-08-19"
+    }
+  },
+  {
+    "infoid": "0c918d3d-64c2-4ea9-bd57-6cc0bc1c32dc",
+    "infourl": "/jyxx/003001/003001004/20250819/0c918d3d-64c2-4ea9-bd57-6cc0bc1c32dc.html",
+    "parsed_data": {
+      "project_name": "枝江市城西片区污水管网新建及改造项目（一期）设计单位采购",
+      "publicity_period": "2025年08月19日 17时00分至2025年08月22日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "江苏华里设计有限公司",
+          "price": "685000.00"
+        },
+        {
+          "bidder": "智诚建科设计有限公司",
+          "price": "678000.00"
+        },
+        {
+          "bidder": "中煜国际工程设计有限公司",
+          "price": "682000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250819/0c918d3d-64c2-4ea9-bd57-6cc0bc1c32dc.html"
+    },
+    "raw_data": {
+      "title": "枝江市城西片区污水管网新建及改造项目（一期）设计单位采购中标候选人公示",
+      "infodate": "2025-08-19"
+    }
   }
 ]
