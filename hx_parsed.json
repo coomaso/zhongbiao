@@ -7523,5 +7523,59 @@
       "title": "宜昌三峡游轮中心航站楼装饰装修及室外配套工程设计中标候选人公示",
       "infodate": "2025-08-22"
     }
+  },
+  {
+    "infoid": "5d3f2561-29bd-4bf0-be50-08da83c16c13",
+    "infourl": "/jyxx/003001/003001004/20250822/5d3f2561-29bd-4bf0-be50-08da83c16c13.html",
+    "parsed_data": {
+      "project_name": "当阳市坝陵化工园生活区配套建设项目(保租房）配电工程",
+      "publicity_period": "2025年08月22日 17时30分至2025年08月25日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "7111262.18"
+        },
+        {
+          "bidder": "宜昌光源电业有限责任公司",
+          "price": "7271666.56"
+        },
+        {
+          "bidder": "武汉锦隆鑫建设工程有限公司",
+          "price": "7010588.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250822/5d3f2561-29bd-4bf0-be50-08da83c16c13.html"
+    },
+    "raw_data": {
+      "title": "当阳市坝陵化工园生活区配套建设项目(保租房）配电工程中标候选人公示",
+      "infodate": "2025-08-22"
+    }
+  },
+  {
+    "infoid": "f312cb21-34e3-42ab-a37c-57befc3a47e6",
+    "infourl": "/jyxx/003001/003001004/20250822/f312cb21-34e3-42ab-a37c-57befc3a47e6.html",
+    "parsed_data": {
+      "project_name": "青宜产业园配套基础设施建设二期项目(内环路停车场)",
+      "publicity_period": "2025年08月22日 17时30分至2025年08月25日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北夷顺路桥有限公司",
+          "price": "1201815.45"
+        },
+        {
+          "bidder": "湖北越智建设工程有限责任公司",
+          "price": "1163426.06"
+        },
+        {
+          "bidder": "湖北河泽水利水电工程有限公司",
+          "price": "1175358.01"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250822/f312cb21-34e3-42ab-a37c-57befc3a47e6.html"
+    },
+    "raw_data": {
+      "title": "青宜产业园配套基础设施建设二期项目(内环路停车场)中标候选人公示",
+      "infodate": "2025-08-22"
+    }
   }
 ]
