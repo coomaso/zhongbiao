@@ -8264,5 +8264,40 @@
       "title": "三峡坝区沥青砼站项目中标候选人公示",
       "infodate": "2025-08-27"
     }
+  },
+  {
+    "infoid": "31b3ebfd-b749-4c3e-be9b-3253e1c945c5",
+    "infourl": "/jyxx/003001/003001004/20250827/31b3ebfd-b749-4c3e-be9b-3253e1c945c5.html",
+    "parsed_data": {
+      "project_name": "绿道慢行系统连通工程",
+      "publicity_period": "2025年08月27日 17时30分至2025年09月01日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北博霖建设工程有限公司",
+          "price": "15150365.57"
+        },
+        {
+          "bidder": "友焜建工集团有限公司",
+          "price": "15073155.56"
+        },
+        {
+          "bidder": "湖北国华建设工程有限公司",
+          "price": "15235706.22"
+        },
+        {
+          "bidder": "湖北晟弘建设工程有限公司",
+          "price": "15260284.58"
+        },
+        {
+          "bidder": "湖北宜坤建设有限公司",
+          "price": "15124631.72"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/31b3ebfd-b749-4c3e-be9b-3253e1c945c5.html"
+    },
+    "raw_data": {
+      "title": "绿道慢行系统连通工程中标候选人公示",
+      "infodate": "2025-08-27"
+    }
   }
 ]
