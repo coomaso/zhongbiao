@@ -8299,5 +8299,86 @@
       "title": "绿道慢行系统连通工程中标候选人公示",
       "infodate": "2025-08-27"
     }
+  },
+  {
+    "infoid": "11aa582a-0f08-4218-bfbc-19ab7070df52",
+    "infourl": "/jyxx/003001/003001004/20250827/11aa582a-0f08-4218-bfbc-19ab7070df52.html",
+    "parsed_data": {
+      "project_name": "远安县城中片区老旧小区改造工程（五期）四标段",
+      "publicity_period": "2025年08月27日 18时00分至2025年08月30日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "2219636.67"
+        },
+        {
+          "bidder": "湖北昌磊建设工程有限公司",
+          "price": "2217850.63"
+        },
+        {
+          "bidder": "宜昌东阳建设工程有限公司",
+          "price": "2187348.29"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/11aa582a-0f08-4218-bfbc-19ab7070df52.html"
+    },
+    "raw_data": {
+      "title": "远安县城中片区老旧小区改造工程（五期）四标段中标候选人公示",
+      "infodate": "2025-08-27"
+    }
+  },
+  {
+    "infoid": "e5a2a40d-1a11-406d-ba06-bb2f7944911d",
+    "infourl": "/jyxx/003001/003001004/20250827/e5a2a40d-1a11-406d-ba06-bb2f7944911d.html",
+    "parsed_data": {
+      "project_name": "远安县城中片区老旧小区改造工程（五期）五标段",
+      "publicity_period": "2025年08月27日 18时00分至2025年08月30日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "1541739.31"
+        },
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "1548209.66"
+        },
+        {
+          "bidder": "湖北昌磊建设工程有限公司",
+          "price": "1526348.76"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/e5a2a40d-1a11-406d-ba06-bb2f7944911d.html"
+    },
+    "raw_data": {
+      "title": "远安县城中片区老旧小区改造工程（五期）五标段中标候选人公示",
+      "infodate": "2025-08-27"
+    }
+  },
+  {
+    "infoid": "9b4823cd-ade0-47d6-a084-818cc7f053f2",
+    "infourl": "/jyxx/003001/003001004/20250827/9b4823cd-ade0-47d6-a084-818cc7f053f2.html",
+    "parsed_data": {
+      "project_name": "远安县城中片区老旧小区改造工程（五期）三标段",
+      "publicity_period": "2025年08月27日 18时00分至2025年08月30日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "1704068.16"
+        },
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "1690203.39"
+        },
+        {
+          "bidder": "宜昌东阳建设工程有限公司",
+          "price": "1697126.73"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/9b4823cd-ade0-47d6-a084-818cc7f053f2.html"
+    },
+    "raw_data": {
+      "title": "远安县城中片区老旧小区改造工程（五期）三标段中标候选人公示",
+      "infodate": "2025-08-27"
+    }
   }
 ]
