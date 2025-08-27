@@ -8237,5 +8237,32 @@
       "title": "夷陵区城市更新项目(丁家坝污水处理厂扩容及配套管网改造）施工中标候选人公示",
       "infodate": "2025-08-27"
     }
+  },
+  {
+    "infoid": "b7e663f1-112a-4d4e-9ad5-dcdbdc7d8040",
+    "infourl": "/jyxx/003001/003001004/20250827/b7e663f1-112a-4d4e-9ad5-dcdbdc7d8040.html",
+    "parsed_data": {
+      "project_name": "三峡坝区沥青砼站项目",
+      "publicity_period": "2025年08月27日 17时30分至2025年09月01日 12时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌诚祥建筑工程有限公司",
+          "price": "18814904.66"
+        },
+        {
+          "bidder": "兴山华鼎建筑工程有限公司",
+          "price": "18774208.86"
+        },
+        {
+          "bidder": "湖北鄂武建工集团有限公司",
+          "price": "18882781.50"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/b7e663f1-112a-4d4e-9ad5-dcdbdc7d8040.html"
+    },
+    "raw_data": {
+      "title": "三峡坝区沥青砼站项目中标候选人公示",
+      "infodate": "2025-08-27"
+    }
   }
 ]
