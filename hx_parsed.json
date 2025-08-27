@@ -8183,5 +8183,59 @@
       "title": "宜昌市伍家岗区共勤村安置房项目施工中标候选人公示",
       "infodate": "2025-08-27"
     }
+  },
+  {
+    "infoid": "8e8912ec-cfbb-4b89-9bc1-129f59369730",
+    "infourl": "/jyxx/003001/003001004/20250827/8e8912ec-cfbb-4b89-9bc1-129f59369730.html",
+    "parsed_data": {
+      "project_name": "伍家岗区新能源充电桩及配套基础设施项目（一标段）",
+      "publicity_period": "2025年08月27日 17时00分至2025年09月01日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北超越建设有限公司",
+          "price": "15186687.32"
+        },
+        {
+          "bidder": "宜昌市江星电气机械有限公司",
+          "price": "14765954.45"
+        },
+        {
+          "bidder": "海南威特送变电工程有限公司",
+          "price": "14630383.03"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/8e8912ec-cfbb-4b89-9bc1-129f59369730.html"
+    },
+    "raw_data": {
+      "title": "伍家岗区新能源充电桩及配套基础设施项目（一标段）中标候选人公示",
+      "infodate": "2025-08-27"
+    }
+  },
+  {
+    "infoid": "0aed5d8d-bd03-49f8-852b-be660bf5ed7f",
+    "infourl": "/jyxx/003001/003001004/20250827/0aed5d8d-bd03-49f8-852b-be660bf5ed7f.html",
+    "parsed_data": {
+      "project_name": "夷陵区城市更新项目(丁家坝污水处理厂扩容及配套管网改造）施工",
+      "publicity_period": "2025年08月27日 17时00分至2025年09月01日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌拥江建设工程有限公司",
+          "price": "42508302.32"
+        },
+        {
+          "bidder": "中核二二（宜昌）建设有限公司",
+          "price": "42726688.70"
+        },
+        {
+          "bidder": "中国一冶集团有限公司",
+          "price": "42081751.34"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250827/0aed5d8d-bd03-49f8-852b-be660bf5ed7f.html"
+    },
+    "raw_data": {
+      "title": "夷陵区城市更新项目(丁家坝污水处理厂扩容及配套管网改造）施工中标候选人公示",
+      "infodate": "2025-08-27"
+    }
   }
 ]
