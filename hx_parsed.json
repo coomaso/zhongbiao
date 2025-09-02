@@ -9268,5 +9268,86 @@
       "title": "宜昌市西陵区2025年老旧小区改造工程监理中标候选人公示",
       "infodate": "2025-09-02"
     }
+  },
+  {
+    "infoid": "15c1a046-f925-497e-bd33-c7ae106b6f5d",
+    "infourl": "/jyxx/003001/003001004/20250902/15c1a046-f925-497e-bd33-c7ae106b6f5d.html",
+    "parsed_data": {
+      "project_name": "远安县嫘祖镇茶产业配套设施建设项目",
+      "publicity_period": "2025年09月02日 18时00分至2025年09月05日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北昌磊建设工程有限公司",
+          "price": "5265815.50"
+        },
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "5283225.62"
+        },
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "5260345.82"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250902/15c1a046-f925-497e-bd33-c7ae106b6f5d.html"
+    },
+    "raw_data": {
+      "title": "远安县嫘祖镇茶产业配套设施建设项目中标候选人公示",
+      "infodate": "2025-09-02"
+    }
+  },
+  {
+    "infoid": "51b35bd9-374d-4a8c-9b92-fb467f629880",
+    "infourl": "/jyxx/003001/003001004/20250902/51b35bd9-374d-4a8c-9b92-fb467f629880.html",
+    "parsed_data": {
+      "project_name": "宜都市县域充换电设施补短板建设项目",
+      "publicity_period": "2025年09月02日 18时00分至2025年09月05日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "友焜建工集团有限公司",
+          "price": "28052702.58"
+        },
+        {
+          "bidder": "辉阳集团有限公司",
+          "price": "28030554.67"
+        },
+        {
+          "bidder": "湖北夷昊建设工程有限公司",
+          "price": "27030378.83"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250902/51b35bd9-374d-4a8c-9b92-fb467f629880.html"
+    },
+    "raw_data": {
+      "title": "宜都市县域充换电设施补短板建设项目中标候选人公示",
+      "infodate": "2025-09-02"
+    }
+  },
+  {
+    "infoid": "4f7c8d25-c398-43b9-96e6-9921e117685f",
+    "infourl": "/jyxx/003001/003001004/20250902/4f7c8d25-c398-43b9-96e6-9921e117685f.html",
+    "parsed_data": {
+      "project_name": "沮漳河流域系统治理工程（当阳段）监理",
+      "publicity_period": "2025年09月02日 18时00分至2025年09月05日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市水利水电勘察设计院有限公司",
+          "price": "622100.00"
+        },
+        {
+          "bidder": "湖北鑫宜能工程咨询有限公司",
+          "price": "619000.00"
+        },
+        {
+          "bidder": "湖北振信工程咨询有限公司",
+          "price": "625800.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250902/4f7c8d25-c398-43b9-96e6-9921e117685f.html"
+    },
+    "raw_data": {
+      "title": "沮漳河流域系统治理工程（当阳段）监理中标候选人公示",
+      "infodate": "2025-09-02"
+    }
   }
 ]
