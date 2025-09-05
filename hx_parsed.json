@@ -9681,5 +9681,32 @@
       "title": "宜都市“城市管家”一体化项目中标候选人公示",
       "infodate": "2025-09-04"
     }
+  },
+  {
+    "infoid": "c08a41e8-fdfe-471a-aa4a-ddd4996b48b2",
+    "infourl": "/jyxx/003001/003001004/20250905/c08a41e8-fdfe-471a-aa4a-ddd4996b48b2.html",
+    "parsed_data": {
+      "project_name": "枝江市中医医院医养结合中心大楼建设项目监理单位招标",
+      "publicity_period": "2025年09月05日 14时30分至2025年09月08日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北楚元工程建设咨询有限公司",
+          "price": "900000.00"
+        },
+        {
+          "bidder": "中基华工程管理集团有限公司",
+          "price": "887666.00"
+        },
+        {
+          "bidder": "湖北新天地工程建设监理有限责任公司",
+          "price": "963349.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250905/c08a41e8-fdfe-471a-aa4a-ddd4996b48b2.html"
+    },
+    "raw_data": {
+      "title": "枝江市中医医院医养结合中心大楼建设项目监理单位招标中标候选人公示",
+      "infodate": "2025-09-05"
+    }
   }
 ]
