@@ -11650,5 +11650,32 @@
       "title": "长阳土家族自治县集中式饮用水水源地保护工程中标候选人公示",
       "infodate": "2025-09-19"
     }
+  },
+  {
+    "infoid": "2195a58c-cdaf-46c7-ab35-12eaee099d60",
+    "infourl": "/jyxx/003001/003001004/20250919/2195a58c-cdaf-46c7-ab35-12eaee099d60.html",
+    "parsed_data": {
+      "project_name": "远安某建设项目110KV输变电工程设计",
+      "publicity_period": "2025年09月19日 23时59分至2025年09月23日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌电力勘测设计院有限公司",
+          "price": "4000000.00"
+        },
+        {
+          "bidder": "湖北省电力规划设计研究院有限公司",
+          "price": "4536000.00"
+        },
+        {
+          "bidder": "杭州鸿晟电力设计咨询有限公司",
+          "price": "4080000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250919/2195a58c-cdaf-46c7-ab35-12eaee099d60.html"
+    },
+    "raw_data": {
+      "title": "远安某建设项目110KV输变电工程设计中标候选人公示",
+      "infodate": "2025-09-19"
+    }
   }
 ]
