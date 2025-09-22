@@ -11677,5 +11677,32 @@
       "title": "远安某建设项目110KV输变电工程设计中标候选人公示",
       "infodate": "2025-09-19"
     }
+  },
+  {
+    "infoid": "0f2ddb82-fe7d-4c0a-b293-a703e5819cdb",
+    "infourl": "/jyxx/003001/003001004/20250922/0f2ddb82-fe7d-4c0a-b293-a703e5819cdb.html",
+    "parsed_data": {
+      "project_name": "宜昌市伍家岗片区饮水质量提升项目（直饮水设备采购及安装）",
+      "publicity_period": "2025年09月22日 12时00分至2025年09月25日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北轩升建设工程有限公司",
+          "price": "下浮率3.0%"
+        },
+        {
+          "bidder": "湖北世悟建设工程有限公司",
+          "price": "下浮2.6%"
+        },
+        {
+          "bidder": "宜昌拥江建设工程有限公司",
+          "price": "下浮率为2.5%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250922/0f2ddb82-fe7d-4c0a-b293-a703e5819cdb.html"
+    },
+    "raw_data": {
+      "title": "宜昌市伍家岗片区饮水质量提升项目（直饮水设备采购及安装）中标候选人公示",
+      "infodate": "2025-09-22"
+    }
   }
 ]
