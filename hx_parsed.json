@@ -12179,5 +12179,59 @@
       "title": "宜昌市伍家岗区共勤村安置房项目检测中标候选人公示",
       "infodate": "2025-09-24"
     }
+  },
+  {
+    "infoid": "e2b4eec9-5b71-4f01-993d-2e63c549d0af",
+    "infourl": "/jyxx/003001/003001004/20250924/e2b4eec9-5b71-4f01-993d-2e63c549d0af.html",
+    "parsed_data": {
+      "project_name": "兴山县养老院项目(厨房装修)",
+      "publicity_period": "2025年09月24日 17时30分至2025年09月28日 12时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北泓博锐建设工程有限公司",
+          "price": "631446.59"
+        },
+        {
+          "bidder": "湖北宇梦建设工程有限公司",
+          "price": "628066.85"
+        },
+        {
+          "bidder": "宜昌永舜建设工程有限公司",
+          "price": "621452.69"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250924/e2b4eec9-5b71-4f01-993d-2e63c549d0af.html"
+    },
+    "raw_data": {
+      "title": "兴山县养老院项目(厨房装修)中标候选人公示",
+      "infodate": "2025-09-24"
+    }
+  },
+  {
+    "infoid": "ff8f5ed3-3d57-4720-87f3-a0f3c2a0a09a",
+    "infourl": "/jyxx/003001/003001004/20250924/ff8f5ed3-3d57-4720-87f3-a0f3c2a0a09a.html",
+    "parsed_data": {
+      "project_name": "中石化湖北化肥分公司厂区南部地块土壤修复工程-修复施工单位采购",
+      "publicity_period": "2025年09月24日 17时30分至2025年09月28日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "上海建工环境科技有限公司",
+          "price": "13982762.11"
+        },
+        {
+          "bidder": "山东凯利华建工集团有限公司",
+          "price": "14751957.50"
+        },
+        {
+          "bidder": "武汉棕地生态环保科技有限公司",
+          "price": "15010061.88"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250924/ff8f5ed3-3d57-4720-87f3-a0f3c2a0a09a.html"
+    },
+    "raw_data": {
+      "title": "中石化湖北化肥分公司厂区南部地块土壤修复工程-修复施工单位采购中标候选人公示",
+      "infodate": "2025-09-24"
+    }
   }
 ]
