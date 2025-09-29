@@ -13639,5 +13639,59 @@
       "title": "宜昌市西陵区2025年东山片区老旧小区改造工程设计中标候选人公示",
       "infodate": "2025-09-29"
     }
+  },
+  {
+    "infoid": "abed88ed-4ed0-429d-ba03-4c7641dceebc",
+    "infourl": "/jyxx/003001/003001004/20250929/abed88ed-4ed0-429d-ba03-4c7641dceebc.html",
+    "parsed_data": {
+      "project_name": "湖北省兴山县高岚河治理工程勘察设计服务",
+      "publicity_period": "2025年09月29日 17时30分至2025年10月09日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市水利水电勘察设计院有限公司",
+          "price": "2.65%"
+        },
+        {
+          "bidder": "荆门市水利勘察设计院有限责任公司",
+          "price": "2.69%"
+        },
+        {
+          "bidder": "湖北金浪勘察设计有限公司",
+          "price": "2.60%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250929/abed88ed-4ed0-429d-ba03-4c7641dceebc.html"
+    },
+    "raw_data": {
+      "title": "湖北省兴山县高岚河治理工程勘察设计服务中标候选人公示",
+      "infodate": "2025-09-29"
+    }
+  },
+  {
+    "infoid": "ae7b3401-f2e9-4564-b732-e001c9602dee",
+    "infourl": "/jyxx/003001/003001004/20250929/ae7b3401-f2e9-4564-b732-e001c9602dee.html",
+    "parsed_data": {
+      "project_name": "长阳土家族自治县2025年老旧小区改造及配套设施建设工程补短板项目施工图设计",
+      "publicity_period": "2025年09月29日 17时30分至2025年10月09日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "重庆银桥工程设计（集团）有限公司",
+          "price": "1500000.00"
+        },
+        {
+          "bidder": "中联合创设计有限公司",
+          "price": "1518000.00"
+        },
+        {
+          "bidder": "中叙设计集团有限公司",
+          "price": "1481000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250929/ae7b3401-f2e9-4564-b732-e001c9602dee.html"
+    },
+    "raw_data": {
+      "title": "长阳土家族自治县2025年老旧小区改造及配套设施建设工程补短板项目施工图设计中标候选人公示",
+      "infodate": "2025-09-29"
+    }
   }
 ]
