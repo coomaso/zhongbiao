@@ -13909,5 +13909,59 @@
       "title": "宜都市陆城、环城污水处理厂设施设备更新项目中标候选人公示",
       "infodate": "2025-09-30"
     }
+  },
+  {
+    "infoid": "0eb57eb6-93ea-46fa-9eb0-ef4a1ad259b7",
+    "infourl": "/jyxx/003001/003001004/20250930/0eb57eb6-93ea-46fa-9eb0-ef4a1ad259b7.html",
+    "parsed_data": {
+      "project_name": "枝江市城西片区污水管网新建及改造项目（一期）监理单位采购",
+      "publicity_period": "2025年09月30日 17时00分至2025年10月09日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北建盛工程项目管理有限公司",
+          "price": "530000.00"
+        },
+        {
+          "bidder": "建基工程咨询有限公司",
+          "price": "510000.00"
+        },
+        {
+          "bidder": "高达建设管理发展有限责任公司",
+          "price": "496000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250930/0eb57eb6-93ea-46fa-9eb0-ef4a1ad259b7.html"
+    },
+    "raw_data": {
+      "title": "枝江市城西片区污水管网新建及改造项目（一期）监理单位采购中标候选人公示",
+      "infodate": "2025-09-30"
+    }
+  },
+  {
+    "infoid": "ad337166-e096-4855-ba02-930edef5e835",
+    "infourl": "/jyxx/003001/003001004/20250930/ad337166-e096-4855-ba02-930edef5e835.html",
+    "parsed_data": {
+      "project_name": "远景动力智能锂电池宜昌智能产业园项目监理",
+      "publicity_period": "2025年09月30日 17时00分至2025年10月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北中业宏工程咨询有限公司",
+          "price": "1978000.00"
+        },
+        {
+          "bidder": "湖北清江工程管理咨询有限公司",
+          "price": "2186000.00"
+        },
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "1827638.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20250930/ad337166-e096-4855-ba02-930edef5e835.html"
+    },
+    "raw_data": {
+      "title": "远景动力智能锂电池宜昌智能产业园项目监理中标候选人公示",
+      "infodate": "2025-09-30"
+    }
   }
 ]
