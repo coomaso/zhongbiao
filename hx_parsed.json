@@ -14403,5 +14403,32 @@
       "title": "废盐回收综合利用年产30万吨烧碱项目一期工程中标候选人公示",
       "infodate": "2025-10-10"
     }
+  },
+  {
+    "infoid": "a263dc4c-db49-4ae4-8eaa-886ec287326e",
+    "infourl": "/jyxx/003001/003001004/20251010/a263dc4c-db49-4ae4-8eaa-886ec287326e.html",
+    "parsed_data": {
+      "project_name": "宜都市枝城东片区管廊及配套设施项目施工",
+      "publicity_period": "2025年10月10日 16时30分至2025年10月13日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "武汉雅阁市政建设工程有限公司",
+          "price": "96658256.73"
+        },
+        {
+          "bidder": "中国化学工程第十六建设有限公司",
+          "price": "96510839.63"
+        },
+        {
+          "bidder": "中国化学工程第十四建设有限公司",
+          "price": "96805117.76"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251010/a263dc4c-db49-4ae4-8eaa-886ec287326e.html"
+    },
+    "raw_data": {
+      "title": "宜都市枝城东片区管廊及配套设施项目施工中标候选人公示",
+      "infodate": "2025-10-10"
+    }
   }
 ]
