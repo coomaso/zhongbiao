@@ -14940,5 +14940,59 @@
       "title": "宜昌市猇亭区桃子冲物流中心项目监理中标候选人公示",
       "infodate": "2025-10-11"
     }
+  },
+  {
+    "infoid": "b28eedec-f715-45fc-a5f4-440ddaad575f",
+    "infourl": "/jyxx/003001/003001004/20251011/b28eedec-f715-45fc-a5f4-440ddaad575f.html",
+    "parsed_data": {
+      "project_name": "当阳市中心城区防涝能力提升项目（熊家山路）移动、电信、广电、联通通信光缆及管线迁改工程(第2次招标)",
+      "publicity_period": "2025年10月11日 18时00分至2025年10月15日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "武汉德唯尔科技有限公司",
+          "price": "1156523.39"
+        },
+        {
+          "bidder": "湖北中益瑞建设工程有限公司",
+          "price": "1132798.30"
+        },
+        {
+          "bidder": "浩宸建设科技股份有限公司",
+          "price": "1174255.39"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251011/b28eedec-f715-45fc-a5f4-440ddaad575f.html"
+    },
+    "raw_data": {
+      "title": "当阳市中心城区防涝能力提升项目（熊家山路）移动、电信、广电、联通通信光缆及管线迁改工程(第2次招标)中标候选人公示",
+      "infodate": "2025-10-11"
+    }
+  },
+  {
+    "infoid": "4b139edd-cd48-48bd-bf54-951af347045b",
+    "infourl": "/jyxx/003001/003001004/20251011/4b139edd-cd48-48bd-bf54-951af347045b.html",
+    "parsed_data": {
+      "project_name": "G348宜昌市夷陵区境安全设施精细化提升工程",
+      "publicity_period": "2025年10月11日 18时00分至2025年10月14日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "远安县兴路养护有限公司",
+          "price": "11764819.24"
+        },
+        {
+          "bidder": "宜昌弘夷公路养护工程有限责任公司",
+          "price": "11358286.56"
+        },
+        {
+          "bidder": "湖北瑞得建设有限责任公司",
+          "price": "11505818.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251011/4b139edd-cd48-48bd-bf54-951af347045b.html"
+    },
+    "raw_data": {
+      "title": "G348宜昌市夷陵区境安全设施精细化提升工程中标候选人公示",
+      "infodate": "2025-10-11"
+    }
   }
 ]
