@@ -15554,5 +15554,59 @@
       "title": "湖北省高岚河幸福河湖建设项目一期监理中标候选人公示",
       "infodate": "2025-10-14"
     }
+  },
+  {
+    "infoid": "7cef62e7-7519-4ada-bd92-c7c073678060",
+    "infourl": "/jyxx/003001/003001004/20251014/7cef62e7-7519-4ada-bd92-c7c073678060.html",
+    "parsed_data": {
+      "project_name": "秭归县周坪河生态清洁小流域建设项目",
+      "publicity_period": "2025年10月14日 16时00分至2025年10月17日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌金利水利水电工程有限公司",
+          "price": "4421416.69"
+        },
+        {
+          "bidder": "湖北昊源建设工程有限公司",
+          "price": "4420332.09"
+        },
+        {
+          "bidder": "宜昌市东风水利水电工程建设有限公司",
+          "price": "4417750.35"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251014/7cef62e7-7519-4ada-bd92-c7c073678060.html"
+    },
+    "raw_data": {
+      "title": "秭归县周坪河生态清洁小流域建设项目中标候选人公示",
+      "infodate": "2025-10-14"
+    }
+  },
+  {
+    "infoid": "902740b4-60ac-4821-a2be-9efbb0be2c32",
+    "infourl": "/jyxx/003001/003001004/20251014/902740b4-60ac-4821-a2be-9efbb0be2c32.html",
+    "parsed_data": {
+      "project_name": "原葛洲坝中学老校区改建高中项目1标段施工",
+      "publicity_period": "2025年10月14日 16时00分至2025年10月17日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中国化学工程第十六建设有限公司",
+          "price": "9826645.94"
+        },
+        {
+          "bidder": "湖北恒诚建设有限公司",
+          "price": "9756810.63"
+        },
+        {
+          "bidder": "湖北筑禾建设有限公司",
+          "price": "10121351.92"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251014/902740b4-60ac-4821-a2be-9efbb0be2c32.html"
+    },
+    "raw_data": {
+      "title": "原葛洲坝中学老校区改建高中项目1标段施工中标候选人公示",
+      "infodate": "2025-10-14"
+    }
   }
 ]
