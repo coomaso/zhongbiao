@@ -16075,5 +16075,59 @@
       "title": "伍家岗区新能源充电桩及配套基础设施项目监理中标候选人公示",
       "infodate": "2025-10-16"
     }
+  },
+  {
+    "infoid": "db38297c-1b7c-4055-93b5-212d024423ee",
+    "infourl": "/jyxx/003001/003001004/20251016/db38297c-1b7c-4055-93b5-212d024423ee.html",
+    "parsed_data": {
+      "project_name": "金亚· 时光序项目10KV配电工程",
+      "publicity_period": "2025年10月16日 17时00分至2025年10月19日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北智谦成安装工程有限公司",
+          "price": "15060278.95"
+        },
+        {
+          "bidder": "宜昌昌耀电业集团有限公司",
+          "price": "14870090.97元"
+        },
+        {
+          "bidder": "宜昌光源电业有限责任公司",
+          "price": "15057016.4元"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251016/db38297c-1b7c-4055-93b5-212d024423ee.html"
+    },
+    "raw_data": {
+      "title": "金亚· 时光序项目10KV配电工程中标候选人公示",
+      "infodate": "2025-10-16"
+    }
+  },
+  {
+    "infoid": "ec5551e0-75bd-4ad3-b0a6-971e9f1d509d",
+    "infourl": "/jyxx/003001/003001004/20251016/ec5551e0-75bd-4ad3-b0a6-971e9f1d509d.html",
+    "parsed_data": {
+      "project_name": "枝江城市APP底座项目建设单位采购",
+      "publicity_period": "2025年10月16日 17时00分至2025年10月21日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "南京大数据集团有限公司",
+          "price": "2988000.00"
+        },
+        {
+          "bidder": "郑州云智信安安全技术有限公司",
+          "price": "2870000.00"
+        },
+        {
+          "bidder": "浙江浙大网新软件产业集团有限公司",
+          "price": "2995000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251016/ec5551e0-75bd-4ad3-b0a6-971e9f1d509d.html"
+    },
+    "raw_data": {
+      "title": "枝江城市APP底座项目建设单位采购中标候选人公示",
+      "infodate": "2025-10-16"
+    }
   }
 ]
