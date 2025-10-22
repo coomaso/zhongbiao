@@ -17576,5 +17576,59 @@
       "title": "远安县中心城区雨水管网修复改造工程（二期）中标候选人公示",
       "infodate": "2025-10-22"
     }
+  },
+  {
+    "infoid": "c64d0ed0-c9a1-43ab-b577-48fcd2f18a28",
+    "infourl": "/jyxx/003001/003001004/20251022/c64d0ed0-c9a1-43ab-b577-48fcd2f18a28.html",
+    "parsed_data": {
+      "project_name": "2025年枝江市百里洲镇滨湖高标准农田项目（1标段）",
+      "publicity_period": "2025年10月22日 18时30分至2025年10月27日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "四川省君源水电建设有限公司",
+          "price": "88.628%"
+        },
+        {
+          "bidder": "兴山宏业建筑工程有限责任公司",
+          "price": "88.666%"
+        },
+        {
+          "bidder": "宜昌吉顺建设工程有限公司",
+          "price": "88.698%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251022/c64d0ed0-c9a1-43ab-b577-48fcd2f18a28.html"
+    },
+    "raw_data": {
+      "title": "2025年枝江市百里洲镇滨湖高标准农田项目（1标段）中标候选人公示",
+      "infodate": "2025-10-22"
+    }
+  },
+  {
+    "infoid": "c9cacd86-696a-476e-bb01-10c3226fb5c7",
+    "infourl": "/jyxx/003001/003001004/20251022/c9cacd86-696a-476e-bb01-10c3226fb5c7.html",
+    "parsed_data": {
+      "project_name": "2025年枝江市百里洲镇滨湖高标准农田项目（5标段）",
+      "publicity_period": "2025年10月22日 18时25分至2025年10月27日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北锦烨盛建设有限公司",
+          "price": "88.481%"
+        },
+        {
+          "bidder": "四川省君源水电建设有限公司",
+          "price": "88.496%"
+        },
+        {
+          "bidder": "湖北宜顺建设工程有限公司",
+          "price": "88.523%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251022/c9cacd86-696a-476e-bb01-10c3226fb5c7.html"
+    },
+    "raw_data": {
+      "title": "2025年枝江市百里洲镇滨湖高标准农田项目（5标段）中标候选人公示",
+      "infodate": "2025-10-22"
+    }
   }
 ]
