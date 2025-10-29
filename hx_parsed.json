@@ -19020,5 +19020,59 @@
       "title": "宜都市2025年农村公路次差路路面改善工程中标候选人公示",
       "infodate": "2025-10-29"
     }
+  },
+  {
+    "infoid": "228bb73a-5671-4361-b848-de3c4564bde9",
+    "infourl": "/jyxx/003001/003001004/20251029/228bb73a-5671-4361-b848-de3c4564bde9.html",
+    "parsed_data": {
+      "project_name": "湖北秭归抽水蓄能电站G348松树坳至兰陵溪段改线工程",
+      "publicity_period": "2025年10月29日 17时30分至2025年11月03日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌富强工程有限责任公司",
+          "price": "72954688.88"
+        },
+        {
+          "bidder": "中铁十一局集团有限公司",
+          "price": "74479263.03"
+        },
+        {
+          "bidder": "四川公路桥梁建设集团有限公司",
+          "price": "74800898.29"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251029/228bb73a-5671-4361-b848-de3c4564bde9.html"
+    },
+    "raw_data": {
+      "title": "湖北秭归抽水蓄能电站G348松树坳至兰陵溪段改线工程中标候选人公示",
+      "infodate": "2025-10-29"
+    }
+  },
+  {
+    "infoid": "a490c7a1-d0c9-4c51-8da4-9ca4c643b18c",
+    "infourl": "/jyxx/003001/003001004/20251029/a490c7a1-d0c9-4c51-8da4-9ca4c643b18c.html",
+    "parsed_data": {
+      "project_name": "宜昌市伍家岗片区饮水质量提升项目方案及施工图设计",
+      "publicity_period": "2025年10月29日 17时00分至2025年11月03日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中诺宏盛设计集团有限公司",
+          "price": "400000.00"
+        },
+        {
+          "bidder": "武汉市给排水工程设计院有限公司",
+          "price": "395000.00"
+        },
+        {
+          "bidder": "浙江天然城建设计有限公司",
+          "price": "380000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251029/a490c7a1-d0c9-4c51-8da4-9ca4c643b18c.html"
+    },
+    "raw_data": {
+      "title": "宜昌市伍家岗片区饮水质量提升项目方案及施工图设计中标候选人公示",
+      "infodate": "2025-10-29"
+    }
   }
 ]
