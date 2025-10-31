@@ -19572,5 +19572,59 @@
       "title": "“数智夷陵”建设项目EPC中标候选人公示",
       "infodate": "2025-10-31"
     }
+  },
+  {
+    "infoid": "5ab62d23-e967-410b-aacf-19f95b39a685",
+    "infourl": "/jyxx/003001/003001004/20251031/5ab62d23-e967-410b-aacf-19f95b39a685.html",
+    "parsed_data": {
+      "project_name": "夷陵区城区智慧路灯升级改造项目",
+      "publicity_period": "2025年10月31日 18时00分至2025年11月03日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "江苏天煌照明集团有限公司",
+          "price": "26649093.98"
+        },
+        {
+          "bidder": "诺尔智能科技集团有限公司",
+          "price": "26340494.57"
+        },
+        {
+          "bidder": "江苏迪生建设集团有限公司",
+          "price": "26929579.68"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251031/5ab62d23-e967-410b-aacf-19f95b39a685.html"
+    },
+    "raw_data": {
+      "title": "夷陵区城区智慧路灯升级改造项目中标候选人公示",
+      "infodate": "2025-10-31"
+    }
+  },
+  {
+    "infoid": "02151e89-e81b-4e16-a2c5-be1d6d326997",
+    "infourl": "/jyxx/003001/003001004/20251031/02151e89-e81b-4e16-a2c5-be1d6d326997.html",
+    "parsed_data": {
+      "project_name": "兴山县城香溪河左岸城市地下管网建设改造项目（麦仓片区）(一期)",
+      "publicity_period": "2025年10月31日 18时00分至2025年11月04日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北鑫盛宏峰建设有限公司",
+          "price": "7913728.69"
+        },
+        {
+          "bidder": "宜昌誉博建设工程有限公司",
+          "price": "7935818.60"
+        },
+        {
+          "bidder": "湖北宇梦建设工程有限公司",
+          "price": "7934107.40"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251031/02151e89-e81b-4e16-a2c5-be1d6d326997.html"
+    },
+    "raw_data": {
+      "title": "兴山县城香溪河左岸城市地下管网建设改造项目（麦仓片区）(一期)中标候选人公示",
+      "infodate": "2025-10-31"
+    }
   }
 ]
