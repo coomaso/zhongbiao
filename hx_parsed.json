@@ -20039,5 +20039,32 @@
       "title": "三峡建材物流园项目工程总承包（EPC）中标候选人公示",
       "infodate": "2025-11-05"
     }
+  },
+  {
+    "infoid": "3d26a888-b8f3-48de-bccd-1eb9db68e536",
+    "infourl": "/jyxx/003001/003001004/20251105/3d26a888-b8f3-48de-bccd-1eb9db68e536.html",
+    "parsed_data": {
+      "project_name": "西陵区2025年城市危旧房改造配套基础设施建设项目施工",
+      "publicity_period": "2025年11月05日 15时00分至2025年11月10日 09时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "56883625.64"
+        },
+        {
+          "bidder": "湖北联诺建设有限公司",
+          "price": "57320004.76"
+        },
+        {
+          "bidder": "坤发建筑有限公司、宜昌市宜星市政建设有限公司联合体",
+          "price": "56470157.65"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251105/3d26a888-b8f3-48de-bccd-1eb9db68e536.html"
+    },
+    "raw_data": {
+      "title": "西陵区2025年城市危旧房改造配套基础设施建设项目施工中标候选人公示",
+      "infodate": "2025-11-05"
+    }
   }
 ]
