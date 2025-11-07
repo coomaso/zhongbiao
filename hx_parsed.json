@@ -20390,5 +20390,32 @@
       "title": "远安县凤祥·凤城二期建设项目-安防工程中标候选人公示",
       "infodate": "2025-11-06"
     }
+  },
+  {
+    "infoid": "f307398e-2f5d-4cf5-a843-a7ec11c4118e",
+    "infourl": "/jyxx/003001/003001004/20251107/f307398e-2f5d-4cf5-a843-a7ec11c4118e.html",
+    "parsed_data": {
+      "project_name": "三峡建材物流园项目监理",
+      "publicity_period": "2025年11月07日 09时00分至2025年11月10日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "折扣率94.88%"
+        },
+        {
+          "bidder": "三峡大学（湖北）设计咨询研究院有限责任公司",
+          "price": "折扣率98.00%"
+        },
+        {
+          "bidder": "平安建设管理（湖北）有限公司",
+          "price": "折扣率98.56%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251107/f307398e-2f5d-4cf5-a843-a7ec11c4118e.html"
+    },
+    "raw_data": {
+      "title": "三峡建材物流园项目监理中标候选人公示",
+      "infodate": "2025-11-07"
+    }
   }
 ]
