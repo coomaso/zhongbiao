@@ -23027,5 +23027,59 @@
       "title": "高铁新城住宅项目(金亚·启宸上院)2#地块主体工程中标候选人公示",
       "infodate": "2025-11-25"
     }
+  },
+  {
+    "infoid": "22fc3ae3-3a1f-4f83-9392-4dfafb35b36e",
+    "infourl": "/jyxx/003001/003001004/20251126/22fc3ae3-3a1f-4f83-9392-4dfafb35b36e.html",
+    "parsed_data": {
+      "project_name": "长阳县城乡冷链物流园及其配套设施建设项目（3#楼~8#楼）第三方检测服务",
+      "publicity_period": "2025年11月26日 12时00分至2025年11月29日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北永祥检验检测技术服务有限公司",
+          "price": "4450000.00"
+        },
+        {
+          "bidder": "湖北建夷检验检测中心有限公司",
+          "price": "4200006.00"
+        },
+        {
+          "bidder": "湖北精睿建设工程检测有限公司",
+          "price": "4480880.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251126/22fc3ae3-3a1f-4f83-9392-4dfafb35b36e.html"
+    },
+    "raw_data": {
+      "title": "长阳县城乡冷链物流园及其配套设施建设项目（3#楼~8#楼）第三方检测服务中标候选人公示",
+      "infodate": "2025-11-26"
+    }
+  },
+  {
+    "infoid": "b98e6ebe-87d2-4436-9dee-07afea87643b",
+    "infourl": "/jyxx/003001/003001004/20251126/b98e6ebe-87d2-4436-9dee-07afea87643b.html",
+    "parsed_data": {
+      "project_name": "宜昌保障性租赁住房运营服务及配套设施建设项目(一期)第三批施工",
+      "publicity_period": "2025年11月26日 12时00分至2025年11月29日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北名邸建设有限公司",
+          "price": "6186516.76"
+        },
+        {
+          "bidder": "宜昌易盛建设有限公司",
+          "price": "5936780.02"
+        },
+        {
+          "bidder": "湖北品胜源建设有限公司",
+          "price": "6328368.87"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251126/b98e6ebe-87d2-4436-9dee-07afea87643b.html"
+    },
+    "raw_data": {
+      "title": "宜昌保障性租赁住房运营服务及配套设施建设项目(一期)第三批施工中标候选人公示",
+      "infodate": "2025-11-26"
+    }
   }
 ]
