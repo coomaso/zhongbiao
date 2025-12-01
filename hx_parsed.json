@@ -24208,5 +24208,59 @@
       "title": "宜昌市猇亭区2025年老旧小区改造项目（一期）中标候选人公示",
       "infodate": "2025-12-01"
     }
+  },
+  {
+    "infoid": "2b3dbd2c-d1d2-495a-a1ed-78f9e0eac398",
+    "infourl": "/jyxx/003001/003001004/20251202/2b3dbd2c-d1d2-495a-a1ed-78f9e0eac398.html",
+    "parsed_data": {
+      "project_name": "2025年兴山县黄粮镇石槽溪高标准农田项目（三标段）",
+      "publicity_period": "2025年12月02日 00时00分至2025年12月05日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北金华星建设工程有限公司",
+          "price": "4160711.24"
+        },
+        {
+          "bidder": "湖北众宇建设工程有限公司",
+          "price": "4212212.01"
+        },
+        {
+          "bidder": "湖北新阳市政工程有限公司",
+          "price": "4238074.17"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251202/2b3dbd2c-d1d2-495a-a1ed-78f9e0eac398.html"
+    },
+    "raw_data": {
+      "title": "2025年兴山县黄粮镇石槽溪高标准农田项目（三标段）中标候选人公示",
+      "infodate": "2025-12-02"
+    }
+  },
+  {
+    "infoid": "c2ea047c-e39b-49e3-9596-49b85ced29b3",
+    "infourl": "/jyxx/003001/003001004/20251202/c2ea047c-e39b-49e3-9596-49b85ced29b3.html",
+    "parsed_data": {
+      "project_name": "2025年兴山县黄粮镇石槽溪高标准农田项目（四标段）",
+      "publicity_period": "2025年12月02日 00时00分至2025年12月05日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌大兴水利水电工程有限公司",
+          "price": "4567092.80"
+        },
+        {
+          "bidder": "湖北宇梦建设工程有限公司",
+          "price": "4515538.78"
+        },
+        {
+          "bidder": "湖北博创顺通建设工程有限公司",
+          "price": "4497279.66"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251202/c2ea047c-e39b-49e3-9596-49b85ced29b3.html"
+    },
+    "raw_data": {
+      "title": "2025年兴山县黄粮镇石槽溪高标准农田项目（四标段）中标候选人公示",
+      "infodate": "2025-12-02"
+    }
   }
 ]
