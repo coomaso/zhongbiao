@@ -28952,5 +28952,59 @@
       "title": "猇亭产城融合示范区商业建设项目监理中标候选人公示",
       "infodate": "2025-12-26"
     }
+  },
+  {
+    "infoid": "8d4074c5-6756-45bb-bd8a-eacb54fd4199",
+    "infourl": "/jyxx/003001/003001004/20251226/8d4074c5-6756-45bb-bd8a-eacb54fd4199.html",
+    "parsed_data": {
+      "project_name": "枝江市鲈鱼产业发展示范试点项目（一期工程）设备采购(第2次招标)",
+      "publicity_period": "2025年12月26日 15时05分至2025年12月29日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北邦裕重工装备有限公司",
+          "price": "3985668.00"
+        },
+        {
+          "bidder": "宜昌长欣机电安装工程有限公司",
+          "price": "4109910.00"
+        },
+        {
+          "bidder": "湖北万兴建安有限公司",
+          "price": "4069524.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251226/8d4074c5-6756-45bb-bd8a-eacb54fd4199.html"
+    },
+    "raw_data": {
+      "title": "枝江市鲈鱼产业发展示范试点项目（一期工程）设备采购(第2次招标)中标候选人公示",
+      "infodate": "2025-12-26"
+    }
+  },
+  {
+    "infoid": "7829a080-44ff-4b2f-9382-e24d3cd6dec0",
+    "infourl": "/jyxx/003001/003001004/20251226/7829a080-44ff-4b2f-9382-e24d3cd6dec0.html",
+    "parsed_data": {
+      "project_name": "枝江市职业教育中心弱电采购项目",
+      "publicity_period": "2025年12月26日 15时00分至2025年12月29日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中国通信建设第三工程局有限公司",
+          "price": "45941859.78"
+        },
+        {
+          "bidder": "华信咨询设计研究院有限公司",
+          "price": "45890440.57"
+        },
+        {
+          "bidder": "湖北电信工程有限公司",
+          "price": "45990994.23"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20251226/7829a080-44ff-4b2f-9382-e24d3cd6dec0.html"
+    },
+    "raw_data": {
+      "title": "枝江市职业教育中心弱电采购项目中标候选人公示",
+      "infodate": "2025-12-26"
+    }
   }
 ]
