@@ -30044,5 +30044,86 @@
       "title": "当阳市坝陵化工园兴旺路建设项目EPC工程总承包中标候选人公示",
       "infodate": "2026-01-05"
     }
+  },
+  {
+    "infoid": "70bf0d95-2faa-4f56-af57-3761f58cce59",
+    "infourl": "/jyxx/003001/003001004/20260105/70bf0d95-2faa-4f56-af57-3761f58cce59.html",
+    "parsed_data": {
+      "project_name": "宜昌市百灵路（毓秀路-合益路）市政工程施工",
+      "publicity_period": "2026年01月05日 17时30分至2026年01月08日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北三峡路桥工程有限公司",
+          "price": "22988777.77"
+        },
+        {
+          "bidder": "湖北恒诚建设有限公司",
+          "price": "22990879.06"
+        },
+        {
+          "bidder": "信邦建设集团有限公司",
+          "price": "23012165.70"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260105/70bf0d95-2faa-4f56-af57-3761f58cce59.html"
+    },
+    "raw_data": {
+      "title": "宜昌市百灵路（毓秀路-合益路）市政工程施工中标候选人公示",
+      "infodate": "2026-01-05"
+    }
+  },
+  {
+    "infoid": "fd6db3af-d341-4813-8dd4-7a45dd347559",
+    "infourl": "/jyxx/003001/003001004/20260105/fd6db3af-d341-4813-8dd4-7a45dd347559.html",
+    "parsed_data": {
+      "project_name": "宜昌北站站前广场生态修复工程",
+      "publicity_period": "2026年01月05日 17时30分至2026年01月08日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌山水园林景观工程有限公司",
+          "price": "5980526.00"
+        },
+        {
+          "bidder": "宜昌金禾环境工程有限公司",
+          "price": "5959355.64"
+        },
+        {
+          "bidder": "相亭生态科技有限公司",
+          "price": "6042855.29"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260105/fd6db3af-d341-4813-8dd4-7a45dd347559.html"
+    },
+    "raw_data": {
+      "title": "宜昌北站站前广场生态修复工程中标候选人公示",
+      "infodate": "2026-01-05"
+    }
+  },
+  {
+    "infoid": "6141320c-1042-46c9-885e-1ccf74ccf025",
+    "infourl": "/jyxx/003001/003001004/20260105/6141320c-1042-46c9-885e-1ccf74ccf025.html",
+    "parsed_data": {
+      "project_name": "青宜产业园配套基础设施建设二期项目（田畈桥至鸦白和鸦南收费站道路改造）监理",
+      "publicity_period": "2026年01月05日 17时30分至2026年01月08日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北中南华大建设项目管理有限公司",
+          "price": "171000.00"
+        },
+        {
+          "bidder": "湖北允舜项目管理有限公司",
+          "price": "179000.00"
+        },
+        {
+          "bidder": "湖北皓明工程项目管理有限责任公司",
+          "price": "183317.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260105/6141320c-1042-46c9-885e-1ccf74ccf025.html"
+    },
+    "raw_data": {
+      "title": "青宜产业园配套基础设施建设二期项目（田畈桥至鸦白和鸦南收费站道路改造）监理中标候选人公示",
+      "infodate": "2026-01-05"
+    }
   }
 ]
