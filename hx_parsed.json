@@ -30519,5 +30519,40 @@
       "title": "远安工业园万里片区20万吨／年有机肥项目场地平整建设工程中标候选人公示",
       "infodate": "2026-01-07"
     }
+  },
+  {
+    "infoid": "f2263f7f-d616-4b39-bb6e-a66ecbdfd8a6",
+    "infourl": "/jyxx/003001/003001004/20260108/f2263f7f-d616-4b39-bb6e-a66ecbdfd8a6.html",
+    "parsed_data": {
+      "project_name": "余家溪停车场新建工程",
+      "publicity_period": "2026年01月08日 14时00分至2026年01月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北兴泰源水利建设有限公司",
+          "price": "4552172.73"
+        },
+        {
+          "bidder": "湖北圣熠建设有限公司",
+          "price": "4591932.95"
+        },
+        {
+          "bidder": "宜昌楚鑫建设有限责任公司",
+          "price": "4566799.54"
+        },
+        {
+          "bidder": "湖北恒诚建设有限公司",
+          "price": "4581491.21"
+        },
+        {
+          "bidder": "湖北乡友建设有限公司",
+          "price": "4561858.62"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260108/f2263f7f-d616-4b39-bb6e-a66ecbdfd8a6.html"
+    },
+    "raw_data": {
+      "title": "余家溪停车场新建工程中标候选人公示",
+      "infodate": "2026-01-08"
+    }
   }
 ]
