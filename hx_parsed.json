@@ -30713,5 +30713,59 @@
       "title": "长阳城区二次供水设施改造项目二期（含保障房供水管网改造工程）中标候选人公示",
       "infodate": "2026-01-08"
     }
+  },
+  {
+    "infoid": "8d8ec366-ebfa-43de-93b6-f0b326bc42db",
+    "infourl": "/jyxx/003001/003001004/20260109/8d8ec366-ebfa-43de-93b6-f0b326bc42db.html",
+    "parsed_data": {
+      "project_name": "S311当阳市郭场至窑湾段改扩建工程（两河集镇至金沙收费站）监理",
+      "publicity_period": "2026年01月09日 12时00分至2026年01月12日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "广东协立工程咨询监理有限公司",
+          "price": "1919100.00"
+        },
+        {
+          "bidder": "湖北华中公路工程监理咨询有限公司",
+          "price": "1890000.00"
+        },
+        {
+          "bidder": "河南省光大建设管理有限公司",
+          "price": "1952000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260109/8d8ec366-ebfa-43de-93b6-f0b326bc42db.html"
+    },
+    "raw_data": {
+      "title": "S311当阳市郭场至窑湾段改扩建工程（两河集镇至金沙收费站）监理中标候选人公示",
+      "infodate": "2026-01-09"
+    }
+  },
+  {
+    "infoid": "02ee0464-b2a5-4b98-9c1f-fc31d43f9c3d",
+    "infourl": "/jyxx/003001/003001004/20260109/02ee0464-b2a5-4b98-9c1f-fc31d43f9c3d.html",
+    "parsed_data": {
+      "project_name": "伍家岗区新能源充电桩及配套基础设施项目（二标段）",
+      "publicity_period": "2026年01月09日 12时00分至2026年01月12日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市江星电气机械有限公司",
+          "price": "7421818.67"
+        },
+        {
+          "bidder": "四川同达建设有限公司",
+          "price": "7398200.07"
+        },
+        {
+          "bidder": "湖北长江电气有限公司",
+          "price": "7264724.95"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260109/02ee0464-b2a5-4b98-9c1f-fc31d43f9c3d.html"
+    },
+    "raw_data": {
+      "title": "伍家岗区新能源充电桩及配套基础设施项目（二标段）中标候选人公示",
+      "infodate": "2026-01-09"
+    }
   }
 ]
