@@ -30848,5 +30848,59 @@
       "title": "湖北省宜昌市引清入宜调水工程（取水口工程）中标候选人公示",
       "infodate": "2026-01-09"
     }
+  },
+  {
+    "infoid": "1aa09421-07b2-46aa-8b12-04d23f8d3cc8",
+    "infourl": "/jyxx/003001/003001004/20260109/1aa09421-07b2-46aa-8b12-04d23f8d3cc8.html",
+    "parsed_data": {
+      "project_name": "伍家岗区汪家冲片区开发项目A地块大区景观工程",
+      "publicity_period": "2026年01月09日 17时30分至2026年01月12日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "辉阳集团有限公司",
+          "price": "13078392.02"
+        },
+        {
+          "bidder": "湖北三峡路桥工程有限公司",
+          "price": "13065994.41"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "13145884.07"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260109/1aa09421-07b2-46aa-8b12-04d23f8d3cc8.html"
+    },
+    "raw_data": {
+      "title": "伍家岗区汪家冲片区开发项目A地块大区景观工程中标候选人公示",
+      "infodate": "2026-01-09"
+    }
+  },
+  {
+    "infoid": "b8390a9e-4eb4-4528-ab84-ad6106b6cccf",
+    "infourl": "/jyxx/003001/003001004/20260109/b8390a9e-4eb4-4528-ab84-ad6106b6cccf.html",
+    "parsed_data": {
+      "project_name": "秭归县金缸城新区文体公园项目10KV配电工程专业分包",
+      "publicity_period": "2026年01月09日 17时30分至2026年01月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "武汉锦隆鑫建设工程有限公司",
+          "price": "6911668.85"
+        },
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "6998040.28"
+        },
+        {
+          "bidder": "湖北智谦成安装工程有限公司",
+          "price": "7030009.06"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260109/b8390a9e-4eb4-4528-ab84-ad6106b6cccf.html"
+    },
+    "raw_data": {
+      "title": "秭归县金缸城新区文体公园项目10KV配电工程专业分包中标候选人公示",
+      "infodate": "2026-01-09"
+    }
   }
 ]
