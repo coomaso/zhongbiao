@@ -31037,5 +31037,32 @@
       "title": "土门路建设工程施工中标候选人公示",
       "infodate": "2026-01-12"
     }
+  },
+  {
+    "infoid": "ebfcf80a-526c-46f7-a831-dbdd8eaf4dfe",
+    "infourl": "/jyxx/003001/003001004/20260112/ebfcf80a-526c-46f7-a831-dbdd8eaf4dfe.html",
+    "parsed_data": {
+      "project_name": "4万吨／年电子级磷酸项目土建工程",
+      "publicity_period": "2026年01月12日 18时00分至2026年01月15日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中国化学工程第十六建设有限公司",
+          "price": "34523001.43"
+        },
+        {
+          "bidder": "湖北鑫民建设集团有限公司",
+          "price": "34428071.84"
+        },
+        {
+          "bidder": "湖北华欣城建工程有限公司",
+          "price": "33094676.22"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260112/ebfcf80a-526c-46f7-a831-dbdd8eaf4dfe.html"
+    },
+    "raw_data": {
+      "title": "4万吨／年电子级磷酸项目土建工程中标候选人公示",
+      "infodate": "2026-01-12"
+    }
   }
 ]
