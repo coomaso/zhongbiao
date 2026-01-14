@@ -31253,5 +31253,32 @@
       "title": "当阳市农村基础设施改造工程EPC工程总承包中标候选人公示",
       "infodate": "2026-01-13"
     }
+  },
+  {
+    "infoid": "ce021d79-4d61-42d1-bbd6-f8a390d3feae",
+    "infourl": "/jyxx/003001/003001004/20260114/ce021d79-4d61-42d1-bbd6-f8a390d3feae.html",
+    "parsed_data": {
+      "project_name": "宜昌市童家冲水库绿道建设工程",
+      "publicity_period": "2026年01月14日 12时00分至2026年01月19日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "12231665.12"
+        },
+        {
+          "bidder": "宜昌富强工程有限责任公司",
+          "price": "12199166.00"
+        },
+        {
+          "bidder": "湖北三峡路桥工程有限公司",
+          "price": "12277777.77"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260114/ce021d79-4d61-42d1-bbd6-f8a390d3feae.html"
+    },
+    "raw_data": {
+      "title": "宜昌市童家冲水库绿道建设工程中标候选人公示",
+      "infodate": "2026-01-14"
+    }
   }
 ]
