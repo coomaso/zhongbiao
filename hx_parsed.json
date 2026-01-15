@@ -31477,5 +31477,59 @@
       "title": "湖北当阳国家粮食储备库仓储及配套设施升级改造项目设计中标候选人公示",
       "infodate": "2026-01-15"
     }
+  },
+  {
+    "infoid": "d018811f-457e-4ae4-a5b8-a238a36a8ef6",
+    "infourl": "/jyxx/003001/003001004/20260115/d018811f-457e-4ae4-a5b8-a238a36a8ef6.html",
+    "parsed_data": {
+      "project_name": "宜都市花庙泵站更新改造工程10kV配电工程",
+      "publicity_period": "2026年01月15日 18时00分至2026年01月19日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北华健联建设工程有限公司",
+          "price": "1855270.40"
+        },
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "1930232.97"
+        },
+        {
+          "bidder": "宜昌昌瑞送变电工程有限公司",
+          "price": "1981710.40"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260115/d018811f-457e-4ae4-a5b8-a238a36a8ef6.html"
+    },
+    "raw_data": {
+      "title": "宜都市花庙泵站更新改造工程10kV配电工程中标候选人公示",
+      "infodate": "2026-01-15"
+    }
+  },
+  {
+    "infoid": "52aaa218-9173-44ab-ba96-66f777957a21",
+    "infourl": "/jyxx/003001/003001004/20260115/52aaa218-9173-44ab-ba96-66f777957a21.html",
+    "parsed_data": {
+      "project_name": "宜都市茶店泵站更新改造工程10kV配电工程",
+      "publicity_period": "2026年01月15日 18时00分至2026年01月19日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "3421383.40"
+        },
+        {
+          "bidder": "宜昌东能电力工程有限公司",
+          "price": "3453096.95"
+        },
+        {
+          "bidder": "湖北鄂能电力建设有限公司",
+          "price": "2997861.83"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260115/52aaa218-9173-44ab-ba96-66f777957a21.html"
+    },
+    "raw_data": {
+      "title": "宜都市茶店泵站更新改造工程10kV配电工程中标候选人公示",
+      "infodate": "2026-01-15"
+    }
   }
 ]
