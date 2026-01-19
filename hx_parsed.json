@@ -31863,5 +31863,32 @@
       "title": "江峡三路集镇迁建区建设项目二期(一标段)(第2次招标)中标候选人公示",
       "infodate": "2026-01-16"
     }
+  },
+  {
+    "infoid": "d6c6bfed-af47-4211-8aa4-433f6ab52b9f",
+    "infourl": "/jyxx/003001/003001004/20260119/d6c6bfed-af47-4211-8aa4-433f6ab52b9f.html",
+    "parsed_data": {
+      "project_name": "兴山县门家河梅坪至后坪段安全防护工程EPC工程总承包",
+      "publicity_period": "2026年01月19日 15时00分至2026年01月22日 15时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北瑞泰工程管理有限公司、湖北吉多安水利勘测设计有限公司联合体",
+          "price": "65095801.28"
+        },
+        {
+          "bidder": "湖北浩川水利水电工程有限公司",
+          "price": "66410959.43"
+        },
+        {
+          "bidder": "湖北昊源建设工程有限公司",
+          "price": "64323256.22"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260119/d6c6bfed-af47-4211-8aa4-433f6ab52b9f.html"
+    },
+    "raw_data": {
+      "title": "兴山县门家河梅坪至后坪段安全防护工程EPC工程总承包中标候选人公示",
+      "infodate": "2026-01-19"
+    }
   }
 ]
