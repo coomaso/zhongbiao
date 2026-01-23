@@ -32573,5 +32573,32 @@
       "title": "伍家岗区东山大道与东站一路交会处西北侧C地块商住项目检测中标候选人公示",
       "infodate": "2026-01-22"
     }
+  },
+  {
+    "infoid": "70b72ed5-92ea-4a9e-9b56-e6eabe98d95b",
+    "infourl": "/jyxx/003001/003001004/20260123/70b72ed5-92ea-4a9e-9b56-e6eabe98d95b.html",
+    "parsed_data": {
+      "project_name": "宜都兴发系列场平及基础设施配套建设项目勘察",
+      "publicity_period": "2026年01月23日 12时00分至2026年01月26日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北地环勘察设计院有限公司",
+          "price": "35.00"
+        },
+        {
+          "bidder": "中国兵器工业北方勘察设计研究院有限公司",
+          "price": "28.00"
+        },
+        {
+          "bidder": "湖南中核岩土工程有限责任公司",
+          "price": "41.20"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260123/70b72ed5-92ea-4a9e-9b56-e6eabe98d95b.html"
+    },
+    "raw_data": {
+      "title": "宜都兴发系列场平及基础设施配套建设项目勘察中标候选人公示",
+      "infodate": "2026-01-23"
+    }
   }
 ]
