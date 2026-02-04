@@ -33561,5 +33561,32 @@
       "title": "伍家新城创新创业园项目精装修工程中标候选人公示",
       "infodate": "2026-02-04"
     }
+  },
+  {
+    "infoid": "adeebcd2-16f7-43b4-b5ef-0c634680ec20",
+    "infourl": "/jyxx/003001/003001004/20260204/adeebcd2-16f7-43b4-b5ef-0c634680ec20.html",
+    "parsed_data": {
+      "project_name": "三峡新材临港汽车及电子玻璃项目厂房建设工程2标段",
+      "publicity_period": "2026年02月04日 18时00分至2026年02月07日 18时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中国机械工业建设集团有限公司",
+          "price": "370648477.53"
+        },
+        {
+          "bidder": "中交建筑集团有限公司",
+          "price": "370287648.00"
+        },
+        {
+          "bidder": "江西建工第四建筑有限责任公司",
+          "price": "369239352.79"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260204/adeebcd2-16f7-43b4-b5ef-0c634680ec20.html"
+    },
+    "raw_data": {
+      "title": "三峡新材临港汽车及电子玻璃项目厂房建设工程2标段中标候选人公示",
+      "infodate": "2026-02-04"
+    }
   }
 ]
