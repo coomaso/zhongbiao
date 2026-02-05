@@ -33642,5 +33642,86 @@
       "title": "夷陵区综合能源服务站一期建设项目（朱家湾综合能源服务站）中标候选人公示",
       "infodate": "2026-02-05"
     }
+  },
+  {
+    "infoid": "8c7d5ed8-8e1b-4deb-822b-bb17ea2c63e6",
+    "infourl": "/jyxx/003001/003001004/20260205/8c7d5ed8-8e1b-4deb-822b-bb17ea2c63e6.html",
+    "parsed_data": {
+      "project_name": "宜昌市伍家岗区共勤村安置房项目-A区箱变进线改造工程(第2次招标)",
+      "publicity_period": "2026年02月05日 17时00分至2026年02月08日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北亿能电力建设有限公司",
+          "price": "152972.20"
+        },
+        {
+          "bidder": "湖北恒电慧泽电力工程有限公司",
+          "price": "158574.45"
+        },
+        {
+          "bidder": "湖北鹏发送变电工程有限公司",
+          "price": "160248.41"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260205/8c7d5ed8-8e1b-4deb-822b-bb17ea2c63e6.html"
+    },
+    "raw_data": {
+      "title": "宜昌市伍家岗区共勤村安置房项目-A区箱变进线改造工程(第2次招标)中标候选人公示",
+      "infodate": "2026-02-05"
+    }
+  },
+  {
+    "infoid": "05c586f7-10a4-4cde-b08c-67eff5b6af6c",
+    "infourl": "/jyxx/003001/003001004/20260205/05c586f7-10a4-4cde-b08c-67eff5b6af6c.html",
+    "parsed_data": {
+      "project_name": "当阳市非物质文化遗产传承中心项目监理",
+      "publicity_period": "2026年02月05日 17时00分至2026年02月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌胜一建设工程咨询有限公司",
+          "price": "1656000.00元"
+        },
+        {
+          "bidder": "中新创达咨询有限公司",
+          "price": "1520000.00元"
+        },
+        {
+          "bidder": "宜昌安泰建设监理有限公司",
+          "price": "1677000.00元"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260205/05c586f7-10a4-4cde-b08c-67eff5b6af6c.html"
+    },
+    "raw_data": {
+      "title": "当阳市非物质文化遗产传承中心项目监理中标候选人公示",
+      "infodate": "2026-02-05"
+    }
+  },
+  {
+    "infoid": "d757f985-a159-4b88-91b7-655d26fa6ddb",
+    "infourl": "/jyxx/003001/003001004/20260205/d757f985-a159-4b88-91b7-655d26fa6ddb.html",
+    "parsed_data": {
+      "project_name": "锦屏水厂改扩建工程监理",
+      "publicity_period": "2026年02月05日 17时00分至2026年02月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "四川省蜀顺工程建设咨询有限公司",
+          "price": "1380650.00"
+        },
+        {
+          "bidder": "武汉平安建设工程项目管理有限公司",
+          "price": "1402000.00"
+        },
+        {
+          "bidder": "精源国际工程咨询有限公司",
+          "price": "1418500.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260205/d757f985-a159-4b88-91b7-655d26fa6ddb.html"
+    },
+    "raw_data": {
+      "title": "锦屏水厂改扩建工程监理中标候选人公示",
+      "infodate": "2026-02-05"
+    }
   }
 ]
