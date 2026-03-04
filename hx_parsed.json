@@ -36023,5 +36023,67 @@
       "title": "宜昌高新区东山园区大连路与青岛路交会处南侧居住项目一期监理中标候选人公示",
       "infodate": "2026-03-04"
     }
+  },
+  {
+    "infoid": "fb2be7e0-f32e-424f-ac51-15c15dbc10b3",
+    "infourl": "/jyxx/003001/003001004/20260304/fb2be7e0-f32e-424f-ac51-15c15dbc10b3.html",
+    "parsed_data": {
+      "project_name": "长阳龙舟坪片区农村人居环境整治工程施工",
+      "publicity_period": "2026年03月04日 17时00分至2026年03月07日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北乾润建设工程有限公司",
+          "price": "14770543.04"
+        },
+        {
+          "bidder": "长阳路通工程建设有限责任公司",
+          "price": "14785409.10"
+        },
+        {
+          "bidder": "湖北步阳建筑有限公司",
+          "price": "14775161.02"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260304/fb2be7e0-f32e-424f-ac51-15c15dbc10b3.html"
+    },
+    "raw_data": {
+      "title": "长阳龙舟坪片区农村人居环境整治工程施工中标候选人公示",
+      "infodate": "2026-03-04"
+    }
+  },
+  {
+    "infoid": "c1cfaef8-8c7d-4b23-a23e-dc95bc0be527",
+    "infourl": "/jyxx/003001/003001004/20260304/c1cfaef8-8c7d-4b23-a23e-dc95bc0be527.html",
+    "parsed_data": {
+      "project_name": "三峡水运新通道待闸船舶猇亭服务区建设项目一期监理",
+      "publicity_period": "2026年03月04日 17时00分至2026年03月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "武汉星宇建设咨询有限公司",
+          "price": "980000.00"
+        },
+        {
+          "bidder": "平安建设管理（湖北）有限公司",
+          "price": "1074200.00"
+        },
+        {
+          "bidder": "湖北中业宏工程咨询有限公司",
+          "price": "955620.00"
+        },
+        {
+          "bidder": "湖北楚元工程建设咨询有限公司",
+          "price": "1077700.00"
+        },
+        {
+          "bidder": "湖北新天地工程建设监理有限责任公司、湖北沭坤工程咨询有限公司、湖北新天地工程建设监理有限责任公司联合体",
+          "price": "898880.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260304/c1cfaef8-8c7d-4b23-a23e-dc95bc0be527.html"
+    },
+    "raw_data": {
+      "title": "三峡水运新通道待闸船舶猇亭服务区建设项目一期监理中标候选人公示",
+      "infodate": "2026-03-04"
+    }
   }
 ]
