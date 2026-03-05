@@ -36193,5 +36193,59 @@
       "title": "宜昌市城东 7-7 号地块接线道路市政工程中标候选人公示",
       "infodate": "2026-03-05"
     }
+  },
+  {
+    "infoid": "b01538d5-2e75-46b4-a591-9174fff4c0fb",
+    "infourl": "/jyxx/003001/003001004/20260305/b01538d5-2e75-46b4-a591-9174fff4c0fb.html",
+    "parsed_data": {
+      "project_name": "宜昌白洋供热有限公司热电联产一期项目地勘",
+      "publicity_period": "2026年03月05日 12时00分至2026年03月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中机三勘岩土工程有限公司",
+          "price": "96元/延米"
+        },
+        {
+          "bidder": "宜昌市磐石注册岩土工程师事务有限公司",
+          "price": "115.00元/延米"
+        },
+        {
+          "bidder": "中国兵器工业北方勘察设计研究院有限公司",
+          "price": "96 元/延米"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260305/b01538d5-2e75-46b4-a591-9174fff4c0fb.html"
+    },
+    "raw_data": {
+      "title": "宜昌白洋供热有限公司热电联产一期项目地勘中标候选人公示",
+      "infodate": "2026-03-05"
+    }
+  },
+  {
+    "infoid": "47b7231b-f085-4b1a-a475-bddbd332890a",
+    "infourl": "/jyxx/003001/003001004/20260305/47b7231b-f085-4b1a-a475-bddbd332890a.html",
+    "parsed_data": {
+      "project_name": "原葛洲坝中学老校区改建高中项目2标段施工",
+      "publicity_period": "2026年03月05日 12时00分至2026年03月09日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北筑禾建设有限公司",
+          "price": "9638441.47"
+        },
+        {
+          "bidder": "湖北鑫民建设集团有限公司",
+          "price": "9633059.29"
+        },
+        {
+          "bidder": "秭归县沙镇溪建筑有限责任公司",
+          "price": "9694157.60"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260305/47b7231b-f085-4b1a-a475-bddbd332890a.html"
+    },
+    "raw_data": {
+      "title": "原葛洲坝中学老校区改建高中项目2标段施工中标候选人公示",
+      "infodate": "2026-03-05"
+    }
   }
 ]
