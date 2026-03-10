@@ -37182,5 +37182,59 @@
       "title": "湖北长阳经济开发区（磨市片区）工业污水处理设施项目EPC中标候选人公示",
       "infodate": "2026-03-09"
     }
+  },
+  {
+    "infoid": "3b8f77b1-7107-4f2f-a736-47eea8ac02f9",
+    "infourl": "/jyxx/003001/003001004/20260310/3b8f77b1-7107-4f2f-a736-47eea8ac02f9.html",
+    "parsed_data": {
+      "project_name": "鸦鹊岭镇长湖村杨天线公路提档升级项目",
+      "publicity_period": "2026年03月10日 12时00分至2026年03月14日 08时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北泽望建设工程有限公司",
+          "price": "3847578.25"
+        },
+        {
+          "bidder": "湖北荆楚路桥有限公司",
+          "price": "3882930.79"
+        },
+        {
+          "bidder": "湖北云琨路桥建设有限公司",
+          "price": "3862821.94"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260310/3b8f77b1-7107-4f2f-a736-47eea8ac02f9.html"
+    },
+    "raw_data": {
+      "title": "鸦鹊岭镇长湖村杨天线公路提档升级项目中标候选人公示",
+      "infodate": "2026-03-10"
+    }
+  },
+  {
+    "infoid": "0651dfdc-001b-405f-8354-e87dc58ebeab",
+    "infourl": "/jyxx/003001/003001004/20260310/0651dfdc-001b-405f-8354-e87dc58ebeab.html",
+    "parsed_data": {
+      "project_name": "当阳市2025年干河项目区小流域综合治理提质增效项目施工",
+      "publicity_period": "2026年03月10日 12时00分至2026年03月13日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌誉博建设工程有限公司",
+          "price": "4850999.88"
+        },
+        {
+          "bidder": "宜昌市东风水利水电工程建设有限公司",
+          "price": "4849539.85"
+        },
+        {
+          "bidder": "湖北昊源建设工程有限公司",
+          "price": "4821455.79"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260310/0651dfdc-001b-405f-8354-e87dc58ebeab.html"
+    },
+    "raw_data": {
+      "title": "当阳市2025年干河项目区小流域综合治理提质增效项目施工中标候选人公示",
+      "infodate": "2026-03-10"
+    }
   }
 ]
