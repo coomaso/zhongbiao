@@ -37263,5 +37263,59 @@
       "title": "猇亭区托育综合服务中心项目施工中标候选人公示",
       "infodate": "2026-03-10"
     }
+  },
+  {
+    "infoid": "1cb06e2f-c55a-48dd-9a7b-df7f98ba368a",
+    "infourl": "/jyxx/003001/003001004/20260310/1cb06e2f-c55a-48dd-9a7b-df7f98ba368a.html",
+    "parsed_data": {
+      "project_name": "昭君雁栖水岸项目（三期）一标段配电工程",
+      "publicity_period": "2026年03月10日 17时30分至2026年03月14日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北中电新能电气有限公司",
+          "price": "10792323.84"
+        },
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "11960000.53"
+        },
+        {
+          "bidder": "湖北智谦成安装工程有限公司",
+          "price": "10999540.31"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260310/1cb06e2f-c55a-48dd-9a7b-df7f98ba368a.html"
+    },
+    "raw_data": {
+      "title": "昭君雁栖水岸项目（三期）一标段配电工程中标候选人公示",
+      "infodate": "2026-03-10"
+    }
+  },
+  {
+    "infoid": "589d05e7-7c0c-4265-94a5-3bec1c36ee71",
+    "infourl": "/jyxx/003001/003001004/20260310/589d05e7-7c0c-4265-94a5-3bec1c36ee71.html",
+    "parsed_data": {
+      "project_name": "昭君・皓月云居项目配电工程",
+      "publicity_period": "2026年03月10日 17时30分至2026年03月14日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌中发电力工程有限公司",
+          "price": "13627014.66"
+        },
+        {
+          "bidder": "宜昌光源电业有限责任公司",
+          "price": "13917279.02"
+        },
+        {
+          "bidder": "宜昌三峡送变电工程有限责任公司",
+          "price": "14940000.52"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260310/589d05e7-7c0c-4265-94a5-3bec1c36ee71.html"
+    },
+    "raw_data": {
+      "title": "昭君・皓月云居项目配电工程中标候选人公示",
+      "infodate": "2026-03-10"
+    }
   }
 ]
