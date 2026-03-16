@@ -38239,5 +38239,32 @@
       "title": "算力视界项目(EPC+O)(第2次招标)中标候选人公示",
       "infodate": "2026-03-16"
     }
+  },
+  {
+    "infoid": "8cfae04c-ab85-4c08-acd6-1ea117e5da25",
+    "infourl": "/jyxx/003001/003001004/20260316/8cfae04c-ab85-4c08-acd6-1ea117e5da25.html",
+    "parsed_data": {
+      "project_name": "2025年枝江市问安镇万店高标准农田项目（7标段）",
+      "publicity_period": "2026年03月16日 19时45分至2026年03月19日 19时45分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北瑞德天成建设有限公司",
+          "price": "92.751%"
+        },
+        {
+          "bidder": "湖北武振建设有限公司",
+          "price": "92.832%"
+        },
+        {
+          "bidder": "湖北明洋建工有限公司",
+          "price": "93.211%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260316/8cfae04c-ab85-4c08-acd6-1ea117e5da25.html"
+    },
+    "raw_data": {
+      "title": "2025年枝江市问安镇万店高标准农田项目（7标段）中标候选人公示",
+      "infodate": "2026-03-16"
+    }
   }
 ]
