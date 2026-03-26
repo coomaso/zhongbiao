@@ -39494,5 +39494,67 @@
       "title": "2025年白洋镇农村公路硬化项目（三标段）中标候选人公示",
       "infodate": "2026-03-25"
     }
+  },
+  {
+    "infoid": "0e93e9e1-c8b3-4e93-9feb-abd8141b20a5",
+    "infourl": "/jyxx/003001/003001004/20260326/0e93e9e1-c8b3-4e93-9feb-abd8141b20a5.html",
+    "parsed_data": {
+      "project_name": "秭归县丹阳山片区农村供水工程监理",
+      "publicity_period": "2026年03月26日 17时30分至2026年03月29日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北瑞洪工程管理有限公司",
+          "price": "价格系数1.19%"
+        },
+        {
+          "bidder": "宜昌市水利水电勘察设计院有限公司",
+          "price": "价格系数1.18%"
+        },
+        {
+          "bidder": "湖北鑫宜能工程咨询有限公司",
+          "price": "价格系数1.18%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260326/0e93e9e1-c8b3-4e93-9feb-abd8141b20a5.html"
+    },
+    "raw_data": {
+      "title": "秭归县丹阳山片区农村供水工程监理中标候选人公示",
+      "infodate": "2026-03-26"
+    }
+  },
+  {
+    "infoid": "619cc98e-7db8-41b5-8fb4-cf1336904736",
+    "infourl": "/jyxx/003001/003001004/20260326/619cc98e-7db8-41b5-8fb4-cf1336904736.html",
+    "parsed_data": {
+      "project_name": "赵庄路（滚钟坡路-梅子溪路）市政工程",
+      "publicity_period": "2026年03月26日 17时30分至2026年03月31日 00时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北金湖建设工程有限公司",
+          "price": "9649436.71"
+        },
+        {
+          "bidder": "湖北益通建设股份有限公司",
+          "price": "9677416.98"
+        },
+        {
+          "bidder": "湖北广盛建设集团有限责任公司",
+          "price": "9691786.16"
+        },
+        {
+          "bidder": "湖北森垚建设有限公司",
+          "price": "9683845.51"
+        },
+        {
+          "bidder": "宸瑞建设有限公司",
+          "price": "9666672.76"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260326/619cc98e-7db8-41b5-8fb4-cf1336904736.html"
+    },
+    "raw_data": {
+      "title": "赵庄路（滚钟坡路-梅子溪路）市政工程中标候选人公示",
+      "infodate": "2026-03-26"
+    }
   }
 ]
