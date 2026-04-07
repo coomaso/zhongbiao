@@ -40561,5 +40561,59 @@
       "title": "西陵区智慧物流产业园项目（一期）装修工程中标候选人公示",
       "infodate": "2026-04-07"
     }
+  },
+  {
+    "infoid": "fdc3902e-ede1-40f1-be60-47bd90fe2f6c",
+    "infourl": "/jyxx/003001/003001004/20260407/fdc3902e-ede1-40f1-be60-47bd90fe2f6c.html",
+    "parsed_data": {
+      "project_name": "S256当阳北绕城公路工程勘察设计服务",
+      "publicity_period": "2026年04月07日 17时00分至2026年04月10日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北省交通规划设计院股份有限公司",
+          "price": "7046000.00"
+        },
+        {
+          "bidder": "中南勘察设计院集团有限公司",
+          "price": "7076000.00"
+        },
+        {
+          "bidder": "中交第二公路勘察设计研究院有限公司",
+          "price": "7063000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260407/fdc3902e-ede1-40f1-be60-47bd90fe2f6c.html"
+    },
+    "raw_data": {
+      "title": "S256当阳北绕城公路工程勘察设计服务中标候选人公示",
+      "infodate": "2026-04-07"
+    }
+  },
+  {
+    "infoid": "ebc90362-6af9-4650-8520-cf0825106118",
+    "infourl": "/jyxx/003001/003001004/20260407/ebc90362-6af9-4650-8520-cf0825106118.html",
+    "parsed_data": {
+      "project_name": "当阳市充电基础设施建设项目（二期）施工",
+      "publicity_period": "2026年04月07日 17时00分至2026年04月10日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北群久建设工程有限公司",
+          "price": "6414749.37"
+        },
+        {
+          "bidder": "当阳市给排水安装工程有限公司、湖北胜辉达建设工程有限公司联合体",
+          "price": "6391094.73"
+        },
+        {
+          "bidder": "河南炳焱建筑工程有限公司",
+          "price": "6417018.80"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260407/ebc90362-6af9-4650-8520-cf0825106118.html"
+    },
+    "raw_data": {
+      "title": "当阳市充电基础设施建设项目（二期）施工中标候选人公示",
+      "infodate": "2026-04-07"
+    }
   }
 ]
