@@ -41445,5 +41445,32 @@
       "title": "湖北航天江河化工有限公司白洋园区10kV外线输电线路工程中标候选人公示",
       "infodate": "2026-04-14"
     }
+  },
+  {
+    "infoid": "b5a05308-ccab-4aa0-9ae1-f09b5004cb2d",
+    "infourl": "/jyxx/003001/003001004/20260415/b5a05308-ccab-4aa0-9ae1-f09b5004cb2d.html",
+    "parsed_data": {
+      "project_name": "宜昌数字经济产业科创中心项目二标段电梯采购与安装工程",
+      "publicity_period": "2026年04月15日 12时00分至2026年04月18日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北必胜科技有限公司",
+          "price": "8090000.00元"
+        },
+        {
+          "bidder": "西子电梯科技有限公司",
+          "price": "8119100.00元"
+        },
+        {
+          "bidder": "西继迅达电梯有限公司",
+          "price": "8086300.00元"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260415/b5a05308-ccab-4aa0-9ae1-f09b5004cb2d.html"
+    },
+    "raw_data": {
+      "title": "宜昌数字经济产业科创中心项目二标段电梯采购与安装工程中标候选人公示",
+      "infodate": "2026-04-15"
+    }
   }
 ]
