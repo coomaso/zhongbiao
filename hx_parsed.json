@@ -41958,5 +41958,59 @@
       "title": "宜都市枝城镇永彬小区房屋室内装饰装修工程（一期）中标候选人公示",
       "infodate": "2026-04-20"
     }
+  },
+  {
+    "infoid": "582b5171-1a51-4b4c-8f1d-e77f2ff39c16",
+    "infourl": "/jyxx/003001/003001004/20260420/582b5171-1a51-4b4c-8f1d-e77f2ff39c16.html",
+    "parsed_data": {
+      "project_name": "宜昌公安监管中心建设工程项目视频监控安防设备（智慧监管）采购项目",
+      "publicity_period": "2026年04月20日 17时30分至2026年04月23日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中移系统集成有限公司",
+          "price": "27800423.00"
+        },
+        {
+          "bidder": "联通数字科技有限公司",
+          "price": "26657534.55"
+        },
+        {
+          "bidder": "武汉爱迪科技股份有限公司",
+          "price": "28172685.86"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260420/582b5171-1a51-4b4c-8f1d-e77f2ff39c16.html"
+    },
+    "raw_data": {
+      "title": "宜昌公安监管中心建设工程项目视频监控安防设备（智慧监管）采购项目中标候选人公示",
+      "infodate": "2026-04-20"
+    }
+  },
+  {
+    "infoid": "ad1b782e-f43e-4178-8f66-3b76bed6aede",
+    "infourl": "/jyxx/003001/003001004/20260420/ad1b782e-f43e-4178-8f66-3b76bed6aede.html",
+    "parsed_data": {
+      "project_name": "宜昌市伍家岗区直饮水建设项目采购及安装（第二批）",
+      "publicity_period": "2026年04月20日 17时30分至2026年04月23日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北轩升建设工程有限公司",
+          "price": "下浮率3.0%"
+        },
+        {
+          "bidder": "湖北鑫盛阳建设工程有限公司",
+          "price": "下浮2.8%"
+        },
+        {
+          "bidder": "武汉悉水科技有限公司",
+          "price": "下浮2.8%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260420/ad1b782e-f43e-4178-8f66-3b76bed6aede.html"
+    },
+    "raw_data": {
+      "title": "宜昌市伍家岗区直饮水建设项目采购及安装（第二批）中标候选人公示",
+      "infodate": "2026-04-20"
+    }
   }
 ]
