@@ -42039,5 +42039,32 @@
       "title": "枝江市枫杨中小学10KV配电工程中标候选人公示",
       "infodate": "2026-04-20"
     }
+  },
+  {
+    "infoid": "a32aaa2a-32a8-4035-8309-e1681f2fadf5",
+    "infourl": "/jyxx/003001/003001004/20260421/a32aaa2a-32a8-4035-8309-e1681f2fadf5.html",
+    "parsed_data": {
+      "project_name": "金亚·锦尚（二期）场平工程",
+      "publicity_period": "2026年04月21日 15时30分至2026年04月24日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "浩天建工集团有限公司",
+          "price": "8059095.64"
+        },
+        {
+          "bidder": "湖北宜翔建设有限公司",
+          "price": "8041702.33"
+        },
+        {
+          "bidder": "湖南琨基建设集团有限公司",
+          "price": "8050401.10"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260421/a32aaa2a-32a8-4035-8309-e1681f2fadf5.html"
+    },
+    "raw_data": {
+      "title": "金亚·锦尚（二期）场平工程中标候选人公示",
+      "infodate": "2026-04-21"
+    }
   }
 ]
