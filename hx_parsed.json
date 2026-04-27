@@ -42892,5 +42892,32 @@
       "title": "五峰县城燃气管网更新改造工程EPC工程总承包中标候选人公示",
       "infodate": "2026-04-25"
     }
+  },
+  {
+    "infoid": "6b0b658f-18da-4c9a-82b1-f31439cf30a8",
+    "infourl": "/jyxx/003001/003001004/20260427/6b0b658f-18da-4c9a-82b1-f31439cf30a8.html",
+    "parsed_data": {
+      "project_name": "东城科技园科创中心项目电梯采购及安装",
+      "publicity_period": "2026年04月27日 10时00分至2026年04月30日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "上海爱登堡电梯集团股份有限公司",
+          "price": "3580000.00"
+        },
+        {
+          "bidder": "江苏施塔德电梯有限公司",
+          "price": "3650600.00"
+        },
+        {
+          "bidder": "湖北和顺机电有限公司",
+          "price": "3559000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260427/6b0b658f-18da-4c9a-82b1-f31439cf30a8.html"
+    },
+    "raw_data": {
+      "title": "东城科技园科创中心项目电梯采购及安装中标候选人公示",
+      "infodate": "2026-04-27"
+    }
   }
 ]
