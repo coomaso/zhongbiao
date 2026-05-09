@@ -43845,5 +43845,86 @@
       "title": "秭归经济开发区玻璃新材产业园区建设项目（一期）设计中标候选人公示",
       "infodate": "2026-05-08"
     }
+  },
+  {
+    "infoid": "a2023c09-4d87-4df5-8cf2-346f56db4bd9",
+    "infourl": "/jyxx/003001/003001004/20260509/a2023c09-4d87-4df5-8cf2-346f56db4bd9.html",
+    "parsed_data": {
+      "project_name": "2025年枝江市高标准农田建设项目工程质量复核（1标段）",
+      "publicity_period": "2026年05月09日 12时00分至2026年05月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市科信水电工程质量检测有限公司",
+          "price": "90.000%"
+        },
+        {
+          "bidder": "湖北韩宇检测有限公司",
+          "price": "90.265%"
+        },
+        {
+          "bidder": "湖北大衡工程检测有限公司",
+          "price": "91.880%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260509/a2023c09-4d87-4df5-8cf2-346f56db4bd9.html"
+    },
+    "raw_data": {
+      "title": "2025年枝江市高标准农田建设项目工程质量复核（1标段）中标候选人公示",
+      "infodate": "2026-05-09"
+    }
+  },
+  {
+    "infoid": "c716500d-cd64-42fe-b82a-8c07370d7a9e",
+    "infourl": "/jyxx/003001/003001004/20260509/c716500d-cd64-42fe-b82a-8c07370d7a9e.html",
+    "parsed_data": {
+      "project_name": "2025年枝江市高标准农田建设项目工程质量复核（2标段）",
+      "publicity_period": "2026年05月09日 12时00分至2026年05月12日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北韩宇检测有限公司",
+          "price": "90.318%"
+        },
+        {
+          "bidder": "湖北正严建设工程质量检测有限公司",
+          "price": "88.500%"
+        },
+        {
+          "bidder": "湖北大衡工程检测有限公司",
+          "price": "91.500%"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260509/c716500d-cd64-42fe-b82a-8c07370d7a9e.html"
+    },
+    "raw_data": {
+      "title": "2025年枝江市高标准农田建设项目工程质量复核（2标段）中标候选人公示",
+      "infodate": "2026-05-09"
+    }
+  },
+  {
+    "infoid": "5f3244ff-3914-4e5d-9352-6c5f40c15f67",
+    "infourl": "/jyxx/003001/003001004/20260509/5f3244ff-3914-4e5d-9352-6c5f40c15f67.html",
+    "parsed_data": {
+      "project_name": "宜昌市伍家岗区实验初级中学改扩建项目10kV配电工程（正式电）",
+      "publicity_period": "2026年05月09日 12时00分至2026年05月12日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌既济数能集团有限公司",
+          "price": "340004.01"
+        },
+        {
+          "bidder": "湖北世纪森源电力工程有限公司",
+          "price": "348005.65"
+        },
+        {
+          "bidder": "湖北华丰冶建建设工程有限公司",
+          "price": "310001.09"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260509/5f3244ff-3914-4e5d-9352-6c5f40c15f67.html"
+    },
+    "raw_data": {
+      "title": "宜昌市伍家岗区实验初级中学改扩建项目10kV配电工程（正式电）中标候选人公示",
+      "infodate": "2026-05-09"
+    }
   }
 ]
