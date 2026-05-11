@@ -157,7 +157,7 @@ class BidMonitor:
             # 提取公示时间 - 增强匹配逻辑
             publicity_period = ""
             pub_patterns = [
-                r"公示[期时]为?[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
+                r"公示[期时]为[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
                 r"公示时间[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
                 r"公示期[:：]?\s*(.+?至.+?)\s*(?:\n|<|$)",
                 r"公示期为(\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分至\d{4}年\d{1,2}月\d{1,2}日 \d{1,2}时\d{1,2}分)",
@@ -174,9 +174,8 @@ class BidMonitor:
 
             bidders_and_prices = []
 
-            # 方法1：精确提取表格中的候选人及报价 - 增强表格解析
+            # 方法1：精确提取表格中的候选人及报价
             for table in soup.find_all('table'):
-                # 查找包含"中标候选人名称"的行
                 header_found = False
                 for row in table.find_all('tr'):
                     row_text = row.get_text(strip=True)
@@ -217,13 +216,13 @@ class BidMonitor:
                         if price_row:
                             price_cells = price_row.find_all(['td', 'th'])
                             prices = []
-                            # 使用相同的起始列
                             for i in range(start_col, len(price_cells)):
                                 text = price_cells[i].get_text(strip=True)
-                                # 排除表头标签
-                                if any(kw in text for kw in ["投标报价", "报价", "投标总价", "总报价", "投标金额", "金额"]):
+                                # ═══ 修复：精确匹配纯标签格，不误杀含"报价"的实际数据 ═══
+                                # 只跳过纯标签格（如"投标报价(元/%)"、"报价"等）
+                                # 不跳过含实际数值的格（如"施工报价：折扣率96.18%；设计报价：546500.00元"）
+                                if re.match(r'^(投标报价|报价|投标总价|总报价|投标金额|金额)\s*(\(.*?\))?\s*$', text):
                                     continue
-                                # 保留所有文本内容（可能是数字或描述性文本）
                                 if text and text != "/" and not re.match(r'^第?[一二三四五六七八九十\d]+名?$', text):
                                     prices.append(text)
                             
@@ -235,7 +234,6 @@ class BidMonitor:
                                         "price": prices[i]
                                     })
                                 else:
-                                    # 如果报价数量不足，尝试从其他列获取
                                     if i < len(price_cells):
                                         alt_price = price_cells[i].get_text(strip=True)
                                         bidders_and_prices.append({
