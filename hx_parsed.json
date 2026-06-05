@@ -46983,5 +46983,86 @@
       "title": "当阳市子龙小学新建项目EPC工程总承包中标候选人公示",
       "infodate": "2026-06-04"
     }
+  },
+  {
+    "infoid": "23a32d5d-6a46-47a9-b949-bc5f521e645d",
+    "infourl": "/jyxx/003001/003001004/20260605/23a32d5d-6a46-47a9-b949-bc5f521e645d.html",
+    "parsed_data": {
+      "project_name": "远安工业园嫘祖片区110kV变电站配套线路工程勘察设计",
+      "publicity_period": "2026年06月05日 18时00分至2026年06月08日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌电力勘测设计院有限公司",
+          "price": "1207800.00"
+        },
+        {
+          "bidder": "武汉联动设计股份有限公司",
+          "price": "1213900.00"
+        },
+        {
+          "bidder": "荆门市荆科盛和电力技术有限责任公司",
+          "price": "1211500.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260605/23a32d5d-6a46-47a9-b949-bc5f521e645d.html"
+    },
+    "raw_data": {
+      "title": "远安工业园嫘祖片区110kV变电站配套线路工程勘察设计中标候选人公示",
+      "infodate": "2026-06-05"
+    }
+  },
+  {
+    "infoid": "c0eb354c-7c53-4979-9f25-0a01e6a05eec",
+    "infourl": "/jyxx/003001/003001004/20260605/c0eb354c-7c53-4979-9f25-0a01e6a05eec.html",
+    "parsed_data": {
+      "project_name": "江南楚韵度假区电梯设备采购与安装工程",
+      "publicity_period": "2026年06月05日 17时00分至2026年06月08日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "上海爱登堡电梯集团股份有限公司",
+          "price": "900800.00"
+        },
+        {
+          "bidder": "湖北东晟科技有限公司",
+          "price": "918000.00"
+        },
+        {
+          "bidder": "宜昌奥通电梯有限公司",
+          "price": "920000.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260605/c0eb354c-7c53-4979-9f25-0a01e6a05eec.html"
+    },
+    "raw_data": {
+      "title": "江南楚韵度假区电梯设备采购与安装工程中标候选人公示",
+      "infodate": "2026-06-05"
+    }
+  },
+  {
+    "infoid": "387be265-810f-4952-91cd-01a75666e52e",
+    "infourl": "/jyxx/003001/003001004/20260605/387be265-810f-4952-91cd-01a75666e52e.html",
+    "parsed_data": {
+      "project_name": "当阳市子龙小学新建项目监理",
+      "publicity_period": "2026年06月05日 16时00分至2026年06月08日 16时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌长江工程建设监理有限责任公司",
+          "price": "625800.00元"
+        },
+        {
+          "bidder": "精源国际工程咨询有限公司",
+          "price": "620000.00元"
+        },
+        {
+          "bidder": "湖北三峡建设项目管理股份有限公司",
+          "price": "669000.00元"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260605/387be265-810f-4952-91cd-01a75666e52e.html"
+    },
+    "raw_data": {
+      "title": "当阳市子龙小学新建项目监理中标候选人公示",
+      "infodate": "2026-06-05"
+    }
   }
 ]
