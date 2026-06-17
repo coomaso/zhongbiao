@@ -48091,5 +48091,59 @@
       "title": "100万吨／年磷酸铁(一期15万吨／年)项目主干道路及附属工程施工中标候选人公示",
       "infodate": "2026-06-16"
     }
+  },
+  {
+    "infoid": "63b4efcd-417e-4cdc-bd67-5d264df5642d",
+    "infourl": "/jyxx/003001/003001004/20260617/63b4efcd-417e-4cdc-bd67-5d264df5642d.html",
+    "parsed_data": {
+      "project_name": "秭归县茅坪镇移民安置区产业转移项目(C区厂房)施工（二标段）(第2次招标)",
+      "publicity_period": "2026年06月17日 12时00分至2026年06月20日 12时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌晶鑫建设工程有限责任公司",
+          "price": "35971218.52"
+        },
+        {
+          "bidder": "湖北汇宜建设工程有限公司",
+          "price": "35812995.88"
+        },
+        {
+          "bidder": "江铭建设集团有限公司",
+          "price": "35850520.11"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260617/63b4efcd-417e-4cdc-bd67-5d264df5642d.html"
+    },
+    "raw_data": {
+      "title": "秭归县茅坪镇移民安置区产业转移项目(C区厂房)施工（二标段）(第2次招标)中标候选人公示",
+      "infodate": "2026-06-17"
+    }
+  },
+  {
+    "infoid": "7faa45c7-782a-4f22-a263-67d0add25921",
+    "infourl": "/jyxx/003001/003001004/20260617/7faa45c7-782a-4f22-a263-67d0add25921.html",
+    "parsed_data": {
+      "project_name": "远安县大柳树水库工程",
+      "publicity_period": "2026年06月17日 11时30分至2026年06月22日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌晟泰水电实业有限责任公司",
+          "price": "48553868.95"
+        },
+        {
+          "bidder": "湖北昊源建设工程有限公司",
+          "price": "48652417.22"
+        },
+        {
+          "bidder": "湖北河泽水利水电工程有限公司",
+          "price": "48317976.81"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260617/7faa45c7-782a-4f22-a263-67d0add25921.html"
+    },
+    "raw_data": {
+      "title": "远安县大柳树水库工程中标候选人公示",
+      "infodate": "2026-06-17"
+    }
   }
 ]
