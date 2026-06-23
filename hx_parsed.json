@@ -48423,5 +48423,59 @@
       "title": "青宜产业园基础设施建设项目（标准化厂房）EPC工程总承包中标候选人公示",
       "infodate": "2026-06-22"
     }
+  },
+  {
+    "infoid": "a1e83ef2-15b9-4abf-ad24-3f854f5a98ee",
+    "infourl": "/jyxx/003001/003001004/20260623/a1e83ef2-15b9-4abf-ad24-3f854f5a98ee.html",
+    "parsed_data": {
+      "project_name": "夷陵区鸦鹊岭镇东西泉磷石膏库污染综合治理项目（管网修缮与生态修复工程）",
+      "publicity_period": "2026年06月23日 12时00分至2026年06月26日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌铭杰建筑工程有限公司",
+          "price": "3339290.51"
+        },
+        {
+          "bidder": "湖北建工集团有限公司",
+          "price": "3328439.22"
+        },
+        {
+          "bidder": "宜昌鼎燊建设工程有限公司",
+          "price": "3337392.66"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260623/a1e83ef2-15b9-4abf-ad24-3f854f5a98ee.html"
+    },
+    "raw_data": {
+      "title": "夷陵区鸦鹊岭镇东西泉磷石膏库污染综合治理项目（管网修缮与生态修复工程）中标候选人公示",
+      "infodate": "2026-06-23"
+    }
+  },
+  {
+    "infoid": "01ebefcb-d4c4-4a8f-bb2a-f72f778eec58",
+    "infourl": "/jyxx/003001/003001004/20260623/01ebefcb-d4c4-4a8f-bb2a-f72f778eec58.html",
+    "parsed_data": {
+      "project_name": "天元科技高性能航天助剂项目场平工程",
+      "publicity_period": "2026年06月23日 10时30分至2026年06月26日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌市洋坤建筑有限公司",
+          "price": "12976086.38"
+        },
+        {
+          "bidder": "宜昌东阳建设工程有限公司",
+          "price": "12993646.34"
+        },
+        {
+          "bidder": "宜昌凯鑫建筑工程有限公司",
+          "price": "12909928.19"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260623/01ebefcb-d4c4-4a8f-bb2a-f72f778eec58.html"
+    },
+    "raw_data": {
+      "title": "天元科技高性能航天助剂项目场平工程中标候选人公示",
+      "infodate": "2026-06-23"
+    }
   }
 ]
