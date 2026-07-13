@@ -50837,5 +50837,59 @@
       "title": "S287兴山县南对河至千斤园段路面功能性修复工程中标候选人公示",
       "infodate": "2026-07-13"
     }
+  },
+  {
+    "infoid": "6e588c80-2c91-4788-9925-6bc2a0c7bb41",
+    "infourl": "/jyxx/003001/003001004/20260713/6e588c80-2c91-4788-9925-6bc2a0c7bb41.html",
+    "parsed_data": {
+      "project_name": "远安县县域充换电设施补短板建设项目（一期）二标段",
+      "publicity_period": "2026年07月13日 19时00分至2026年07月16日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "洛阳嘉盛电源科技有限公司",
+          "price": "4415928.36"
+        },
+        {
+          "bidder": "河南十地建筑工程有限公司",
+          "price": "4453800.07"
+        },
+        {
+          "bidder": "鸿鸣建设有限公司",
+          "price": "4447834.38"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260713/6e588c80-2c91-4788-9925-6bc2a0c7bb41.html"
+    },
+    "raw_data": {
+      "title": "远安县县域充换电设施补短板建设项目（一期）二标段中标候选人公示",
+      "infodate": "2026-07-13"
+    }
+  },
+  {
+    "infoid": "bef8b65f-8a4f-445a-b583-6b6c574eb94b",
+    "infourl": "/jyxx/003001/003001004/20260713/bef8b65f-8a4f-445a-b583-6b6c574eb94b.html",
+    "parsed_data": {
+      "project_name": "远安县县域充换电设施补短板建设项目（一期）一标段",
+      "publicity_period": "2026年07月13日 19时00分至2026年07月16日 23时59分",
+      "bidders_and_prices": [
+        {
+          "bidder": "青岛特来电新能源科技有限公司",
+          "price": "4528085.60"
+        },
+        {
+          "bidder": "湖北星源智汇电力工程有限公司",
+          "price": "4494037.90"
+        },
+        {
+          "bidder": "湖北宜安捷电力工程有限公司",
+          "price": "4431331.22"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260713/bef8b65f-8a4f-445a-b583-6b6c574eb94b.html"
+    },
+    "raw_data": {
+      "title": "远安县县域充换电设施补短板建设项目（一期）一标段中标候选人公示",
+      "infodate": "2026-07-13"
+    }
   }
 ]
