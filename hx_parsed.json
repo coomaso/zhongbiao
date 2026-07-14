@@ -51080,5 +51080,67 @@
       "title": "沿江大道及沿江排水复建工程（一期、二期）监理中标候选人公示",
       "infodate": "2026-07-14"
     }
+  },
+  {
+    "infoid": "ea0e6d73-5ef8-461c-acb4-d5e6d11be46f",
+    "infourl": "/jyxx/003001/003001004/20260714/ea0e6d73-5ef8-461c-acb4-d5e6d11be46f.html",
+    "parsed_data": {
+      "project_name": "宜昌产投产业园2#成品库及配套设施改造项目10kV配电工程施工",
+      "publicity_period": "2026年07月14日 16时00分至2026年07月17日 16时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "沃达建设集团有限公司",
+          "price": "19844445.82"
+        },
+        {
+          "bidder": "宙宏建设集团有限公司",
+          "price": "19759070.99"
+        },
+        {
+          "bidder": "福建省恒鼎建筑工程有限公司",
+          "price": "19869828.37"
+        },
+        {
+          "bidder": "河南海马建设工程有限公司",
+          "price": "19858295.53"
+        },
+        {
+          "bidder": "百年建设集团有限公司",
+          "price": "19892903.05"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260714/ea0e6d73-5ef8-461c-acb4-d5e6d11be46f.html"
+    },
+    "raw_data": {
+      "title": "宜昌产投产业园2#成品库及配套设施改造项目10kV配电工程施工中标候选人公示",
+      "infodate": "2026-07-14"
+    }
+  },
+  {
+    "infoid": "74c745a6-6b11-427e-87aa-5fbd24cf7745",
+    "infourl": "/jyxx/003001/003001004/20260714/74c745a6-6b11-427e-87aa-5fbd24cf7745.html",
+    "parsed_data": {
+      "project_name": "宜昌市三峡中等专业学校食堂改扩建项目施工",
+      "publicity_period": "2026年07月14日 15时00分至2026年07月17日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌明泰建筑工程有限公司",
+          "price": "6634215.19"
+        },
+        {
+          "bidder": "湖北中八建设工程有限公司",
+          "price": "6529557.59"
+        },
+        {
+          "bidder": "湖北辉腾建工有限公司",
+          "price": "6632578.24"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260714/74c745a6-6b11-427e-87aa-5fbd24cf7745.html"
+    },
+    "raw_data": {
+      "title": "宜昌市三峡中等专业学校食堂改扩建项目施工中标候选人公示",
+      "infodate": "2026-07-14"
+    }
   }
 ]
