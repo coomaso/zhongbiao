@@ -52014,5 +52014,59 @@
       "title": "当阳市第二高级中学改扩建项目EPC工程总承包中标候选人公示",
       "infodate": "2026-07-21"
     }
+  },
+  {
+    "infoid": "3a30965e-fd3b-47ad-85e6-71a711b70e26",
+    "infourl": "/jyxx/003001/003001004/20260722/3a30965e-fd3b-47ad-85e6-71a711b70e26.html",
+    "parsed_data": {
+      "project_name": "点军区点军小学校舍维修改造工程",
+      "publicity_period": "2026年07月22日 17时00分至2026年07月25日 17时00分",
+      "bidders_and_prices": [
+        {
+          "bidder": "泰源工程集团股份有限公司",
+          "price": "3614851.02"
+        },
+        {
+          "bidder": "深圳市建侨建工集团有限公司",
+          "price": "3685728.95"
+        },
+        {
+          "bidder": "湖北汇宜建设工程有限公司",
+          "price": "3672857.59"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260722/3a30965e-fd3b-47ad-85e6-71a711b70e26.html"
+    },
+    "raw_data": {
+      "title": "点军区点军小学校舍维修改造工程中标候选人公示",
+      "infodate": "2026-07-22"
+    }
+  },
+  {
+    "infoid": "a7599778-cb09-494b-bc76-0b2835dfcb6a",
+    "infourl": "/jyxx/003001/003001004/20260722/a7599778-cb09-494b-bc76-0b2835dfcb6a.html",
+    "parsed_data": {
+      "project_name": "宜都市枝城镇九道河物流园项目施工",
+      "publicity_period": "2026年07月22日 16时00分至2026年07月27日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "中建三局第三建设工程有限责任公司",
+          "price": "117386564.97"
+        },
+        {
+          "bidder": "湖北夷昊建设工程有限公司",
+          "price": "118653155.51"
+        },
+        {
+          "bidder": "湖北国通领驭建设集团有限公司",
+          "price": "117991940.78"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260722/a7599778-cb09-494b-bc76-0b2835dfcb6a.html"
+    },
+    "raw_data": {
+      "title": "宜都市枝城镇九道河物流园项目施工中标候选人公示",
+      "infodate": "2026-07-22"
+    }
   }
 ]
