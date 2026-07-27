@@ -52675,5 +52675,59 @@
       "title": "三江新建人行桥方案研究、勘察、施工图设计(第2次招标)中标候选人公示",
       "infodate": "2026-07-27"
     }
+  },
+  {
+    "infoid": "fd04ed15-d5e3-4f0a-9a02-6c55df0a73f9",
+    "infourl": "/jyxx/003001/003001004/20260727/fd04ed15-d5e3-4f0a-9a02-6c55df0a73f9.html",
+    "parsed_data": {
+      "project_name": "十里红宾馆景石采购及安装工程(第2次招标)",
+      "publicity_period": "2026年07月27日 17时30分至2026年07月30日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "金亚建设有限公司",
+          "price": "1218069.71"
+        },
+        {
+          "bidder": "蜀一建工集团有限公司",
+          "price": "1235325.54"
+        },
+        {
+          "bidder": "湖北嘉羿源建设工程有限公司",
+          "price": "1226659.63"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260727/fd04ed15-d5e3-4f0a-9a02-6c55df0a73f9.html"
+    },
+    "raw_data": {
+      "title": "十里红宾馆景石采购及安装工程(第2次招标)中标候选人公示",
+      "infodate": "2026-07-27"
+    }
+  },
+  {
+    "infoid": "8fcaa39d-4ff0-4140-902c-3c0e508e04f7",
+    "infourl": "/jyxx/003001/003001004/20260727/8fcaa39d-4ff0-4140-902c-3c0e508e04f7.html",
+    "parsed_data": {
+      "project_name": "宜昌交运三峡游轮有限公司主题游轮项目船舶建造",
+      "publicity_period": "2026年07月27日 17时30分至2026年07月30日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "宜昌鑫汇船舶修造有限公司",
+          "price": "37362729.77"
+        },
+        {
+          "bidder": "枝江鸿巨船舶制造有限公司",
+          "price": "37266201.78"
+        },
+        {
+          "bidder": "枝江盛懋船业有限公司",
+          "price": "37833578.17"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260727/8fcaa39d-4ff0-4140-902c-3c0e508e04f7.html"
+    },
+    "raw_data": {
+      "title": "宜昌交运三峡游轮有限公司主题游轮项目船舶建造中标候选人公示",
+      "infodate": "2026-07-27"
+    }
   }
 ]
