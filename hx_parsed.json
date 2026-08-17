@@ -54280,5 +54280,59 @@
       "title": "宜昌市夷陵中学新建综合楼项目装修工程中标候选人公示",
       "infodate": "2026-08-17"
     }
+  },
+  {
+    "infoid": "65ace3d3-0fa5-499a-8750-ea79a8a4b087",
+    "infourl": "/jyxx/003001/003001004/20260817/65ace3d3-0fa5-499a-8750-ea79a8a4b087.html",
+    "parsed_data": {
+      "project_name": "秭归县沙镇溪镇农村公路互联互通工程",
+      "publicity_period": "2026年08月17日 15时30分至2026年08月20日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "黄山新洲建设集团有限公司",
+          "price": "5152033.68"
+        },
+        {
+          "bidder": "湖北鑫盛宏峰建设有限公司",
+          "price": "5281745.32"
+        },
+        {
+          "bidder": "湖北富竹环境工程有限公司",
+          "price": "5335750.93"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260817/65ace3d3-0fa5-499a-8750-ea79a8a4b087.html"
+    },
+    "raw_data": {
+      "title": "秭归县沙镇溪镇农村公路互联互通工程中标候选人公示",
+      "infodate": "2026-08-17"
+    }
+  },
+  {
+    "infoid": "ce7b6c0d-8874-47b3-a764-afce51146b19",
+    "infourl": "/jyxx/003001/003001004/20260817/ce7b6c0d-8874-47b3-a764-afce51146b19.html",
+    "parsed_data": {
+      "project_name": "S255秭归县风吹垭至殷家坝段路面结构性修复工程K44+000-K62+300段",
+      "publicity_period": "2026年08月17日 15时30分至2026年08月20日 17时30分",
+      "bidders_and_prices": [
+        {
+          "bidder": "湖北省清江路桥建筑有限公司",
+          "price": "15881774.20"
+        },
+        {
+          "bidder": "黄山新洲建设集团有限公司",
+          "price": "17031782.00"
+        },
+        {
+          "bidder": "湖北瑞得建设有限责任公司",
+          "price": "17256344.00"
+        }
+      ],
+      "full_url": "https://ggzy.sc.yichang.gov.cn/jyxx/003001/003001004/20260817/ce7b6c0d-8874-47b3-a764-afce51146b19.html"
+    },
+    "raw_data": {
+      "title": "S255秭归县风吹垭至殷家坝段路面结构性修复工程K44+000-K62+300段中标候选人公示",
+      "infodate": "2026-08-17"
+    }
   }
 ]
